@@ -1,0 +1,108 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "rank": 1,
+      "name": "xCrescent",
+      "tier": "CHALLENGER",
+      "LP": 2008,
+      "rate": 33,
+      "win": 97,
+      "lose": 193
+    },
+    {
+      "rank": 2,
+      "name": "Sologesang2",
+      "tier": "CHALLENGER",
+      "LP": 2001,
+      "rate": 21,
+      "win": 101,
+      "lose": 120
+    },
+    {
+      "rank": 3,
+      "name": "춀니",
+      "tier": "CHALLENGER",
+      "LP": 2223,
+      "rate": 11,
+      "win": 110,
+      "lose": 330
+    },
+    {
+      "rank": 4,
+      "name": "ㅇㅇㅇㄹㅇ",
+      "tier": "CHALLENGER",
+      "LP": 1800,
+      "rate": 30,
+      "win": 130,
+      "lose": 220
+    },
+    {
+      "rank": 5,
+      "name": "dd",
+      "tier": "CHALLENGER",
+      "LP": 2030,
+      "rate": 80,
+      "win": 110,
+      "lose": 3330
+    },
+    {
+      "rank": 6,
+      "name": "아프리카",
+      "tier": "CHALLENGER",
+      "LP": 2009,
+      "rate": 42,
+      "win": 1110,
+      "lose": 3220
+    },
+    {
+      "rank": 7,
+      "name": "아시아",
+      "tier": "CHALLENGER",
+      "LP": 2001,
+      "rate": 18,
+      "win": 210,
+      "lose": 120
+    },
+    {
+      "rank": 8,
+      "name": "러시아",
+      "tier": "CHALLENGER",
+      "LP": 2300,
+      "rate": 120,
+      "win": 120,
+      "lose": 350
+    },
+    {
+      "rank": 9,
+      "name": "ddㅇㅇㄻ",
+      "tier": "CHALLENGER",
+      "LP": 20030,
+      "rate": 220,
+      "win": 110,
+      "lose": 305
+    },
+    {
+      "rank": 10,
+      "name": "미국",
+      "tier": "CHALLENGER",
+      "LP": 20020,
+      "rate": 120,
+      "win": 330,
+      "lose": 20
+    }
+  ]
+}
