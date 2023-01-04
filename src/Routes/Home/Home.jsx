@@ -3,6 +3,7 @@ import Header from "../../Components/Header/Header";
 import { Outlet } from "react-router-dom";
 import Board from "../../Components/Board/Board";
 import MetaForm from "../../Components/MetaForm/MetaForm";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Outlet />
       <MetaForm />
       <Board />
+      <Footer />
     </main>
   );
 };
