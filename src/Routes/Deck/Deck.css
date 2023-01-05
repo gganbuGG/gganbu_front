@@ -1,0 +1,9 @@
+.main {
+  background-color: rgba(34, 34, 34, 1);
+}
+
+.meta-header-content {
+  min-height: 20vh;
+  margin-bottom: 20px;
+  background: url("../../images/Samira_1.jpg") center/cover no-repeat;
+}
