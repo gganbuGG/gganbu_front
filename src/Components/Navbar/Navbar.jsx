@@ -42,7 +42,7 @@ const Navbar = () => {
           <ul className="navbar-nav  mr-20">
             <li className="nav-item">
               <Link
-                to="deck"
+                to="/deck"
                 className="nav-link text-uppercase fs-18 fw-5 ls-1 text-lg text-black"
               >
                 덱 통계
@@ -50,7 +50,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="leaderboards"
+                to="/leaderboards"
                 className="nav-link text-uppercase fs-18 fw-5 ls-1 text-black"
               >
                 순위표

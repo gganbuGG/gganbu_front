@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const LeaderBoards = () => {
-  return <div>LeaderBoards</div>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 };
 
 export default LeaderBoards;

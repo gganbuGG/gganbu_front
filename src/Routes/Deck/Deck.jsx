@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Deck = () => {
-  return <div>Deck</div>;
+  return (
+    <main>
+      <Navbar />
+    </main>
+  );
 };
 
 export default Deck;
