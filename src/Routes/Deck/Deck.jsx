@@ -1,5 +1,4 @@
 import React from "react";
-
 import Navbar from "../../Components/Navbar/Navbar";
 import "./Deck.css";
 import Footer from "../../Components/Footer/Footer";
