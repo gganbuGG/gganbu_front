@@ -1,15 +1,9 @@
 import React from "react";
-import Moment from "react-moment";
 
 import Navbar from "../../Components/Navbar/Navbar";
-// import "./Deck.css";
 import "./Deck.css";
-
-const MomentDateChage = () => {
-  const nowTime = Date.now();
-  // Sun Aug 23 2020 15:43:49 GMT+0900
-  return <Moment>{nowTime}</Moment>;
-};
+import Footer from "../../Components/Footer/Footer";
+import Time from "../../utils/CurrentTime";
 
 const Deck = () => {
   return (
@@ -23,7 +17,7 @@ const Deck = () => {
                 메타 통계
               </h2>
               <p class="text-[12px] leading-[130%] text-[#D6D6D6] lg:text-[#999]">
-                최종 업데이트: <MomentDateChage />
+                최종 업데이트: <Time />
               </p>
             </div>
           </header>
@@ -311,6 +305,7 @@ const Deck = () => {
           </div>
         </main>
       </div>
+      <Footer />
     </body>
   );
 };
