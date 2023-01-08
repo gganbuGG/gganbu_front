@@ -77,30 +77,20 @@ const BoxHeader = styled.div`
   padding-left: 16px;
   padding-right: 54px;
   @media (min-width: 1024px) {
-    .lg\:min-h-\[50px\] {
-      min-height: 50px;
-    }
+    min-height: 50px;
   }
   @media (min-width: 1024px) {
-    .lg\:flex-row {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
   @media (min-width: 1024px) {
-    .lg\:items-center {
-      align-items: center;
-    }
+    align-items: center;
   }
   @media (min-width: 1024px) {
-    .lg\:py-\[12px\] {
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   @media (min-width: 1024px) {
-    .lg\:pr-\[16px\] {
-      padding-right: 16px;
-    }
+    padding-right: 16px;
   }
 `;
 
@@ -111,19 +101,13 @@ const BoxHeaderText = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   @media (min-width: 768px) {
-    .md\:flex-row {
-      flex-direction: row;
-    }
+    flex-direction: row;
   }
   @media (min-width: 768px) {
-    .md\:items-center {
-      align-items: center;
-    }
+    align-items: center;
   }
   @media (min-width: 768px) {
-    .md\:gap-\[4px\] {
-      gap: 4px;
-    }
+    gap: 4px;
   }
 `;
 
@@ -158,6 +142,126 @@ const BoxBodyImage = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   overflow: visible;
+`;
+
+const BoxBodyMain = styled.div`
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+  align-items: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 40 46 / var(--tw-bg-opacity));
+  padding-top: 16px;
+  padding-bottom: 16px;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+  @media (min-width: 1024px) {
+    gap: 33px;
+  }
+  @media (min-width: 1024px) {
+    background-color: transparent;
+  }
+  @media (min-width: 1024px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  @media (min-width: 1280px) {
+    padding-left: 164px;
+  }
+  @media (min-width: 1280px) {
+    padding-right: 24px;
+  }
+`;
+
+const BoxChampionBody = styled.div`
+  margin-bottom: 16px;
+  max-width: 342px;
+  @media (min-width: 1024px) {
+    margin-bottom: 0px;
+  }
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+  @media (min-width: 1024px) {
+    max-width: 456px;
+  }
+  @media (min-width: 1024px) {
+    flex-shrink: 0;
+  }
+`;
+
+const BoxChampionBody2 = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+`;
+
+const BoxChampionMain = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  padding-top: 9px;
+`;
+
+const BoxChampionImgAndItems = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+`;
+
+const BoxChampionImg = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+const BoxChampionImgDetail = styled.div`
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: yellow;
+`;
+
+const BoxChampionCoreItems = styled.div`
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+const BoxChampionCoreItem = styled.div`
+  position: relative;
+  height: 15px;
+  width: 15px;
+  overflow: hidden;
+`;
+
+const BoxSider = styled.div`
+  margin-bottom: 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  @media (min-width: 640px) {
+    width: auto;
+  }
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+  @media (min-width: 1024px) {
+    align-items: center;
+  }
 `;
 
 const Deck = () => {
@@ -256,74 +360,75 @@ const Deck = () => {
 
                 <BoxBody>
                   <BoxBodyImage>
-                    <div class="flex min-h-[150px] flex-col items-center bg-[#27282E] py-[16px] lg:flex-row lg:gap-[33px] lg:bg-transparent lg:py-[0px] lg:px-[8px] xl:pl-[164px] xl:pr-[24px]">
-                      <div class="mb-[16px] max-w-[342px] lg:mb-0 lg:w-full lg:max-w-[456px] lg:flex-shrink-0">
-                        <div class="inline-flex flex-wrap gap-2">
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                    <BoxBodyMain>
+                      <BoxChampionBody>
+                        <BoxChampionBody2>
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
 
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius relative inline-flex h-16 w-16 overflow-hidden rounded-md border-2 border-yellow-400">
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                              <div class="inline-flex w-full items-center justify-center">
-                                <div class="relative h-6 w-6 overflow-hidden">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
+                                  <img
+                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                    class="h-full w-full object-cover object-center"
+                                    alt=""
+                                  />
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                              <BoxChampionCoreItems>
+                                <BoxChampionCoreItem>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
                                     width="3"
                                     height="3"
                                     alt=""
                                   />
-                                </div>
-                                <div class="relative h-6 w-6  overflow-hidden">
+                                </BoxChampionCoreItem>
+                                <BoxChampionCoreItem>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
                                     width="12"
                                     height="12"
                                     alt=""
                                   />
-                                </div>
-                                <div class="relative h-6 w-6 overflow-hidden">
+                                </BoxChampionCoreItem>
+                                <BoxChampionCoreItem>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
                                     width="12"
                                     height="12"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
+                                </BoxChampionCoreItem>
+                              </BoxChampionCoreItems>
+                            </BoxChampionImgAndItems>
                             <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
                               <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
                                 <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
@@ -331,88 +436,93 @@ const Deck = () => {
                                 </strong>
                               </div>
                             </div>
-                          </div>
+                          </BoxChampionMain>
 
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="relative inline-flex flex-col pt-[9px]">
-                            <div class="inline-flex flex-col items-center gap-1">
-                              <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+
+                          <BoxChampionMain>
+                            <BoxChampionImgAndItems>
+                              <BoxChampionImg>
+                                <BoxChampionImgDetail>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                                </BoxChampionImgDetail>
+                              </BoxChampionImg>
+                            </BoxChampionImgAndItems>
+                          </BoxChampionMain>
+                        </BoxChampionBody2>
+                      </BoxChampionBody>
 
                       <div class="mb-[20px] grid w-full grid-cols-2 gap-[4px] sm:w-auto lg:mb-0 lg:flex lg:items-center">
                         <div class="flex h-[98px] flex-col justify-between rounded-[4px] bg-[#1D1D1D] py-[12px] sm:w-[126px] sm:px-[6px] lg:w-[130px]">
@@ -485,7 +595,7 @@ const Deck = () => {
                           </dl>
                         </div>
                       </div>
-                    </div>
+                    </BoxBodyMain>
                   </BoxBodyImage>
                 </BoxBody>
               </BoxMain>
