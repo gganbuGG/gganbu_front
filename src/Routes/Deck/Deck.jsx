@@ -285,10 +285,11 @@ const Deck = () => {
                               </div>
                             </div>
                           </div>
+
                           <div class="relative inline-flex flex-col pt-[9px]">
                             <div class="inline-flex flex-col items-center gap-1">
                               <div class="relative inline-flex flex-col overflow-hidden">
-                                <div class="border-radius border-3 relative inline-flex h-16 w-16 overflow-hidden rounded-md border-gray-700">
+                                <div class="border-radius relative inline-flex h-16 w-16 overflow-hidden rounded-md border-2 border-yellow-400">
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
@@ -296,8 +297,42 @@ const Deck = () => {
                                   />
                                 </div>
                               </div>
+                              <div class="inline-flex w-full items-center justify-center">
+                                <div class="relative h-6 w-6 overflow-hidden">
+                                  <img
+                                    src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
+                                    width="3"
+                                    height="3"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="relative h-6 w-6  overflow-hidden">
+                                  <img
+                                    src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
+                                    width="12"
+                                    height="12"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="relative h-6 w-6 overflow-hidden">
+                                  <img
+                                    src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
+                                    width="12"
+                                    height="12"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
+                              <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
+                                <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
+                                  CORE
+                                </strong>
+                              </div>
                             </div>
                           </div>
+
                           <div class="relative inline-flex flex-col pt-[9px]">
                             <div class="inline-flex flex-col items-center gap-1">
                               <div class="relative inline-flex flex-col overflow-hidden">
