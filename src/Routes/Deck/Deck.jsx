@@ -1,107 +1,261 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
-import "./Deck.css";
+// import "./Deck.css";
 import Footer from "../../Components/Footer/Footer";
 import Time from "../../utils/CurrentTime";
+import styled from "styled-components";
+
+const DeckMain = styled.div`
+  position: relative;
+  min-height: 150vh;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 34 34 / var(--tw-bg-opacity));
+  padding-bottom: 80px;
+`;
+const DeckHeader = styled.div`
+  min-height: 20vh;
+  margin-bottom: 20px;
+  background: url("https://cdn.dak.gg/tft/images2/tft/bg/meta-stats.jpeg?20221208")
+    center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+`;
+
+const DeckHeaderText = styled.div`
+  position: relative;
+  display: flex;
+  height: 230px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DeckHeaderH2 = styled.h2`
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(202 147 114 / var(--tw-text-opacity));
+`;
+
+const DeckHeaderP = styled.p`
+  font-size: 12px;
+  line-height: 130%;
+  --tw-text-opacity: 1;
+  color: rgb(214 214 214 / var(--tw-text-opacity));
+`;
+
+const DeckBody = styled.div`
+  flex-direction: column;
+  gap: 16px;
+`;
+const FirstBox = styled.div``;
+
+const BoxMain = styled.div`
+  flex-direction: column;
+  gap: 1px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(50 50 50 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 50 50 / var(--tw-bg-opacity));
+`;
+
+const BoxHeader = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: col;
+  justify-content: space-between;
+  gap: 16px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 47 55 / var(--tw-bg-opacity));
+  padding-top: 16px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 54px;
+  @media (min-width: 1024px) {
+    .lg\:min-h-\[50px\] {
+      min-height: 50px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .lg\:flex-row {
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 1024px) {
+    .lg\:items-center {
+      align-items: center;
+    }
+  }
+  @media (min-width: 1024px) {
+    .lg\:py-\[12px\] {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .lg\:pr-\[16px\] {
+      padding-right: 16px;
+    }
+  }
+`;
+
+const BoxHeaderText = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    .md\:flex-row {
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 768px) {
+    .md\:items-center {
+      align-items: center;
+    }
+  }
+  @media (min-width: 768px) {
+    .md\:gap-\[4px\] {
+      gap: 4px;
+    }
+  }
+`;
+
+const BoxHeaderReinForceMain = styled.div`
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 22px;
+`;
+
+const BoxHeaderReinForceMain2 = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+`;
+
+const BoxHeaderReinForceDummy = styled.div`
+  background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");
+  width: 26px;
+  height: 26px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const BoxBody = styled.div``;
+
+const BoxBodyImage = styled.div`
+  background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Samira.jpg");
+  background-size: cover;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;
+`;
 
 const Deck = () => {
   return (
     <body>
       <Navbar />
-      <div class="ad-sm:min-h-[1610px] relative min-h-screen w-full bg-[#222] pb-[80px]">
+      <DeckMain>
         <main class="container">
-          <header class=" meta-header-content  flex flex-col px-[12px] sm:px-[32px]">
-            <div class="relative flex h-[230px] flex-col justify-center lg:h-[160px]">
-              <h2 class="mb-[16px] text-[24px] font-bold leading-none text-[#CA9372]">
-                메타 통계
-              </h2>
-              <p class="text-[12px] leading-[130%] text-[#D6D6D6] lg:text-[#999]">
+          <DeckHeader>
+            <DeckHeaderText>
+              <DeckHeaderH2>메타 통계</DeckHeaderH2>
+              <DeckHeaderP>
                 최종 업데이트: <Time />
-              </p>
-            </div>
-          </header>
+              </DeckHeaderP>
+            </DeckHeaderText>
+          </DeckHeader>
 
-          <div class=" flex-col gap-[16px] ">
-            <div class="first">
-              <div class=" flex-col gap-[1px] border border-[#323232] bg-[#323232]">
-                <header class="relative flex flex-col justify-between gap-[16px] bg-[#2D2F37] py-[16px] pl-[16px] pr-[54px] lg:min-h-[50px] lg:flex-row lg:items-center lg:py-[12px] lg:pr-[16px]">
-                  <div class="inline-flex flex-col flex-wrap gap-[8px] md:flex-row md:items-center md:gap-[4px]">
+          <DeckBody>
+            <FirstBox>
+              <BoxMain>
+                <BoxHeader>
+                  <BoxHeaderText>
                     <strong class="text-[16px] font-bold leading-none text-white">
                       사미라 세트
                     </strong>
                     <span class="text-[12px] leading-none text-[#999]"></span>
-                  </div>
-                  <div class="inline-flex flex-shrink-0 gap-[22px]">
-                    <div class="inline-flex flex-wrap gap-[2px]">
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                  </BoxHeaderText>
+                  <BoxHeaderReinForceMain>
+                    <BoxHeaderReinForceMain2>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                      <div class="reinforce_bg_gold relative bg-cover bg-center bg-no-repeat">
+                      </BoxHeaderReinForceDummy>
+                      <BoxHeaderReinForceDummy>
                         <img
                           src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                           alt=""
                           class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                         />
-                      </div>
-                    </div>
-                  </div>
-                </header>
+                      </BoxHeaderReinForceDummy>
+                    </BoxHeaderReinForceMain2>
+                  </BoxHeaderReinForceMain>
+                </BoxHeader>
 
-                <body>
-                  <div class="deck_box_main_img  flex-col bg-center bg-no-repeat">
+                <BoxBody>
+                  <BoxBodyImage>
                     <div class="flex min-h-[150px] flex-col items-center bg-[#27282E] py-[16px] lg:flex-row lg:gap-[33px] lg:bg-transparent lg:py-[0px] lg:px-[8px] xl:pl-[164px] xl:pr-[24px]">
                       <div class="mb-[16px] max-w-[342px] lg:mb-0 lg:w-full lg:max-w-[456px] lg:flex-shrink-0">
                         <div class="inline-flex flex-wrap gap-2">
@@ -297,13 +451,13 @@ const Deck = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </body>
-              </div>
-            </div>
-          </div>
+                  </BoxBodyImage>
+                </BoxBody>
+              </BoxMain>
+            </FirstBox>
+          </DeckBody>
         </main>
-      </div>
+      </DeckMain>
       <Footer />
     </body>
   );
