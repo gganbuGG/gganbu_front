@@ -2,28 +2,29 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../Navbar/Navbar";
 import SearchForm from "../SearchForm/SearchForm";
-import "./Header.css";
 import HeaderSrc from "../../images/header.jpg";
 
 const Header = () => {
   return (
-    <div className="holder">
-      <header className="header">
-        <Navbar />
-        <div className="header-content flex-c flex text-center text-white">
-          <HeaderTitle>GGanbu.GG</HeaderTitle>
-          <br />
-          <SearchForm />
-        </div>
-      </header>
-    </div>
+    <Wrapper>
+      <Navbar />
+      <HeaderContent>
+        <HeaderTitle>GGanbu.GG</HeaderTitle>
+        <Br />
+        <SearchForm />
+      </HeaderContent>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div``;
+
+const Br = styled.br``;
 const HeaderContent = styled.div`
   min-height: 60vh;
   background: url(${HeaderSrc}) center/cover no-repeat;
   flex-direction: column;
+  align-items: center;
   display: flex;
   text-align: center;
   color: white;
