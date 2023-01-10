@@ -3,6 +3,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import Time from "../../utils/CurrentTime";
 import styled from "styled-components";
+import Wukong from "../../images/Champions/1Cost/Wukong.jpg";
 
 const Deck = () => {
   return (
@@ -106,13 +107,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                    src={Wukong}
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -120,13 +121,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -134,13 +135,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                               <BoxChampionCoreItems>
                                 <BoxChampionCoreItem>
@@ -181,13 +182,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -195,13 +196,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -209,13 +210,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -223,13 +224,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -237,13 +238,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -251,13 +252,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -416,13 +417,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -430,13 +431,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -444,13 +445,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                               <BoxChampionCoreItems>
                                 <BoxChampionCoreItem>
@@ -491,13 +492,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -505,13 +506,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -519,13 +520,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -533,13 +534,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -547,13 +548,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -561,13 +562,13 @@ const Deck = () => {
                           <BoxChampionMain>
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
-                                <BoxChampionImgDetail>
+                                <BoxChampionImgDetail5Cost>
                                   <img
                                     src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
                                     class="h-full w-full object-cover object-center"
                                     alt=""
                                   />
-                                </BoxChampionImgDetail>
+                                </BoxChampionImgDetail5Cost>
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
                           </BoxChampionMain>
@@ -870,7 +871,7 @@ const BoxChampionImg = styled.div`
   overflow: hidden;
 `;
 
-const BoxChampionImgDetail = styled.div`
+const BoxChampionImgDetail5Cost = styled.div`
   position: relative;
   display: inline-flex;
   height: 40px;
@@ -878,7 +879,7 @@ const BoxChampionImgDetail = styled.div`
   overflow: hidden;
   border-radius: 8px;
   border-width: 2px;
-  border-color: yellow;
+  border-color: var(--yellow-color);
 `;
 
 const BoxChampionCoreItems = styled.div`
