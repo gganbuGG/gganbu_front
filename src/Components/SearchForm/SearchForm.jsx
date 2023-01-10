@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
-// import "./SearchForm.css";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
