@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8083";
+export const BASE_URL = "http://localhost:8083";
 
 export const getProfile = async () => {
   try {

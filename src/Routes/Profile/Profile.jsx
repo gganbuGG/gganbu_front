@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import ProductCard from "./ProfileDetail";
-
-const BASE_URL = "http://localhost:8083";
+import { BASE_URL } from "../../api/API_Profile";
 
 const Profile = () => {
   const [productList, setProductList] = useState([]);

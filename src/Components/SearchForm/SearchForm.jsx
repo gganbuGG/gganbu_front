@@ -13,6 +13,14 @@ const SearchForm = () => {
   const searchData = () => {
     navigate(`/profile?q=${searchText}`);
   };
+
+  const searchEnter = (event) => {
+    if (event.key === "Enter") {
+      let keyword = event.target.value;
+      navigate(`/profile?q=${searchText}`);
+    }
+  };
+
   useEffect(() => {
     (async () => {
       try {
@@ -33,6 +41,7 @@ const SearchForm = () => {
                 type="text"
                 placeholder="소환사 검색"
                 onChange={(e) => setSearchText(e.target.value)}
+                onKeyPress={(event) => searchEnter(event)}
               />
               <Button type="submit" onClick={searchData}>
                 <FaSearch className="text-purple" size={32} />
