@@ -1,12 +1,29 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { FaSearch } from "react-icons/fa";
 import { IoIosReorder } from "react-icons/io";
-import logoImg from "../../images/logo.png";
+import { getProfile } from "../../api/API_Profile";
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const navigate = useNavigate();
+  const [searchText, setSearchText] = useState([]);
+
+  const searchData = () => {
+    navigate(`/profile?q=${searchText}`);
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getProfile();
+        setSearchText(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
 
   return (
     <div className="Navbar">
@@ -40,8 +57,12 @@ const Navbar = () => {
         </button>
       </div>
       <div className="rightSide">
-        <input type="text" placeholder="소환사 검색" />
-        <button>
+        <input
+          type="text"
+          placeholder="소환사 검색"
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <button type="submit" onClick={searchData}>
           <FaSearch />
         </button>
       </div>

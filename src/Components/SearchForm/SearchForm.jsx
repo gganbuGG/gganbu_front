@@ -16,7 +16,6 @@ const SearchForm = () => {
 
   const searchEnter = (event) => {
     if (event.key === "Enter") {
-      let keyword = event.target.value;
       navigate(`/profile?q=${searchText}`);
     }
   };
