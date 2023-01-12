@@ -32,25 +32,20 @@ const SearchForm = () => {
   return (
     <SearchMain>
       <div className="container">
-        <div className="search-form-content">
-          <form className="search-form">
+        <SearchFormContent>
+          <SearchForms>
             <SearchElem>
-              <input
+              <Input
                 type="text"
-                className=" p-2 text-3xl text-black"
                 placeholder="소환사 검색"
                 onChange={(e) => setSearchText(e.target.value)}
               />
-              <button
-                type="submit"
-                className="flex justify-center"
-                onClick={(e) => searchForPlayer(e)}
-              >
+              <Button type="submit" onClick={(e) => searchForPlayer(e)}>
                 <FaSearch className="text-purple" size={32} />
-              </button>
+              </Button>
             </SearchElem>
-          </form>
-        </div>
+          </SearchForms>
+        </SearchFormContent>
       </div>
     </SearchMain>
   );
@@ -61,12 +56,29 @@ const SearchMain = styled.div`
   max-width: 680px;
 `;
 
+const SearchFormContent = styled.div``;
+const SearchForms = styled.div``;
+
 const SearchElem = styled.div`
   padding: 0.8rem 2.8rem;
   border-radius: 3.8rem;
   display: flex;
   background-color: white;
   justify-content: space-between;
+`;
+
+const Input = styled.input`
+  padding: 1px;
+  font-size: 24px;
+  line-height: 36px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+`;
+
+const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default SearchForm;
