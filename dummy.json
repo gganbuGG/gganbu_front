@@ -15,6 +15,7 @@
   ],
   "profile": [
     {
+      "id": 1,
       "rank": 1,
       "name": "xCrescent",
       "tier": "CHALLENGER",
@@ -24,6 +25,7 @@
       "lose": 193
     },
     {
+      "id": 2,
       "rank": 2,
       "name": "Sologesang2",
       "tier": "CHALLENGER",
@@ -33,6 +35,7 @@
       "lose": 120
     },
     {
+      "id": 3,
       "rank": 3,
       "name": "춀니",
       "tier": "CHALLENGER",
@@ -42,6 +45,7 @@
       "lose": 330
     },
     {
+      "id": 4,
       "rank": 4,
       "name": "ㅇㅇㅇㄹㅇ",
       "tier": "CHALLENGER",
@@ -51,6 +55,7 @@
       "lose": 220
     },
     {
+      "id": 5,
       "rank": 5,
       "name": "dd",
       "tier": "CHALLENGER",
@@ -60,6 +65,7 @@
       "lose": 3330
     },
     {
+      "id": 6,
       "rank": 6,
       "name": "아프리카",
       "tier": "CHALLENGER",
@@ -69,6 +75,7 @@
       "lose": 3220
     },
     {
+      "id": 7,
       "rank": 7,
       "name": "아시아",
       "tier": "CHALLENGER",
@@ -78,6 +85,7 @@
       "lose": 120
     },
     {
+      "id": 8,
       "rank": 8,
       "name": "러시아",
       "tier": "CHALLENGER",
@@ -87,6 +95,7 @@
       "lose": 350
     },
     {
+      "id": 9,
       "rank": 9,
       "name": "ddㅇㅇㄻ",
       "tier": "CHALLENGER",
@@ -96,6 +105,7 @@
       "lose": 305
     },
     {
+      "id": 10,
       "rank": 10,
       "name": "미국",
       "tier": "CHALLENGER",
@@ -105,6 +115,7 @@
       "lose": 20
     },
     {
+      "id": 11,
       "rank": 12,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",
@@ -114,6 +125,7 @@
       "lose": 120
     },
     {
+      "id": 12,
       "rank": 13,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",
@@ -123,6 +135,7 @@
       "lose": 120
     },
     {
+      "id": 13,
       "rank": 14,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",
@@ -132,6 +145,7 @@
       "lose": 120
     },
     {
+      "id": 14,
       "rank": 15,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",
@@ -141,6 +155,7 @@
       "lose": 120
     },
     {
+      "id": 15,
       "rank": 16,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",
@@ -150,6 +165,7 @@
       "lose": 120
     },
     {
+      "id": 16,
       "rank": 17,
       "name": "아앙ㅁ",
       "tier": "CHALLENGER",

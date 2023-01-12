@@ -1,34 +1,28 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { getProfile } from "../../api/API_Profile";
 
-const API_KEY = "RGAPI-56cd37e9-6c32-4a22-a6ae-918ec5321c1f"; //하루마다 바꿔야됨.
+// const API_KEY = "RGAPI-56cd37e9-6c32-4a22-a6ae-918ec5321c1f"; //하루마다 바꿔야됨.
 
 const SearchForm = () => {
-  const [searchText, setSearchText] = useState("");
-  const [playerData, setPlayerData] = useState({});
-
   const navigate = useNavigate();
-  function searchForPlayer() {
-    let APICallString =
-      "https://kr.api.riotgames.com/tft/summoner/v1/summoners/by-name/" +
-      searchText +
-      "?api_key=" +
-      API_KEY;
-    axios
-      .get(APICallString)
-      .then(function (response) {
-        //Success
-        setPlayerData(response.data);
-      })
-      .catch(function (error) {
-        //Error
-        console.log(error);
-      });
-    navigate(`/profile/${searchText}`);
-  }
+  const [searchText, setSearchText] = useState([]);
+
+  const searchData = () => {
+    navigate(`/profile?q=${searchText}`);
+  };
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getProfile();
+        setSearchText(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
   return (
     <SearchMain>
       <div className="container">
@@ -40,7 +34,7 @@ const SearchForm = () => {
                 placeholder="소환사 검색"
                 onChange={(e) => setSearchText(e.target.value)}
               />
-              <Button type="submit" onClick={(e) => searchForPlayer(e)}>
+              <Button type="submit" onClick={searchData}>
                 <FaSearch className="text-purple" size={32} />
               </Button>
             </SearchElem>
