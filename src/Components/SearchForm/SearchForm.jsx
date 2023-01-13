@@ -9,7 +9,8 @@ import { getProfile } from "../../api/API_Profile";
 const SearchForm = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);
-
+  if (searchText.length > 2) {
+  }
   const searchData = () => {
     navigate(`/profile?q=${searchText}`);
   };
@@ -41,8 +42,9 @@ const SearchForm = () => {
                 placeholder="소환사 검색"
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyPress={(event) => searchEnter(event)}
+                minLength="2"
               />
-              <Button type="submit" onClick={searchData}>
+              <Button type="submit" minLength="2" onClick={searchData}>
                 <FaSearch className="text-purple" size={32} />
               </Button>
             </SearchElem>

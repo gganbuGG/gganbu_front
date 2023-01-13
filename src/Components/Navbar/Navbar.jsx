@@ -63,6 +63,7 @@ const Navbar = () => {
           type="text"
           placeholder="소환사 검색"
           onChange={(e) => setSearchText(e.target.value)}
+          minLength="2"
         />
         <button type="submit" onClick={searchData}>
           <FaSearch />

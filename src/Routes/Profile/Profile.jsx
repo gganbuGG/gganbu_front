@@ -5,7 +5,7 @@ import ProductCard from "./ProfileDetail";
 import { BASE_URL } from "../../api/API_Profile";
 
 const Profile = () => {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState({});
   const [query, setQuery] = useSearchParams();
   let [error, setError] = useState("");
 
