@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import ProductCard from "./ProfileDetail";
-import { BASE_URL } from "../../api/API_Profile";
+import { BASE_URL, getProfile } from "../../api/API_Profile";
+
+import { useQuery } from "react-query";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -15,11 +17,13 @@ const Profile = () => {
     let url = `${BASE_URL}/profile?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
+
     if (data.length < 1) {
       setError(`${searchQuery}와 일치하는 소환사가 없습니다.`);
     } else {
       setProductList(data);
     }
+
     setProductList(data);
   };
 
@@ -36,9 +40,9 @@ const Profile = () => {
         ) : (
           <div>
             {productList.length > 0 &&
-              productList.map((menu) => (
+              productList.map((info) => (
                 <div>
-                  <ProductCard item={menu}></ProductCard>
+                  <ProductCard item={info} />
                 </div>
               ))}
           </div>

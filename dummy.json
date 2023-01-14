@@ -18,7 +18,7 @@
       "id": 1,
       "rank": 1,
       "name": "xCrescent",
-      "tierImg": "https://cdn.lolchess.gg/images/lol/tier/2022/challenger.png",
+      "tierImg": "https://cdn.lolchess.gg/images/lol/tier/2022/silver.png",
       "tier": "CHALLENGER",
       "LP": 2008,
       "rate": 33,
@@ -64,7 +64,7 @@
       "name": "dd",
       "tierImg": "https://cdn.lolchess.gg/images/lol/tier/2022/challenger.png",
       "tier": "CHALLENGER",
-      "LP": 2030,
+      "LP": 2000,
       "rate": 80,
       "win": 110,
       "lose": 3330
@@ -75,7 +75,7 @@
       "name": "아프리카",
       "tierImg": "https://cdn.lolchess.gg/images/lol/tier/2022/challenger.png",
       "tier": "CHALLENGER",
-      "LP": 2009,
+      "LP": 2001,
       "rate": 42,
       "win": 1110,
       "lose": 3220

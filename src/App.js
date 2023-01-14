@@ -10,10 +10,10 @@ function App() {
     <AppProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/deck" element={<Deck />} />
-          <Route path="/leaderboards" element={<LeaderBoards />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" exact={true} element={<Home />} />
+          <Route path="/deck" exact={true} element={<Deck />} />
+          <Route path="/leaderboards" exact={true} element={<LeaderBoards />} />
+          <Route path="/profile" exact={true} element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </AppProvider>

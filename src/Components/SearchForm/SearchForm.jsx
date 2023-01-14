@@ -9,8 +9,7 @@ import { getProfile } from "../../api/API_Profile";
 const SearchForm = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);
-  if (searchText.length > 2) {
-  }
+
   const searchData = () => {
     navigate(`/profile?q=${searchText}`);
   };
@@ -85,4 +84,5 @@ const Button = styled.button`
   align-items: center;
 `;
 
+// export default SearchForm;
 export default SearchForm;
