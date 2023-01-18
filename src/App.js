@@ -6,12 +6,14 @@ import Profile from "./Routes/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import ScrollTop from "./ScrollToTop";
+import TopButton from "./Components/Button/TopButton";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <ScrollTop />
+      <TopButton />
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
         <Route path="/deck" exact={true} element={<Deck />} />
