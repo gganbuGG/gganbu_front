@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 import Time from "../../utils/CurrentTime";
 import styled from "styled-components";
 import Wukong from "../../images/Champions/1Cost/Wukong.jpg";
@@ -10,7 +8,6 @@ import Samira from "../../images/Champions/4Cost/Samira.jpg";
 const Deck = () => {
   return (
     <body>
-      <Navbar />
       <DeckMain>
         <main class="container">
           <DeckHeader>
@@ -646,7 +643,6 @@ const Deck = () => {
           </DeckBody>
         </main>
       </DeckMain>
-      <Footer />
     </body>
   );
 };

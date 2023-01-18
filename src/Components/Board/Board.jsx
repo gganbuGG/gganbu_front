@@ -21,7 +21,6 @@ const Board = () => {
         <thead className="justify-between">
           <th className="px-4 py-3 text-white">순위</th>
           <th className="px-4 py-3 text-white">소환사</th>
-
           <th className="px-4 py-3 text-white">티어</th>
           <th className="px-4 py-3 text-white">LP</th>
           <th className="px-4 py-3 text-white">승률</th>

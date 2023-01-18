@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "../Navbar/Navbar";
+
 import SearchForm from "../SearchForm/SearchForm";
 import HeaderSrc from "../../images/header.jpg";
 
 const Header = () => {
   return (
     <Wrapper>
-      <Navbar />
       <HeaderContent>
         <HeaderTitle>GGanBu.GG</HeaderTitle>
         <Br />
