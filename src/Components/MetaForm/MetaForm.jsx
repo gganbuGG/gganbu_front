@@ -1,119 +1,6 @@
 import styled from "styled-components";
 import Samira from "../../images/Champions/4Cost/Samira.jpg";
 
-const Wrapper = styled.div`
-  margin-top: 40px;
-  position: relative;
-  min-height: 50vh;
-`;
-
-const Version = styled.span`
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 150px;
-`;
-
-const MetaGroup = styled.div`
-  min-height: 100px;
-  border-width: 2px;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
-`;
-
-const MetaGroupContent = styled.div``;
-
-const MetaGroupDeckBox1 = styled.div``;
-
-// const MetaGroupDeckBox2 = styled.div``;
-
-const MetaGroupDeck = styled.div`
-  display: grid;
-  grid-template-columns: 1.5fr 1.7fr 3fr 1fr;
-`;
-
-const MetaDeckName = styled.div`
-  display: flex;
-  padding: 22px 13px;
-  flex-direction: column;
-`;
-const MetaDeckTraits = styled.div`
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  gap: 2px;
-  margin: 15px 0px;
-`;
-
-const DeckName = styled.div`
-  font-size: 18px;
-  font-weight: inherit;
-`;
-
-const DeckNameHot = styled.div`
-  font-size: 10px;
-`;
-
-const MetaDeckChampions = styled.div`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 4px;
-`;
-
-const BoxChampionMain = styled.div`
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 9px;
-`;
-
-const BoxChampionImgAndItems = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const BoxChampionImg = styled.div`
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
-const BoxChampionImgDetail = styled.div`
-  position: relative;
-  display: inline-flex;
-  height: 45px;
-  width: 45px;
-  overflow: hidden;
-  border-radius: 8px;
-  border-width: 2px;
-  border-color: ${(props) => props.bdColor};
-`;
-
-const BoxChampionCoreItems = styled.div`
-  position: absolute;
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
-`;
-
-const BoxChampionCoreItem = styled.div`
-  position: relative;
-
-  height: 15px;
-  width: 15px;
-  overflow: hidden;
-`;
-
-const MetaDeckExplain = styled.div``;
-
 const MetaForm = () => {
   return (
     <div class="container">
@@ -529,6 +416,118 @@ const MetaForm = () => {
     </div>
   );
 };
+const Wrapper = styled.div`
+  margin-top: 40px;
+  position: relative;
+  min-height: 50vh;
+`;
+
+const Version = styled.span`
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 150px;
+`;
+
+const MetaGroup = styled.div`
+  min-height: 100px;
+  border-width: 2px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+`;
+
+const MetaGroupContent = styled.div``;
+
+const MetaGroupDeckBox1 = styled.div``;
+
+// const MetaGroupDeckBox2 = styled.div``;
+
+const MetaGroupDeck = styled.div`
+  display: grid;
+  grid-template-columns: 1.5fr 1.7fr 3fr 1fr;
+`;
+
+const MetaDeckName = styled.div`
+  display: flex;
+  padding: 22px 13px;
+  flex-direction: column;
+`;
+const MetaDeckTraits = styled.div`
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 2px;
+  margin: 15px 0px;
+`;
+
+const DeckName = styled.div`
+  font-size: 18px;
+  font-weight: inherit;
+`;
+
+const DeckNameHot = styled.div`
+  font-size: 10px;
+`;
+
+const MetaDeckChampions = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+`;
+
+const BoxChampionMain = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 9px;
+`;
+
+const BoxChampionImgAndItems = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const BoxChampionImg = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+const BoxChampionImgDetail = styled.div`
+  position: relative;
+  display: inline-flex;
+  height: 45px;
+  width: 45px;
+  overflow: hidden;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: ${(props) => props.bdColor};
+`;
+
+const BoxChampionCoreItems = styled.div`
+  position: absolute;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+`;
+
+const BoxChampionCoreItem = styled.div`
+  position: relative;
+
+  height: 15px;
+  width: 15px;
+  overflow: hidden;
+`;
+
+const MetaDeckExplain = styled.div``;
 
 const BoxHeaderReinForceDummy = styled.div`
   background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");

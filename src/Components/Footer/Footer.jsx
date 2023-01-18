@@ -1,35 +1,26 @@
 import styled from "styled-components";
 
 const Span = styled.div`
+  height: 70px;
   position: relative;
-  transform: translateY(-100%);
+  transform: translateY(0%);
   padding: 0px 150px;
   font-size: 14px;
-  background-color: gray;
+  background-color: #2f2c2c;
+  justify-content: center;
   text-align: left;
+  color: white;
 `;
 const Copyright = styled.div`
-  float: left;
-  margin-bottom: 5px;
-`;
-const Text = styled.div`
-  float: left;
+  display: flex;
   align-items: center;
+  margin-bottom: 5px;
 `;
 
 function Footer() {
   return (
     <Span>
-      <Copyright>
-        © LoLCHESS.GG. All Rights Reserved. <a href="#">TFT@LoLCHESS.GG</a>
-      </Copyright>
-      <Text>
-        lolchess.gg is hosted by PlayXP Inc. lolchess.gg isn’t endorsed by Riot
-        Games and doesn’t reflect the views or opinions of Riot Games or anyone
-        officially involved in producing or managing League of Legends. League
-        of Legends and Riot Games are trademarks or registered trademarks of
-        Riot Games, Inc. League of Legends © Riot Games, Inc.
-      </Text>
+      <Copyright>© GGanBu.GG. All Rights Reserved.</Copyright>
     </Span>
   );
 }

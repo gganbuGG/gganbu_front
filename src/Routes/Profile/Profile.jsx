@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
-import ProductCard from "./ProfileDetail";
-import { BASE_URL, getProfile } from "../../api/API_Profile";
 
-import { useQuery } from "react-query";
+import ProductCard from "./ProfileDetail";
+import { BASE_URL } from "../../api/API_Profile";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -32,8 +30,7 @@ const Profile = () => {
   }, [query]);
 
   return (
-    <div>
-      <Navbar />
+    <div className="container h-screen">
       <div>
         {error ? (
           <h2>{error}</h2>
