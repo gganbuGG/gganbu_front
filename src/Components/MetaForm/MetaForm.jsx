@@ -1,202 +1,218 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getDeck } from "../../api/API_Profile";
 import Samira from "../../images/Champions/4Cost/Samira.jpg";
 
 const MetaForm = () => {
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getDeck();
+        setInfo(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
   return (
     <div class="container">
       <Wrapper>
         <Version>V12.23b(시즌8) 추천 메타</Version>
-        <MetaGroup>
-          <MetaGroupContent>
-            <MetaGroupDeckBox1>
-              <MetaGroupDeck>
-                <MetaDeckName>
-                  <DeckName>
-                    <span>선의 조이</span>
-                  </DeckName>
-                  <DeckNameHot>
-                    <span>❤️Hot</span>
-                  </DeckNameHot>
-                </MetaDeckName>
-                <MetaDeckTraits>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                  <BoxHeaderReinForceDummy>
-                    <img
-                      src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                      alt=""
-                      class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                    />
-                  </BoxHeaderReinForceDummy>
-                </MetaDeckTraits>
-                {/*  */}
-                <MetaDeckChampions>
-                  <BoxChampionMain>
-                    <BoxChampionImgAndItems>
-                      <BoxChampionImg>
-                        <BoxChampionImgDetail bdColor="var(--cost4-color)">
+        {info?.map((match) => (
+          <MetaGroup>
+            <MetaGroupContent>
+              <MetaGroupDeckBox1>
+                <MetaGroupDeck>
+                  <MetaDeckName>
+                    <DeckName>
+                      <span>선의 조이{match.name}</span>
+                    </DeckName>
+                    <DeckNameHot>
+                      <span>❤️Hot</span>
+                    </DeckNameHot>
+                  </MetaDeckName>
+                  {/*챔피언, 시너지등과 갯수를 받아서 적용하자.*/}
+                  <MetaDeckTraits>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                    <BoxHeaderReinForceDummy>
+                      <img
+                        src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                        alt=""
+                        class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                      />
+                    </BoxHeaderReinForceDummy>
+                  </MetaDeckTraits>
+                  {/*  */}
+                  <MetaDeckChampions>
+                    <BoxChampionMain>
+                      <BoxChampionImgAndItems>
+                        <BoxChampionImg>
+                          <BoxChampionImgDetail bdColor="var(--cost4-color)">
+                            <img
+                              src={Samira}
+                              class="h-full w-full object-cover object-center"
+                              alt=""
+                            />
+                          </BoxChampionImgDetail>
+                        </BoxChampionImg>
+                      </BoxChampionImgAndItems>
+                      <BoxChampionCoreItems>
+                        <BoxChampionCoreItem>
                           <img
-                            src={Samira}
-                            class="h-full w-full object-cover object-center"
+                            src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
+                            width="3"
+                            height="3"
                             alt=""
                           />
-                        </BoxChampionImgDetail>
-                      </BoxChampionImg>
-                    </BoxChampionImgAndItems>
-                    <BoxChampionCoreItems>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                          width="3"
-                          height="3"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                          width="12"
-                          height="12"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                          width="12"
-                          height="12"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                    </BoxChampionCoreItems>
-                  </BoxChampionMain>
-
-                  <BoxChampionMain>
-                    <BoxChampionImgAndItems>
-                      <BoxChampionImg>
-                        <BoxChampionImgDetail>
+                        </BoxChampionCoreItem>
+                        <BoxChampionCoreItem>
                           <img
-                            src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                            class="h-full w-full object-cover object-center"
+                            src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
+                            width="12"
+                            height="12"
                             alt=""
                           />
-                        </BoxChampionImgDetail>
-                      </BoxChampionImg>
-                    </BoxChampionImgAndItems>
-                  </BoxChampionMain>
-
-                  <BoxChampionMain>
-                    <BoxChampionImgAndItems>
-                      <BoxChampionImg>
-                        <BoxChampionImgDetail>
+                        </BoxChampionCoreItem>
+                        <BoxChampionCoreItem>
                           <img
-                            src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                            class="h-full w-full object-cover object-center"
+                            src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
+                            width="12"
+                            height="12"
                             alt=""
                           />
-                        </BoxChampionImgDetail>
-                      </BoxChampionImg>
-                    </BoxChampionImgAndItems>
-                  </BoxChampionMain>
+                        </BoxChampionCoreItem>
+                      </BoxChampionCoreItems>
+                    </BoxChampionMain>
 
-                  <BoxChampionMain>
-                    <BoxChampionImgAndItems>
-                      <BoxChampionImg>
-                        <BoxChampionImgDetail bdColor="var(--cost4-color)">
+                    <BoxChampionMain>
+                      <BoxChampionImgAndItems>
+                        <BoxChampionImg>
+                          <BoxChampionImgDetail>
+                            <img
+                              src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                              class="h-full w-full object-cover object-center"
+                              alt=""
+                            />
+                          </BoxChampionImgDetail>
+                        </BoxChampionImg>
+                      </BoxChampionImgAndItems>
+                    </BoxChampionMain>
+
+                    <BoxChampionMain>
+                      <BoxChampionImgAndItems>
+                        <BoxChampionImg>
+                          <BoxChampionImgDetail>
+                            <img
+                              src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                              class="h-full w-full object-cover object-center"
+                              alt=""
+                            />
+                          </BoxChampionImgDetail>
+                        </BoxChampionImg>
+                      </BoxChampionImgAndItems>
+                    </BoxChampionMain>
+
+                    <BoxChampionMain>
+                      <BoxChampionImgAndItems>
+                        <BoxChampionImg>
+                          <BoxChampionImgDetail bdColor="var(--cost4-color)">
+                            <img
+                              src={Samira}
+                              class="h-full w-full object-cover object-center"
+                              alt=""
+                            />
+                          </BoxChampionImgDetail>
+                        </BoxChampionImg>
+                      </BoxChampionImgAndItems>
+                      <BoxChampionCoreItems>
+                        <BoxChampionCoreItem>
                           <img
-                            src={Samira}
-                            class="h-full w-full object-cover object-center"
+                            src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
+                            width="3"
+                            height="3"
                             alt=""
                           />
-                        </BoxChampionImgDetail>
-                      </BoxChampionImg>
-                    </BoxChampionImgAndItems>
-                    <BoxChampionCoreItems>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                          width="3"
-                          height="3"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                          width="12"
-                          height="12"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                      <BoxChampionCoreItem>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                          width="12"
-                          height="12"
-                          alt=""
-                        />
-                      </BoxChampionCoreItem>
-                    </BoxChampionCoreItems>
-                  </BoxChampionMain>
-                </MetaDeckChampions>
-                {/*  */}
-                <MetaDeckExplain>
-                  <div class="flex items-center justify-center border-2 ">
-                    <span>덱 자세히 보기</span>
-                  </div>
-                </MetaDeckExplain>
-              </MetaGroupDeck>
-            </MetaGroupDeckBox1>
-          </MetaGroupContent>
-        </MetaGroup>
-
+                        </BoxChampionCoreItem>
+                        <BoxChampionCoreItem>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
+                            width="12"
+                            height="12"
+                            alt=""
+                          />
+                        </BoxChampionCoreItem>
+                        <BoxChampionCoreItem>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
+                            width="12"
+                            height="12"
+                            alt=""
+                          />
+                        </BoxChampionCoreItem>
+                      </BoxChampionCoreItems>
+                    </BoxChampionMain>
+                  </MetaDeckChampions>
+                  {/*  */}
+                  <MetaDeckExplain>
+                    <div class="flex items-center justify-center border-2 ">
+                      <span>덱 자세히 보기</span>
+                    </div>
+                  </MetaDeckExplain>
+                </MetaGroupDeck>
+              </MetaGroupDeckBox1>
+            </MetaGroupContent>
+          </MetaGroup>
+        ))}
+        {/* 
         <MetaGroup>
           <MetaGroupContent>
             <MetaGroupDeckBox1>
@@ -411,7 +427,7 @@ const MetaForm = () => {
               </MetaGroupDeck>
             </MetaGroupDeckBox1>
           </MetaGroupContent>
-        </MetaGroup>
+        </MetaGroup> */}
       </Wrapper>
     </div>
   );
