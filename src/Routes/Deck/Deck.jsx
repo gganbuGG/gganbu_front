@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Time from "../../utils/CurrentTime";
 import styled from "styled-components";
 import Wukong from "../../images/Champions/1Cost/Wukong.jpg";
 import Alistar from "../../images/Champions/3Cost/Alistar.jpg";
 import Samira from "../../images/Champions/4Cost/Samira.jpg";
+import { getDeck } from "../../api/API_Profile";
 
 const Deck = () => {
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getDeck();
+        setInfo(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
   return (
     <body>
       <DeckMain>
@@ -18,629 +30,635 @@ const Deck = () => {
               </DeckHeaderP>
             </DeckHeaderText>
           </DeckHeader>
+          {info?.map((match) => (
+            <DeckBody>
+              <FirstBox>
+                <BoxMain>
+                  <BoxHeader>
+                    <BoxHeaderText>
+                      <strong class="text-[16px] font-bold leading-none text-white">
+                        사미라 세트
+                      </strong>
+                      <span class="text-[12px] leading-none text-[#999]"></span>
+                    </BoxHeaderText>
+                    <BoxHeaderReinForceMain>
+                      <BoxHeaderReinForceMain2>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                      </BoxHeaderReinForceMain2>
+                    </BoxHeaderReinForceMain>
+                  </BoxHeader>
 
-          <DeckBody>
-            <FirstBox>
-              <BoxMain>
-                <BoxHeader>
-                  <BoxHeaderText>
-                    <strong class="text-[16px] font-bold leading-none text-white">
-                      사미라 세트
-                    </strong>
-                    <span class="text-[12px] leading-none text-[#999]"></span>
-                  </BoxHeaderText>
-                  <BoxHeaderReinForceMain>
-                    <BoxHeaderReinForceMain2>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                    </BoxHeaderReinForceMain2>
-                  </BoxHeaderReinForceMain>
-                </BoxHeader>
+                  <BoxBody>
+                    <BoxBodyImage>
+                      <BoxBodyMain>
+                        <BoxChampionBody>
+                          <BoxChampionBody2>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail bdColor="var(--cost1-color)">
+                                    <img
+                                      src={Wukong}
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                <BoxBody>
-                  <BoxBodyImage>
-                    <BoxBodyMain>
-                      <BoxChampionBody>
-                        <BoxChampionBody2>
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail bdColor="var(--cost1-color)">
-                                  <img
-                                    src={Wukong}
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail bdColor="var(--cost3-color)">
+                                    <img
+                                      src={Alistar}
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail bdColor="var(--cost3-color)">
-                                  <img
-                                    src={Alistar}
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
-
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail bdColor="var(--cost4-color)">
-                                  <img
-                                    src={Samira}
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                              <BoxChampionCoreItems>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                                    width="3"
-                                    height="3"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                                    width="12"
-                                    height="12"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                                    width="12"
-                                    height="12"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                              </BoxChampionCoreItems>
-                            </BoxChampionImgAndItems>
-                            <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
-                              <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
-                                <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
-                                  CORE
-                                </strong>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail bdColor="var(--cost4-color)">
+                                    <img
+                                      src={Samira}
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                                <BoxChampionCoreItems>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
+                                      width="3"
+                                      height="3"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
+                                      width="12"
+                                      height="12"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
+                                      width="12"
+                                      height="12"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                </BoxChampionCoreItems>
+                              </BoxChampionImgAndItems>
+                              <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
+                                <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
+                                  <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
+                                    CORE
+                                  </strong>
+                                </div>
                               </div>
-                            </div>
-                          </BoxChampionMain>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
-                        </BoxChampionBody2>
-                      </BoxChampionBody>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                          </BoxChampionBody2>
+                        </BoxChampionBody>
 
-                      <BoxSider>
-                        <BoxSiderHighReinforce>
-                          <BoxSiderHighReinforceHeader>
-                            <BoxSiderHighReinforceHeaderText>
-                              상위 증강체
-                            </BoxSiderHighReinforceHeaderText>
-                          </BoxSiderHighReinforceHeader>
-                          <BoxSiderHighReinforceBody>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/Galio2HeroAugment_1668223910-Galio.jpg"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/Ascension_1655945403.png"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/standunited1.tft_set6.png"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                          </BoxSiderHighReinforceBody>
-                        </BoxSiderHighReinforce>
-                        <BoxSiderAvg>
-                          <BoxSiderAvgText>평균 등수</BoxSiderAvgText>
-                        </BoxSiderAvg>
-                        <BoxSiderTopRate>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>TOP4</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>62.1%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>승률</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>27.2%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>픽률</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>1.07%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                        </BoxSiderTopRate>
-                      </BoxSider>
-                    </BoxBodyMain>
-                  </BoxBodyImage>
-                </BoxBody>
-              </BoxMain>
-            </FirstBox>
-            <SecondBox>
-              <BoxMain>
-                <BoxHeader>
-                  <BoxHeaderText>
-                    <strong class="text-[16px] font-bold leading-none text-white">
-                      사미라 세트
-                    </strong>
-                    <span class="text-[12px] leading-none text-[#999]"></span>
-                  </BoxHeaderText>
-                  <BoxHeaderReinForceMain>
-                    <BoxHeaderReinForceMain2>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                      <BoxHeaderReinForceDummy>
-                        <img
-                          src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                          alt=""
-                          class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                        />
-                      </BoxHeaderReinForceDummy>
-                    </BoxHeaderReinForceMain2>
-                  </BoxHeaderReinForceMain>
-                </BoxHeader>
+                        <BoxSider>
+                          <BoxSiderHighReinforce>
+                            <BoxSiderHighReinforceHeader>
+                              <BoxSiderHighReinforceHeaderText>
+                                상위 증강체
+                              </BoxSiderHighReinforceHeaderText>
+                            </BoxSiderHighReinforceHeader>
+                            <BoxSiderHighReinforceBody>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/Galio2HeroAugment_1668223910-Galio.jpg"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/Ascension_1655945403.png"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/standunited1.tft_set6.png"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                            </BoxSiderHighReinforceBody>
+                          </BoxSiderHighReinforce>
+                          <BoxSiderAvg>
+                            <BoxSiderAvgText>
+                              <div>평균 등수</div>
+                              <div>#{match.rate}</div>
+                            </BoxSiderAvgText>
+                          </BoxSiderAvg>
+                          <BoxSiderTopRate>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>TOP4</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>{match.topRate}%</span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>승률</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>
+                                  {Number(match.win / match.lose).toFixed(2)}%
+                                </span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>픽률</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>{match.picked}%</span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                          </BoxSiderTopRate>
+                        </BoxSider>
+                      </BoxBodyMain>
+                    </BoxBodyImage>
+                  </BoxBody>
+                </BoxMain>
+              </FirstBox>
+              {/* <SecondBox>
+                <BoxMain>
+                  <BoxHeader>
+                    <BoxHeaderText>
+                      <strong class="text-[16px] font-bold leading-none text-white">
+                        사미라 세트
+                      </strong>
+                      <span class="text-[12px] leading-none text-[#999]"></span>
+                    </BoxHeaderText>
+                    <BoxHeaderReinForceMain>
+                      <BoxHeaderReinForceMain2>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                        <BoxHeaderReinForceDummy>
+                          <img
+                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
+                            alt=""
+                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
+                          />
+                        </BoxHeaderReinForceDummy>
+                      </BoxHeaderReinForceMain2>
+                    </BoxHeaderReinForceMain>
+                  </BoxHeader>
 
-                <BoxBody>
-                  <BoxBodyImage>
-                    <BoxBodyMain>
-                      <BoxChampionBody>
-                        <BoxChampionBody2>
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                  <BoxBody>
+                    <BoxBodyImage>
+                      <BoxBodyMain>
+                        <BoxChampionBody>
+                          <BoxChampionBody2>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                              <BoxChampionCoreItems>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                                    width="3"
-                                    height="3"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                                    width="12"
-                                    height="12"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                                <BoxChampionCoreItem>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                                    width="12"
-                                    height="12"
-                                    alt=""
-                                  />
-                                </BoxChampionCoreItem>
-                              </BoxChampionCoreItems>
-                            </BoxChampionImgAndItems>
-                            <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
-                              <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
-                                <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
-                                  CORE
-                                </strong>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                                <BoxChampionCoreItems>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
+                                      width="3"
+                                      height="3"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
+                                      width="12"
+                                      height="12"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                  <BoxChampionCoreItem>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
+                                      width="12"
+                                      height="12"
+                                      alt=""
+                                    />
+                                  </BoxChampionCoreItem>
+                                </BoxChampionCoreItems>
+                              </BoxChampionImgAndItems>
+                              <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
+                                <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
+                                  <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
+                                    CORE
+                                  </strong>
+                                </div>
                               </div>
-                            </div>
-                          </BoxChampionMain>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
 
-                          <BoxChampionMain>
-                            <BoxChampionImgAndItems>
-                              <BoxChampionImg>
-                                <BoxChampionImgDetail>
-                                  <img
-                                    src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                    class="h-full w-full object-cover object-center"
-                                    alt=""
-                                  />
-                                </BoxChampionImgDetail>
-                              </BoxChampionImg>
-                            </BoxChampionImgAndItems>
-                          </BoxChampionMain>
-                        </BoxChampionBody2>
-                      </BoxChampionBody>
+                            <BoxChampionMain>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  <BoxChampionImgDetail>
+                                    <img
+                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
+                                      class="h-full w-full object-cover object-center"
+                                      alt=""
+                                    />
+                                  </BoxChampionImgDetail>
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                          </BoxChampionBody2>
+                        </BoxChampionBody>
 
-                      <BoxSider>
-                        <BoxSiderHighReinforce>
-                          <BoxSiderHighReinforceHeader>
-                            <BoxSiderHighReinforceHeaderText>
-                              상위 증강체
-                            </BoxSiderHighReinforceHeaderText>
-                          </BoxSiderHighReinforceHeader>
-                          <BoxSiderHighReinforceBody>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/Galio2HeroAugment_1668223910-Galio.jpg"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/Ascension_1655945403.png"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                            <BoxSiderHighReinforceBodyImg>
-                              <img
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                src="//cdn.lolchess.gg/upload/images/items/standunited1.tft_set6.png"
-                                alt=""
-                                width="34"
-                                height="34"
-                              />
-                            </BoxSiderHighReinforceBodyImg>
-                          </BoxSiderHighReinforceBody>
-                        </BoxSiderHighReinforce>
-                        <BoxSiderAvg>
-                          <BoxSiderAvgText>평균 등수</BoxSiderAvgText>
-                        </BoxSiderAvg>
-                        <BoxSiderTopRate>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>TOP4</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>62.1%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>승률</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>27.2%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                          <BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateIndex>픽률</BoxSiderTopRateIndex>
-                            <BoxSiderTopRateRate>
-                              <span>1.07%</span>
-                            </BoxSiderTopRateRate>
-                          </BoxSiderTopRateThreeIndex>
-                        </BoxSiderTopRate>
-                      </BoxSider>
-                    </BoxBodyMain>
-                  </BoxBodyImage>
-                </BoxBody>
-              </BoxMain>
-            </SecondBox>
-          </DeckBody>
+                        <BoxSider>
+                          <BoxSiderHighReinforce>
+                            <BoxSiderHighReinforceHeader>
+                              <BoxSiderHighReinforceHeaderText>
+                                상위 증강체
+                              </BoxSiderHighReinforceHeaderText>
+                            </BoxSiderHighReinforceHeader>
+                            <BoxSiderHighReinforceBody>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/Galio2HeroAugment_1668223910-Galio.jpg"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/Ascension_1655945403.png"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                              <BoxSiderHighReinforceBodyImg>
+                                <img
+                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                  src="//cdn.lolchess.gg/upload/images/items/standunited1.tft_set6.png"
+                                  alt=""
+                                  width="34"
+                                  height="34"
+                                />
+                              </BoxSiderHighReinforceBodyImg>
+                            </BoxSiderHighReinforceBody>
+                          </BoxSiderHighReinforce>
+                          <BoxSiderAvg>
+                            <BoxSiderAvgText>평균 등수</BoxSiderAvgText>
+                          </BoxSiderAvg>
+                          <BoxSiderTopRate>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>TOP4</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>2</span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>승률</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>27.2%</span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                            <BoxSiderTopRateThreeIndex>
+                              <BoxSiderTopRateIndex>픽률</BoxSiderTopRateIndex>
+                              <BoxSiderTopRateRate>
+                                <span>1.07%</span>
+                              </BoxSiderTopRateRate>
+                            </BoxSiderTopRateThreeIndex>
+                          </BoxSiderTopRate>
+                        </BoxSider>
+                      </BoxBodyMain>
+                    </BoxBodyImage>
+                  </BoxBody>
+                </BoxMain>
+              </SecondBox> */}
+            </DeckBody>
+          ))}
         </main>
       </DeckMain>
     </body>
@@ -971,6 +989,7 @@ const BoxSiderHighReinforceBodyImg = styled.div`
 
 const BoxSiderAvg = styled.div`
   //**text */
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;

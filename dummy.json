@@ -1,16 +1,28 @@
 {
-  "posts": [
+  "deck": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "rate": 3.14,
+      "topRate": 62.3,
+      "win": 32,
+      "lose": 100,
+      "picked": 1.32
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "rate": 1.234,
+      "topRate": 62.3,
+      "win": 50,
+      "lose": 101,
+      "picked": 3.22
+    },
+    {
+      "id": 3,
+      "rate": 5.1,
+      "topRate": 63.3,
+      "win": 42,
+      "lose": 120,
+      "picked": 10.321
     }
   ],
   "profile": [
