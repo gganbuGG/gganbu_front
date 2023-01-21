@@ -10,6 +10,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);
 
+  const searchEnter = (event) => {
+    if (event.key === "Enter") {
+      navigate(`/profile?q=${searchText}`);
+    }
+  };
+
   const searchData = () => {
     navigate(`/profile?q=${searchText}`);
   };
@@ -64,6 +70,7 @@ const Navbar = () => {
           placeholder="소환사 검색"
           onChange={(e) => setSearchText(e.target.value)}
           minLength="2"
+          onKeyUp={(event) => searchEnter(event)}
         />
         <button type="submit" onClick={searchData}>
           <FaSearch />
