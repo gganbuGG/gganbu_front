@@ -4,10 +4,9 @@ const Span = styled.div`
   height: 70px;
   position: relative;
   transform: translateY(0%);
-  padding: 0px 150px;
+  padding: 10px 150px;
   font-size: 14px;
   background-color: #2f2c2c;
-  justify-content: center;
   text-align: left;
   color: white;
 `;
