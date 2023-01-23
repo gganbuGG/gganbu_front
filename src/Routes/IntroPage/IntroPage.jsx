@@ -1,17 +1,14 @@
-import { SectionsContainer, Section } from "react-fullpage";
-import { Link } from "react-router-dom";
+import AOS from "aos";
+import React from "react";
+import "./aos.css";
 
 export default function IntroPage() {
-  let options = {
-    anchors: ["sectionOne", "sectionTwo", "sectionThree"],
-  };
   return (
-    <SectionsContainer {...options}>
-      <div>
-        <Section>Welcom to Roobits</Section>
-        <Section>소개 페이지</Section>
-        <Section>테마 및 기능 설명</Section>
+    <div>
+      <div className="container items-center justify-center">
+        <div>1</div>
+        <div>2</div>
       </div>
-    </SectionsContainer>
+    </div>
   );
 }

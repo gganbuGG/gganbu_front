@@ -11,6 +11,7 @@ import Modal from "./Components/Modal/Modal";
 import { useState } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
 import { useEffect } from "react";
+import IntroPage from "./Routes/IntroPage/IntroPage";
 
 function App() {
   const [openModal, setOpenModal] = useState(true);

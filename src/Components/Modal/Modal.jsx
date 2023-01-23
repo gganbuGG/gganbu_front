@@ -1,24 +1,27 @@
 import styled from "styled-components";
 import React from "react";
 import IntroPage from "../../Routes/IntroPage/IntroPage";
+import HeaderSrc from "../../images/intro.jpg";
 
 function Modal({ closeModal, closeModalUntilExpires }) {
   return (
     <Container>
-      <ModalBackground />
-      <ModalContainer>
-        <ModalContent>
-          {/* <IntroPage /> */}
+      <ModalBackground>
+        <Buttons>
+          <Button onClick={closeModalUntilExpires}>
+            오늘 하루 더 이상 보지 않기
+          </Button>
+          <Button onClick={closeModal}>닫기</Button>
+        </Buttons>
+        <IntroPage />
+        {/* <span>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
           labore sint impedit, optio mollitia quae soluta possimus itaque
           obcaecati unde expedita laudantium ducimus distinctio quasi
           rerumddddddddddddddddddddddddddddd molestiae velit, quibusdam cum.
-        </ModalContent>
-        <ModalCloseWrapper>
-          <p onClick={closeModalUntilExpires}>오늘 하루 더 이상 보지 않기</p>
-          <p onClick={closeModal}>닫기</p>
-        </ModalCloseWrapper>
-      </ModalContainer>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
+        </span> */}
+      </ModalBackground>
     </Container>
   );
 }
@@ -38,28 +41,20 @@ const Container = styled.div`
 `;
 
 const ModalBackground = styled.div`
+  background: url(${HeaderSrc}) center/cover no-repeat;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--main-bg-color);
   z-index: 1000;
 `;
-
-const ModalContainer = styled.div`
-  z-index: 1001;
-`;
-
-const ModalContent = styled.div`
-  width: 100%;
-  background-color: #fff;
-`;
-
-const ModalCloseWrapper = styled.div`
+const Buttons = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 10px;
+  justify-content: end;
+`;
 
-  p {
-    cursor: pointer;
-  }
+const Button = styled.button`
+  border: 2px solid black;
+  border-radius: 10px;
 `;
