@@ -11,7 +11,7 @@ const Home = () => {
       <Header />
       <Outlet />
       <MetaForm />
-      <div className="container text-left text-5xl font-bold">
+      <div className=" container text-5xl font-bold">
         <span>글로벌 Top 10</span>
       </div>
       <Board />

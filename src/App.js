@@ -16,9 +16,9 @@ function App() {
       <TopButton />
       <Routes>
         <Route path="/" exact={true} element={<Home />} />
-        <Route path="/deck" exact={true} element={<Deck />} />
-        <Route path="/leaderboards" exact={true} element={<LeaderBoards />} />
-        <Route path="/profile" exact={true} element={<Profile />} />
+        <Route path="deck" exact={true} element={<Deck />} />
+        <Route path="leaderboards" exact={true} element={<LeaderBoards />} />
+        <Route path="profile" exact={true} element={<Profile />} />
       </Routes>
       <Footer />
     </BrowserRouter>
