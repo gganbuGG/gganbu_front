@@ -31,6 +31,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
+  -ms-overflow-style: none;
 }
 
 /* resets */
@@ -183,4 +184,8 @@ input {
   font-weight: 600;
   text-transform: uppercase;
   padding: 18px 0 24px 0;
+}
+/*스크롤바 삭제*/
+::-webkit-scrollbar {
+  display: none;
 }
