@@ -1,5 +1,5 @@
 import AOS from "aos";
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 import "./aos.css";
@@ -7,15 +7,18 @@ import "./aos.css";
 export default function IntroPage() {
   const redirectToGoogle = () => {
     window.location.href = "/deck";
-    console.log("end");
-    console.log("end2");
   };
+  useEffect(() => {
+    AOS.init();
+  });
   return (
     <Wrapper>
-      <ProjectBox>
+      <ProjectBox data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <button onClick={redirectToGoogle}>프로젝트 소개</button>
       </ProjectBox>
-      <TeamBox>팀원 소개</TeamBox>
+      <TeamBox data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+        <button>팀원 소개</button>
+      </TeamBox>
     </Wrapper>
   );
 }
