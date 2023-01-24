@@ -19,18 +19,12 @@ function Modal({ closeModal, closeModalUntilExpires }) {
         </Buttons>
         {/* <IntroPage /> */}
         <Wrapper>
-          <ProjectBox
-            data-aos="fade-right"
-            data-aos-anchor-placement="top-bottom"
-          >
+          <ProjectBox>
             <button onClick={closeModal}>
               <Link to="/project">프로젝트 소개</Link>
             </button>
           </ProjectBox>
-          <TeamBox
-            data-aos="fade-left"
-            data-aos-anchor-placement="bottom-bottom"
-          >
+          <TeamBox>
             <button onClick={closeModal}>
               <Link to="/team">팀원 소개</Link>
             </button>
@@ -88,6 +82,9 @@ const ProjectBox = styled.div`
   padding: 4px;
   font-size: 60px;
   font-weight: bold;
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const TeamBox = styled.div`
@@ -97,4 +94,7 @@ const TeamBox = styled.div`
   padding: 4px;
   font-size: 60px;
   font-weight: bold;
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
