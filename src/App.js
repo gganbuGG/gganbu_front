@@ -11,7 +11,8 @@ import Modal from "./Components/Modal/Modal";
 import { useState } from "react";
 import { CookiesProvider, useCookies } from "react-cookie";
 import { useEffect } from "react";
-import IntroPage from "./Routes/IntroPage/IntroPage";
+import IntroProject from "./Routes/IntroPage/IntroProject";
+import Team from "./Routes/IntroPage/Team";
 
 function App() {
   const [openModal, setOpenModal] = useState(true);
@@ -56,6 +57,8 @@ function App() {
           <Route path="deck" exact={true} element={<Deck />} />
           <Route path="leaderboards" exact={true} element={<LeaderBoards />} />
           <Route path="profile" exact={true} element={<Profile />} />
+          <Route path="project" exact={true} element={<IntroProject />} />
+          <Route path="team" exact={true} element={<Team />} />
         </Routes>
         <Footer />
       </BrowserRouter>

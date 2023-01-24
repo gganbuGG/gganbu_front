@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import React from "react";
-import IntroPage from "../../Routes/IntroPage/IntroPage";
-import HeaderSrc from "../../images/intro.jpg";
+import React, { useEffect } from "react";
+import HeaderSrc from "../../images/intromain.jpg";
+import AOS from "aos";
+import { Link } from "react-router-dom";
 
 function Modal({ closeModal, closeModalUntilExpires }) {
+  useEffect(() => {
+    AOS.init();
+  });
   return (
     <Container>
       <ModalBackground>
@@ -13,14 +17,25 @@ function Modal({ closeModal, closeModalUntilExpires }) {
           </Button>
           <Button onClick={closeModal}>닫기</Button>
         </Buttons>
-        <IntroPage />
-        {/* <span>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-          labore sint impedit, optio mollitia quae soluta possimus itaque
-          obcaecati unde expedita laudantium ducimus distinctio quasi
-          rerumddddddddddddddddddddddddddddd molestiae velit, quibusdam cum.
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-        </span> */}
+        {/* <IntroPage /> */}
+        <Wrapper>
+          <ProjectBox
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <button onClick={closeModal}>
+              <Link to="/project">프로젝트 소개</Link>
+            </button>
+          </ProjectBox>
+          <TeamBox
+            data-aos="fade-left"
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            <button onClick={closeModal}>
+              <Link to="/team">팀원 소개</Link>
+            </button>
+          </TeamBox>
+        </Wrapper>
       </ModalBackground>
     </Container>
   );
@@ -57,4 +72,29 @@ const Buttons = styled.div`
 const Button = styled.button`
   border: 2px solid black;
   border-radius: 10px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+`;
+
+const ProjectBox = styled.div`
+  margin-top: 20%;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 60px;
+  font-weight: bold;
+`;
+
+const TeamBox = styled.div`
+  margin-top: 20%;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 60px;
+  font-weight: bold;
 `;

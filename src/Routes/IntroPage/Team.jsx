@@ -2,7 +2,7 @@ import AOS from "aos";
 import React, { useEffect } from "react";
 import "./aos.css";
 
-export default function Member() {
+export default function Team() {
   useEffect(() => {
     AOS.init();
   }, []);
