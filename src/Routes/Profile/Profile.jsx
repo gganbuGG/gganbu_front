@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 
 import ProductCard from "./ProfileDetail";
 import { BASE_URL } from "../../api/API_Profile";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -30,20 +31,24 @@ const Profile = () => {
   }, [query]);
 
   return (
-    <div className="container h-screen">
-      <div>
-        {error ? (
-          <h2>{error}</h2>
-        ) : (
-          <div>
-            {productList.length > 0 &&
-              productList.map((info) => (
-                <div>
-                  <ProductCard item={info} />
-                </div>
-              ))}
-          </div>
-        )}
+    <div>
+      <Navbar />
+
+      <div className="container h-screen">
+        <div>
+          {error ? (
+            <h2>{error}</h2>
+          ) : (
+            <div>
+              {productList.length > 0 &&
+                productList.map((info) => (
+                  <div>
+                    <ProductCard item={info} />
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

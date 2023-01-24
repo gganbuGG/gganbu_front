@@ -4,7 +4,6 @@ import Deck from "./Routes/Deck/Deck";
 import LeaderBoards from "./Routes/LeaderBoards/LeaderBoards";
 import Profile from "./Routes/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/Navbar/Navbar";
 import ScrollTop from "./ScrollToTop";
 import TopButton from "./Components/Button/TopButton";
 import Modal from "./Components/Modal/Modal";
@@ -49,7 +48,7 @@ function App() {
             closeModalUntilExpires={closeModalUntilExpires}
           />
         )}
-        <Navbar />
+
         <ScrollTop />
         <TopButton />
         <Routes>

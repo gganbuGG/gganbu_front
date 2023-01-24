@@ -5,6 +5,7 @@ import Wukong from "../../images/Champions/1Cost/Wukong.jpg";
 import Alistar from "../../images/Champions/3Cost/Alistar.jpg";
 import Samira from "../../images/Champions/4Cost/Samira.jpg";
 import { getDeck } from "../../api/API_Profile";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Deck = () => {
   const [info, setInfo] = useState([]);
@@ -20,6 +21,7 @@ const Deck = () => {
   }, []);
   return (
     <body>
+      <Navbar />
       <DeckMain>
         <main class="container">
           <DeckHeader>
@@ -403,9 +405,6 @@ const DeckBody = styled.div`
   gap: 16px;
 `;
 const FirstBox = styled.div`
-  margin-bottom: 50px;
-`;
-const SecondBox = styled.div`
   margin-bottom: 50px;
 `;
 

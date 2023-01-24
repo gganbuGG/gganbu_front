@@ -4,10 +4,12 @@ import { Outlet } from "react-router-dom";
 import Board from "../../Components/Board/Board";
 import MetaForm from "../../Components/MetaForm/MetaForm";
 import styled from "styled-components";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const Home = () => {
   return (
     <Wrapper>
+      <Navbar />
       <Header />
       <Outlet />
       <MetaForm />
