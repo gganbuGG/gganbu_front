@@ -8,7 +8,7 @@ const LeaderBoards = () => {
     <main>
       <Navbar />
       <p className=" mt-20 flex justify-center text-center font-sans text-6xl font-bold">
-        전체 순위
+        🎅전체 순위
       </p>
       <div className="mt-20 mb-44">
         <Board />

@@ -26,7 +26,7 @@ const Deck = () => {
         <main class="container">
           <DeckHeader>
             <DeckHeaderText>
-              <DeckHeaderH2>메타 통계</DeckHeaderH2>
+              <DeckHeaderH2>덱 통계</DeckHeaderH2>
               <DeckHeaderP>
                 최종 업데이트: <Time />
               </DeckHeaderP>
