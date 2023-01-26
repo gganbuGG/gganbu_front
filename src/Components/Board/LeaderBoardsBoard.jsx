@@ -28,7 +28,7 @@ const Board = () => {
           <th className="px-4 py-3 text-white">승</th>
           <th className="px-4 py-3 text-white">패</th>
         </thead>
-        <LeaderBoardsTr key={info["data"]} info={info} />
+        <LeaderBoardsTr key={info} info={info} />
       </table>
     </div>
   );

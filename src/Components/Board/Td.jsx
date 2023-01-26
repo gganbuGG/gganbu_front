@@ -9,7 +9,6 @@ const Td = ({ item }) => {
           <Link to={`/profile?q=${item.name}`}>{item.name}</Link>
         </td>
         <td className="flex items-center justify-center px-4 py-3 text-center">
-          {/* <img className="mr-3 h-16 w-16" src={item?.tierImg} alt="tierImg" /> */}
           <span>{item.tier}</span>
         </td>
         <td className="px-4 py-3 text-center">{item.LP}</td>
