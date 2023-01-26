@@ -59,6 +59,7 @@ const Navbar = () => {
           </Link>
           <Link to="/deck">덱 통계</Link>
           <Link to="/leaderboards">순위표</Link>
+          <Link to="/champion">챔피언</Link>
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>
           <IoIosReorder />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProfile } from "../../api/API_Profile";
+import { getLeaderBoard } from "../../api/API_Profile";
 import LeaderBoardsTr from "./LeaderBoardsTr";
 
 const Board = () => {
@@ -8,7 +8,8 @@ const Board = () => {
   useEffect(() => {
     (async () => {
       try {
-        const result = await getProfile();
+        const result = await getLeaderBoard();
+        console.log(result);
         setInfo(result);
       } catch (e) {
         console.error(e.message);
@@ -21,14 +22,13 @@ const Board = () => {
         <thead className="justify-between">
           <th className="px-4 py-3 text-white">순위</th>
           <th className="px-4 py-3 text-white">소환사</th>
-
           <th className="px-4 py-3 text-white">티어</th>
           <th className="px-4 py-3 text-white">LP</th>
           <th className="px-4 py-3 text-white">승률</th>
           <th className="px-4 py-3 text-white">승</th>
           <th className="px-4 py-3 text-white">패</th>
         </thead>
-        <LeaderBoardsTr info={info} />
+        <LeaderBoardsTr key={info["data"]} info={info} />
       </table>
     </div>
   );

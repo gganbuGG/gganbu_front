@@ -4,7 +4,7 @@ const Tr = ({ info }) => {
   return (
     <tbody>
       {info.map((item) => {
-        return <Td key={item.id} item={item} />;
+        return <Td key={item["data"].id} item={item} />;
       })}
     </tbody>
   );

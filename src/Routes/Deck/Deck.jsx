@@ -32,7 +32,7 @@ const Deck = () => {
               </DeckHeaderP>
             </DeckHeaderText>
           </DeckHeader>
-          {info?.map((match) => (
+          {info?.slice(0, 10)?.map((match) => (
             <DeckBody>
               <FirstBox>
                 <BoxMain>
