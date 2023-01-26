@@ -27,24 +27,23 @@ export default function IntroProject() {
             </CancleButton>
 
             <FirstHeaderText>
-              깐부지지에 오신 것을 환영합니다. ㅅ@@@ㅂ 웰컴~
+              <VideoButton onClick={() => setisCheck((e) => !e)}>
+                {isCheck ? "❌" : "깐부지지에 오신 것을 환영합니다."}
+              </VideoButton>
+              {isCheck && (
+                <PlayerWrapper>
+                  <ReactPlayer
+                    className="player"
+                    url={"https://www.youtube.com/watch?v=4HPfUrO5fBY"}
+                    width="100%"
+                    heigth="100%"
+                    playing={true}
+                    muted={true}
+                    controls={true}
+                  />
+                </PlayerWrapper>
+              )}
             </FirstHeaderText>
-            <VideoButton onClick={() => setisCheck((e) => !e)}>
-              {isCheck ? "비디오 접기" : "비디오 보기"}
-            </VideoButton>
-            {isCheck && (
-              <PlayerWrapper>
-                <ReactPlayer
-                  className="player"
-                  url={"https://www.youtube.com/watch?v=4HPfUrO5fBY"}
-                  width="100%"
-                  heigth="100%"
-                  playing={true}
-                  muted={true}
-                  controls={true}
-                />
-              </PlayerWrapper>
-            )}
 
             <FirstPageBody>
               <div>소중한 사람들과 추억을 남겨보세요!</div>
@@ -95,8 +94,8 @@ const FirstPageBody = styled.div`
 `;
 
 const VideoButton = styled.button`
-  color: aqua;
-  font-size: 20px;
+  font-size: 64px;
+  font-weight: bold;
 `;
 
 const SecondPage = styled.div`
