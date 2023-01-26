@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProfile } from "../../api/API_Profile";
+import { getLeaderBoard } from "../../api/API_Profile";
 import Tr from "./Tr";
 
 const Board = () => {
@@ -8,7 +8,7 @@ const Board = () => {
   useEffect(() => {
     (async () => {
       try {
-        const result = await getProfile();
+        const result = await getLeaderBoard();
         setInfo(result);
       } catch (e) {
         console.error(e.message);
