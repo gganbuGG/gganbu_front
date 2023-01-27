@@ -7,7 +7,7 @@ export default function Champion() {
   return (
     <div>
       <Navbar />
-      <h1 className="mt-10 mb-48 flex items-center justify-center text-7xl">
+      <h1 className="mt-48 mb-48 flex items-center justify-center text-7xl">
         챔피언 통계
       </h1>
       <ChampionBox />

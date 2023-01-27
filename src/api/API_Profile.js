@@ -11,7 +11,7 @@ export const CHAMPION_BASE_URL =
 export const getLeaderBoard = async () => {
   try {
     const res = await axios.get(`${SUMMONER_BASE_URL}`);
-    console.log(res.data);
+    // console.log(res.data);
     return res.data;
   } catch (error) {
     return error.message;
@@ -21,7 +21,7 @@ export const getLeaderBoard = async () => {
 export const getChampion = async () => {
   try {
     const res = await axios.get(`${CHAMPION_BASE_URL}`);
-    console.log(res.data);
+    // console.log(res.data);
     return res.data;
   } catch (error) {
     return error.message;

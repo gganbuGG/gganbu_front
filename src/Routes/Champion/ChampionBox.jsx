@@ -20,6 +20,10 @@ export default function Card() {
       }
     })();
   }, []);
+
+  const Star = (event) => {
+    return "✨".repeat(event);
+  };
   // 1. name : 챔피언 이름
   // 2. items : 아이템 이름 => 사진으로 변경
   // 3. rarity : 챔피언 코스트(1코: 0, 2코: 1, 3코: 2, 4코: 4, 5코: 6)
@@ -30,7 +34,7 @@ export default function Card() {
       <Wrapper>
         {info.length === 0
           ? "Loading..!!"
-          : info["data"].map((match, i) => (
+          : info["data"].map((match, event) => (
               <MetaGroup>
                 <MetaGroupContent>
                   {/*  */}
@@ -43,119 +47,23 @@ export default function Card() {
                     </MetaDeckRanking>
                     {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                     <MetaDeckTraits>
-                      <div>{ChampionImg(match.name)}</div>
+                      <Tiers>
+                        <div className="inline-flex items-center justify-center text-center ">
+                          
+                          {Star(match.tier)}
+                        </div>
+                      </Tiers>
+                      <div>
+                        <div className="">{ChampionImg(match.name)}</div>
+                      </div>
                       <div>{match.name}</div>
                     </MetaDeckTraits>
                     {/*3번 grid  아이템 사진*/}
-                    <MetaDeckChampions>
-                      <BoxChampionMain>
-                        <BoxChampionImgAndItems>
-                          <BoxChampionImg>
-                            <BoxChampionImgDetail bdColor="var(--cost4-color)">
-                              <img
-                                src={Samira}
-                                class="h-full w-full object-cover object-center"
-                                alt="no img"
-                              />
-                            </BoxChampionImgDetail>
-                          </BoxChampionImg>
-                        </BoxChampionImgAndItems>
-                        <BoxChampionCoreItems>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                              width="3"
-                              height="3"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                        </BoxChampionCoreItems>
-                      </BoxChampionMain>
-
-                      <BoxChampionMain>
-                        <BoxChampionImgAndItems>
-                          <BoxChampionImg>
-                            <BoxChampionImgDetail>
-                              <img
-                                src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                class="h-full w-full object-cover object-center"
-                                alt=""
-                              />
-                            </BoxChampionImgDetail>
-                          </BoxChampionImg>
-                        </BoxChampionImgAndItems>
-                      </BoxChampionMain>
-
-                      <BoxChampionMain>
-                        <BoxChampionImgAndItems>
-                          <BoxChampionImg>
-                            <BoxChampionImgDetail>
-                              <img
-                                src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                class="h-full w-full object-cover object-center"
-                                alt=""
-                              />
-                            </BoxChampionImgDetail>
-                          </BoxChampionImg>
-                        </BoxChampionImgAndItems>
-                      </BoxChampionMain>
-
-                      <BoxChampionMain>
-                        <BoxChampionImgAndItems>
-                          <BoxChampionImg>
-                            <BoxChampionImgDetail bdColor="var(--cost4-color)">
-                              <img
-                                src={Samira}
-                                class="h-full w-full object-cover object-center"
-                                alt=""
-                              />
-                            </BoxChampionImgDetail>
-                          </BoxChampionImg>
-                        </BoxChampionImgAndItems>
-                        <BoxChampionCoreItems>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                              width="3"
-                              height="3"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                        </BoxChampionCoreItems>
-                      </BoxChampionMain>
-                    </MetaDeckChampions>
+                    <MetaDeckTraits>
+                      <div>{match.items[0]}</div>
+                      <div>{match.items[1]}</div>
+                      <div>{match.items[2]}</div>
+                    </MetaDeckTraits>
 
                     {/*  */}
                   </MetaGroupDeck>
@@ -183,8 +91,6 @@ const MetaGroup = styled.div`
 
 const MetaGroupContent = styled.div``;
 
-// const MetaGroupDeckBox = styled.div``;
-
 const MetaGroupDeck = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 3fr 3fr;
@@ -205,6 +111,20 @@ const MetaDeckTraits = styled.div`
   margin: 15px 0px;
 `;
 
+const Tiers = styled.div`
+  position: absolute;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+`;
+
+const Tier = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+
 const DeckName = styled.div`
   font-size: 18px;
   font-weight: inherit;
@@ -213,72 +133,4 @@ const DeckName = styled.div`
 const Ranking = styled.p`
   margin-left: 20px;
   font-size: 20px;
-`;
-
-const MetaDeckChampions = styled.div`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 4px;
-`;
-
-const BoxChampionMain = styled.div`
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 9px;
-`;
-
-const BoxChampionImgAndItems = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const BoxChampionImg = styled.div`
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
-const BoxChampionImgDetail = styled.div`
-  position: relative;
-  display: inline-flex;
-  height: 45px;
-  width: 45px;
-  overflow: hidden;
-  border-radius: 8px;
-  border-width: 2px;
-  border-color: ${(props) => props.bdColor};
-`;
-
-const BoxChampionCoreItems = styled.div`
-  position: absolute;
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding-top: 50px;
-`;
-
-const BoxChampionCoreItem = styled.div`
-  position: relative;
-
-  height: 15px;
-  width: 15px;
-  overflow: hidden;
-`;
-
-const MetaDeckExplain = styled.div``;
-
-const BoxHeaderReinForceDummy = styled.div`
-  background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");
-  width: 26px;
-  height: 26px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 `;

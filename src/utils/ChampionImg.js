@@ -1,4 +1,3 @@
-import { style } from "@mui/system";
 import styled from "styled-components";
 import Alistar from "../images/Champions/Alistar.jpg";
 import Annie from "../images/Champions/Annie.jpg";
