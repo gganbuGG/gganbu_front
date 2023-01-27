@@ -34,7 +34,7 @@ export default function Card() {
       <Wrapper>
         {info.length === 0
           ? "Loading..!!"
-          : info["data"].map((match, event) => (
+          : info["data"].map((match) => (
               <MetaGroup>
                 <MetaGroupContent>
                   {/*  */}
@@ -48,13 +48,10 @@ export default function Card() {
                     {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                     <MetaDeckTraits>
                       <Tiers>
-                        <div className="inline-flex items-center justify-center text-center ">
-                          
-                          {Star(match.tier)}
-                        </div>
+                        <Tier>{Star(match.tier)}</Tier>
                       </Tiers>
                       <div>
-                        <div className="">{ChampionImg(match.name)}</div>
+                        <div>{ChampionImg(match.name)}</div>
                       </div>
                       <div>{match.name}</div>
                     </MetaDeckTraits>
