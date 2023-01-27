@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Time from "../../utils/CurrentTime";
 import styled from "styled-components";
-import Wukong from "../../images/Champions/1Cost/Wukong.jpg";
-import Alistar from "../../images/Champions/3Cost/Alistar.jpg";
-import Samira from "../../images/Champions/4Cost/Samira.jpg";
+import Wukong from "../../images/Champions/Wukong.jpg";
+import Alistar from "../../images/Champions/Alistar.jpg";
+import Samira from "../../images/Champions/Samira.jpg";
 import { getDeck } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
 

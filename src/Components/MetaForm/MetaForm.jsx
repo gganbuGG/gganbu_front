@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeck } from "../../api/API_Profile";
-import Samira from "../../images/Champions/4Cost/Samira.jpg";
+import Samira from "../../images/Champions/Samira.jpg";
 
 const MetaForm = () => {
   const [info, setInfo] = useState([]);
