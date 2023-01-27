@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getLeaderBoard } from "../../api/API_Profile";
-
 import Board from "../../Components/Board/LeaderBoardsBoard";
 import Navbar from "../../Components/Navbar/Navbar";
 
@@ -27,7 +26,7 @@ const LeaderBoards = () => {
       <p className=" mt-20 flex justify-center text-center font-sans text-6xl font-bold">
         🎅전체 순위
       </p>
-      <p className=" mt-20 flex justify-center text-center font-sans font-bold">
+      <p className=" mx-96 mt-20 flex justify-center bg-slate-50 text-center font-sans font-bold">
         업데이트 시간 : {info["updated_time"]}
       </p>
 
