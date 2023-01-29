@@ -9,7 +9,7 @@ export default function Champion() {
     <Wrapper>
       <Navbar />
       <h1 className="mt-48 mb-48 flex items-center justify-center text-7xl">
-        챔피언 통계
+        Challenger Champion Pick Rate
       </h1>
       <ChampionBox />
     </Wrapper>
