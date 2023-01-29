@@ -87,6 +87,7 @@ export default function Card() {
   );
 }
 const Wrapper = styled.div`
+  background-color: antiquewhite;
   margin-top: 40px;
   position: relative;
   min-height: 50vh;

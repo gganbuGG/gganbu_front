@@ -39,12 +39,25 @@ import 쇼진의창 from "../images/items/쇼진의 창.png";
 import 스태틱의단검 from "../images/items/스태틱의 단검.png";
 import 태양불꽃망토 from "../images/items/태양불꽃 망토.png";
 import 도적의장갑 from "../images/items/도적의 장갑.png";
-import 도적의장갑X from "../images/items/X.jpg";
 import 거인의결의 from "../images/items/거인의 결의.png";
 import 워모그의갑옷 from "../images/items/워모그의 갑옷.png";
 import 지크의전령 from "../images/items/지크의 전령.png";
 import 서풍 from "../images/items/서풍.png";
 import 즈롯차원문 from "../images/items/즈롯 차원문.png";
+import 에이스상징 from "../images/items/에이스 상징.png";
+import 방패대상징 from "../images/items/방패대 상징.png";
+import 싸움꾼상징 from "../images/items/싸움꾼 상징.png";
+import 주문투척자상징 from "../images/items/주문투척자 상징.png";
+import 민간인상징 from "../images/items/민간인 상징.png";
+import 특등사수상징 from "../images/items/특등사수 상징.png";
+import 엄호대상징 from "../images/items/엄호대 상징.png";
+import 메카프라임상징 from "../images/items/메카프라임 상징.png";
+import 기계유망주상징 from "../images/items/기계유망주 상징.png";
+import 해커상징 from "../images/items/해커 상징.png";
+import 익살꾼상징 from "../images/items/익살꾼 상징.png";
+import 정찰단상징 from "../images/items/정찰단 상징.png";
+import 별수호자상징 from "../images/items/별 수호자 상징.png";
+import 지하세계상징 from "../images/items/지하세계 상징.png";
 
 export default function ItemImg(event) {
   switch (event) {
@@ -128,8 +141,6 @@ export default function ItemImg(event) {
       return <Item src={태양불꽃망토} alt="태양불꽃망토" />;
     case "도적의 장갑":
       return <Item src={도적의장갑} alt="도적의장갑" />;
-    case "도적의 장갑(업데이트 필요)":
-      return <Item src={도적의장갑X} alt="Empty Bag" />;
     case "거인의 결의":
       return <Item src={거인의결의} alt="거인의결의" />;
     case "워모그의 갑옷":
@@ -140,6 +151,34 @@ export default function ItemImg(event) {
       return <Item src={서풍} alt="서풍" />;
     case "즈롯 차원문":
       return <Item src={즈롯차원문} alt="즈롯차원문" />;
+    case "에이스 상징":
+      return <Item src={에이스상징} alt="에이스상징" />;
+    case "방패대 상징":
+      return <Item src={방패대상징} alt="방패대상징" />;
+    case "싸움꾼 상징":
+      return <Item src={싸움꾼상징} alt="싸움꾼상징" />;
+    case "주문투척자 상징":
+      return <Item src={주문투척자상징} alt="주문투척자상징" />;
+    case "민간인 상징":
+      return <Item src={민간인상징} alt="민간인상징" />;
+    case "특등사수 상징":
+      return <Item src={특등사수상징} alt="특등사수상징" />;
+    case "엄호대 상징":
+      return <Item src={엄호대상징} alt="엄호대상징" />;
+    case "메카: 프라임 상징":
+      return <Item src={메카프라임상징} alt="메카프라임상징" />;
+    case "기계유망주 상징":
+      return <Item src={기계유망주상징} alt="기계유망주상징" />;
+    case "해커 상징":
+      return <Item src={해커상징} alt="해커상징" />;
+    case "익살꾼 상징":
+      return <Item src={익살꾼상징} alt="익살꾼상징" />;
+    case "정찰단 상징":
+      return <Item src={정찰단상징} alt="정찰단상징" />;
+    case "별 수호자 상징":
+      return <Item src={별수호자상징} alt="별수호자상징" />;
+    case "지하세계 상징":
+      return <Item src={지하세계상징} alt="지하세계상징" />;
 
     default:
       break;
@@ -153,3 +192,4 @@ const Item = styled.img`
   border: 3px solid black;
   border-radius: 10px;
 `;
+//메카: 프라임 상징
