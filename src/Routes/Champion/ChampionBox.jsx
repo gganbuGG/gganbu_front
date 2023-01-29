@@ -97,16 +97,17 @@ const Wrapper = styled.div`
   margin-top: 40px;
   position: relative;
   min-height: 50vh;
+  color: white;
 `;
 
 const ChampionGroup = styled.div`
-  background-color: blanchedalmond;
+  background-color: darkgray;
   height: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   border-width: 2px;
-  border-color: red;
-  margin-bottom: 10px;
+  border-color: gray;
+  margin-bottom: 30px;
 `;
 
 const ChapionGroupContents = styled.div``;

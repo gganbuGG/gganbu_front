@@ -55,11 +55,11 @@ const Navbar = () => {
         </Link>
         <div className="links" id={showLinks ? "hidden" : ""}>
           <Link to="/">
-            <span>깐부지지</span>
+            <span>GGanbuGG</span>
           </Link>
-          <Link to="/deck">덱 통계</Link>
-          <Link to="/leaderboards">순위표</Link>
+          <Link to="/deck">개인 통계</Link>
           <Link to="/champion">챔피언통계</Link>
+          <Link to="/leaderboards">순위표</Link>
         </div>
         <button onClick={() => setShowLinks(!showLinks)}>
           <IoIosReorder />

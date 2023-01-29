@@ -192,4 +192,3 @@ const Item = styled.img`
   border: 3px solid darkgray;
   border-radius: 10px;
 `;
-//메카: 프라임 상징

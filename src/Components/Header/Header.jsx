@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import SearchForm from "../SearchForm/SearchForm";
 import HeaderSrc from "../../images/header.jpg";
 
