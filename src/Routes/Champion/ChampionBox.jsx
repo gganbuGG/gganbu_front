@@ -24,6 +24,7 @@ export default function Card() {
   const Star = (event) => {
     return "⭐".repeat(event);
   };
+
   // 1. name : 챔피언 이름
   // 2. items : 아이템 이름 => 사진으로 변경
   // 3. rarity : 챔피언 코스트(1코: 0, 2코: 1, 3코: 2, 4코: 4, 5코: 6)
@@ -34,54 +35,62 @@ export default function Card() {
       <Wrapper>
         {info.length === 0
           ? "Loading..!!"
-          : info["data"].map((match) => (
-              <ChampionGroup>
-                <ChapionGroupContents>
-                  {/*  */}
-                  <ChampionMain>
-                    {/* 1번 grid - 순위*/}
-                    <ChampionRanking>
-                      <DeckName>
-                        <Ranking>{match.how_many}순위</Ranking>
-                      </DeckName>
-                    </ChampionRanking>
-                    {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
-                    <ChampionName>
-                      <Tiers>
-                        <Tier>{Star(match.tier)}</Tier>
-                      </Tiers>
-                      <div>
-                        <div>{ChampionImg(match.name)}</div>
-                      </div>
-                      <div>{match.name}</div>
-                    </ChampionName>
-                    {/*3번 grid  아이템 사진*/}
-                    <ChampionItem>
-                      <div>
-                        {ItemImg(match.items[2])}
-                        <span className="absolute text-base font-bold">
-                          {match.items[2]}
-                        </span>
-                      </div>
-                      <div>
-                        {ItemImg(match.items[1])}
-                        <span className="absolute text-base font-bold">
-                          {match.items[1]}
-                        </span>
-                      </div>
-                      <div>
-                        {ItemImg(match.items[0])}
-                        <span className="absolute text-base font-bold">
-                          {match.items[0]}
-                        </span>
-                      </div>
-                    </ChampionItem>
-
+          : info["data"]
+              .sort(function (a, b) {
+                if (a.how_many > b.how_many) return -1;
+                else if (b.how_many > a.how_many) return 1;
+                else return 0;
+              })
+              .map((match, i) => (
+                <ChampionGroup>
+                  <ChapionGroupContents>
                     {/*  */}
-                  </ChampionMain>
-                </ChapionGroupContents>
-              </ChampionGroup>
-            ))}
+                    <ChampionMain>
+                      {/* 1번 grid - 순위*/}
+                      <ChampionRanking>
+                        <DeckName>
+                          <Ranking>
+                            {i + 1}. {match.how_many}번 사용됨
+                          </Ranking>
+                        </DeckName>
+                      </ChampionRanking>
+                      {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
+                      <ChampionName>
+                        <Tiers>
+                          <Tier>{Star(match.tier)}</Tier>
+                        </Tiers>
+                        <div>
+                          <div>{ChampionImg(match.name)}</div>
+                        </div>
+                        <div>{match.name}</div>
+                      </ChampionName>
+                      {/*3번 grid  아이템 사진*/}
+                      <ChampionItem>
+                        <div>
+                          {ItemImg(match.items[2])}
+                          <span className="absolute text-base font-bold">
+                            {match.items[2]}
+                          </span>
+                        </div>
+                        <div>
+                          {ItemImg(match.items[1])}
+                          <span className="absolute text-base font-bold">
+                            {match.items[1]}
+                          </span>
+                        </div>
+                        <div>
+                          {ItemImg(match.items[0])}
+                          <span className="absolute text-base font-bold">
+                            {match.items[0]}
+                          </span>
+                        </div>
+                      </ChampionItem>
+
+                      {/*  */}
+                    </ChampionMain>
+                  </ChapionGroupContents>
+                </ChampionGroup>
+              ))}
       </Wrapper>
     </div>
   );
@@ -156,5 +165,5 @@ const DeckName = styled.div`
 
 const Ranking = styled.p`
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
 `;
