@@ -187,9 +187,9 @@ export default function ItemImg(event) {
 
 const Item = styled.img`
   margin-right: 15px;
-  height: 60px;
-  width: 60px;
-  border: 3px solid black;
+  height: 65px;
+  width: 65px;
+  border: 3px solid darkgray;
   border-radius: 10px;
 `;
 //메카: 프라임 상징

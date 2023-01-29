@@ -49,9 +49,7 @@ export default function Card() {
                       {/* 1번 grid - 순위*/}
                       <ChampionRanking>
                         <DeckName>
-                          <Ranking>
-                            {i + 1}. {match.how_many}번 사용됨
-                          </Ranking>
+                          <Ranking>{i + 1}.</Ranking>
                         </DeckName>
                       </ChampionRanking>
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
@@ -96,13 +94,13 @@ export default function Card() {
   );
 }
 const Wrapper = styled.div`
-  background-color: antiquewhite;
   margin-top: 40px;
   position: relative;
   min-height: 50vh;
 `;
 
 const ChampionGroup = styled.div`
+  background-color: blanchedalmond;
   height: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -145,7 +143,7 @@ const ChampionItem = styled.div`
 
 const Tiers = styled.div`
   position: absolute;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
   display: flex;
   align-items: center;
 `;
@@ -154,8 +152,9 @@ const Tier = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
+  font-weight: bold;
 `;
 
 const DeckName = styled.div`
@@ -165,5 +164,5 @@ const DeckName = styled.div`
 
 const Ranking = styled.p`
   margin-left: 20px;
-  font-size: 18px;
+  font-size: 30px;
 `;
