@@ -61,7 +61,7 @@ function App() {
           <Route path="project" exact={true} element={<IntroProject />} />
           <Route path="team" exact={true} element={<Team />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </CookiesProvider>
   );
