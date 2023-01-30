@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Time from "../../utils/CurrentTime";
 import styled from "styled-components";
-import Wukong from "../../images/Champions/Wukong.jpg";
-import Alistar from "../../images/Champions/Alistar.jpg";
-import Samira from "../../images/Champions/Samira.jpg";
-import { getDeck } from "../../api/API_Profile";
+import { getDeckWinRate } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
+import AugmentsImg from "../../utils/AugmentsImg";
+import ChampionImg from "../../utils/ChampionImg";
 
 const Deck = () => {
   const [info, setInfo] = useState([]);
   useEffect(() => {
     (async () => {
       try {
-        const result = await getDeck();
+        const result = await getDeckWinRate();
         setInfo(result);
       } catch (e) {
         console.error(e.message);
@@ -26,20 +24,19 @@ const Deck = () => {
         <main class="container">
           <DeckHeader>
             <DeckHeaderText>
-              <DeckHeaderH2>덱 통계</DeckHeaderH2>
-              <DeckHeaderP>
-                최종 업데이트: <Time />
-              </DeckHeaderP>
+              <DeckHeaderH2>덱 개인 통계</DeckHeaderH2>
+              <DeckHeaderP>최종 업데이트: {info["updated_time"]}</DeckHeaderP>
             </DeckHeaderText>
           </DeckHeader>
-          {info?.slice(0, 10)?.map((match) => (
+          {info["data"]?.map((match) => (
             <DeckBody>
               <FirstBox>
                 <BoxMain>
                   <BoxHeader>
                     <BoxHeaderText>
-                      <strong class="text-[16px] font-bold leading-none text-white">
-                        사미라 세트(deck.text)
+                      <strong class="gap-2 font-bold leading-none text-white">
+                        {match.core[0]} {match.core[1]}
+                        {/* {Object.values(match.traits)[0]} */}
                       </strong>
                       <span class="text-[12px] leading-none text-[#999]"></span>
                     </BoxHeaderText>
@@ -117,164 +114,15 @@ const Deck = () => {
                       <BoxBodyMain>
                         <BoxChampionBody>
                           <BoxChampionBody2>
+                            {/* 챔피언 얼굴? */}
                             <BoxChampionMain>
                               <BoxChampionImgAndItems>
                                 <BoxChampionImg>
-                                  <BoxChampionImgDetail bdColor="var(--cost1-color)">
-                                    <img
-                                      src={Wukong}
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
+                                  {ChampionImg(match.units[0])}
                                 </BoxChampionImg>
                               </BoxChampionImgAndItems>
                             </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail bdColor="var(--cost3-color)">
-                                    <img
-                                      src={Alistar}
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail bdColor="var(--cost4-color)">
-                                    <img
-                                      src={Samira}
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                                <BoxChampionCoreItems>
-                                  <BoxChampionCoreItem>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                                      width="3"
-                                      height="3"
-                                      alt=""
-                                    />
-                                  </BoxChampionCoreItem>
-                                  <BoxChampionCoreItem>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                                      width="12"
-                                      height="12"
-                                      alt=""
-                                    />
-                                  </BoxChampionCoreItem>
-                                  <BoxChampionCoreItem>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                                      width="12"
-                                      height="12"
-                                      alt=""
-                                    />
-                                  </BoxChampionCoreItem>
-                                </BoxChampionCoreItems>
-                              </BoxChampionImgAndItems>
-                              <div class="absolute top-0 left-1/2 flex -translate-x-1/2">
-                                <div class="inline-flex items-center justify-center rounded-[4px] bg-purple-500 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
-                                  <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
-                                    CORE
-                                  </strong>
-                                </div>
-                              </div>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-
-                            <BoxChampionMain>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  <BoxChampionImgDetail>
-                                    <img
-                                      src="//cdn.lolchess.gg/upload/images/champions/Galio_1668167832-Galio.jpg"
-                                      class="h-full w-full object-cover object-center"
-                                      alt=""
-                                    />
-                                  </BoxChampionImgDetail>
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
+                            {/* 챔피언 얼굴?  */}
                           </BoxChampionBody2>
                         </BoxChampionBody>
 
@@ -287,61 +135,37 @@ const Deck = () => {
                             </BoxSiderHighReinforceHeader>
                             <BoxSiderHighReinforceBody>
                               <BoxSiderHighReinforceBodyImg>
-                                <img
-                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                  src="//cdn.lolchess.gg/upload/images/items/Galio2HeroAugment_1668223910-Galio.jpg"
-                                  alt=""
-                                  width="34"
-                                  height="34"
-                                />
+                                {AugmentsImg(match.augments[0])}
                               </BoxSiderHighReinforceBodyImg>
                               <BoxSiderHighReinforceBodyImg>
-                                <img
-                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                  src="//cdn.lolchess.gg/upload/images/items/Ascension_1655945403.png"
-                                  alt=""
-                                  width="34"
-                                  height="34"
-                                />
+                                {AugmentsImg(match.augments[1])}
                               </BoxSiderHighReinforceBodyImg>
                               <BoxSiderHighReinforceBodyImg>
-                                <img
-                                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                                  src="//cdn.lolchess.gg/upload/images/items/standunited1.tft_set6.png"
-                                  alt=""
-                                  width="34"
-                                  height="34"
-                                />
+                                {AugmentsImg(match.augments[2])}
                               </BoxSiderHighReinforceBodyImg>
                             </BoxSiderHighReinforceBody>
                           </BoxSiderHighReinforce>
                           <BoxSiderAvg>
                             <BoxSiderAvgText>
                               <div>평균 등수</div>
-                              <div>#{match.rate}</div>
+                              <div>#{match.avgplace}</div>
                             </BoxSiderAvgText>
                           </BoxSiderAvg>
                           <BoxSiderTopRate>
-                            <BoxSiderTopRateThreeIndex>
-                              <BoxSiderTopRateIndex>TOP4</BoxSiderTopRateIndex>
+                            <BoxSiderTopRateTwoIndex>
+                              <BoxSiderTopRateIndex>
+                                순방률
+                              </BoxSiderTopRateIndex>
                               <BoxSiderTopRateRate>
-                                <span>{match.topRate}%</span>
+                                <span>{match.windefencerate}%</span>
                               </BoxSiderTopRateRate>
-                            </BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateThreeIndex>
+                            </BoxSiderTopRateTwoIndex>
+                            <BoxSiderTopRateTwoIndex>
                               <BoxSiderTopRateIndex>승률</BoxSiderTopRateIndex>
                               <BoxSiderTopRateRate>
-                                <span>
-                                  {Number(match.win / match.lose).toFixed(2)}%
-                                </span>
+                                <span>{match.winrate}%</span>
                               </BoxSiderTopRateRate>
-                            </BoxSiderTopRateThreeIndex>
-                            <BoxSiderTopRateThreeIndex>
-                              <BoxSiderTopRateIndex>픽률</BoxSiderTopRateIndex>
-                              <BoxSiderTopRateRate>
-                                <span>{match.picked}%</span>
-                              </BoxSiderTopRateRate>
-                            </BoxSiderTopRateThreeIndex>
+                            </BoxSiderTopRateTwoIndex>
                           </BoxSiderTopRate>
                         </BoxSider>
                       </BoxBodyMain>
@@ -574,6 +398,8 @@ const BoxChampionImg = styled.div`
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
+  height: 45px;
+  width: 45px;
 `;
 
 const BoxChampionImgDetail = styled.div`
@@ -654,8 +480,9 @@ const BoxSiderHighReinforceHeaderText = styled.span`
 
 const BoxSiderHighReinforceBody = styled.div`
   display: flex;
+  margin-left: 10px;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
   @media (min-width: 1024px) {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -673,7 +500,6 @@ const BoxSiderHighReinforceBodyImg = styled.div`
   position: relative;
   height: 30px;
   width: 30px;
-  overflow: hidden;
 `;
 
 const BoxSiderAvg = styled.div`
@@ -703,7 +529,8 @@ const BoxSiderTopRate = styled.div`
   display: flex;
   height: 98px;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+
   border-radius: 4px;
   --tw-bg-opacity: 1;
   background-color: rgb(29 29 29 / var(--tw-bg-opacity));
@@ -717,8 +544,10 @@ const BoxSiderTopRate = styled.div`
   }
 `;
 
-const BoxSiderTopRateThreeIndex = styled.dl`
+const BoxSiderTopRateTwoIndex = styled.dl`
   display: flex;
+  padding-top: 10px;
+  margin-bottom: 10px;
   justify-content: space-between;
 `;
 

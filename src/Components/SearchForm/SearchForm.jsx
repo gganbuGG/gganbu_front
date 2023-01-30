@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { getProfile } from "../../api/API_Profile";
+import { getLeaderBoard } from "../../api/API_Profile";
 
 // const API_KEY = "RGAPI-56cd37e9-6c32-4a22-a6ae-918ec5321c1f"; //하루마다 바꿔야됨.
 
@@ -23,7 +23,7 @@ const SearchForm = () => {
   useEffect(() => {
     (async () => {
       try {
-        const result = await getProfile();
+        const result = await getLeaderBoard();
         setSearchText(result);
       } catch (e) {
         console.error(e.message);

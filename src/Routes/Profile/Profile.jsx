@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
 import ProductCard from "./ProfileDetail";
-import { BASE_URL } from "../../api/API_Profile";
+import { SUMMONER_BASE_URL } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
 
 const Profile = () => {
@@ -13,7 +12,7 @@ const Profile = () => {
   const getProduct = async () => {
     let searchQuery = query.get("q") || "";
     console.log("쿼리 값: ", searchQuery);
-    let url = `${BASE_URL}/profile?q=${searchQuery}`;
+    let url = `${SUMMONER_BASE_URL}/profile?q=${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
 
