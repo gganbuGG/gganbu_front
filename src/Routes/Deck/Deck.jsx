@@ -29,18 +29,14 @@ const Deck = () => {
               <DeckHeaderP>최종 업데이트: {info["updated_time"]}</DeckHeaderP>
             </DeckHeaderText>
           </DeckHeader>
-          {info["data"]?.map((match, index) => (
+          {info["data"]?.map((match) => (
             <DeckBody>
               <FirstBox>
                 <BoxMain>
                   <BoxHeader>
                     <BoxHeaderText>
-                      <p
-                        key={index}
-                        class="gap-2 font-bold leading-none text-white"
-                      >
+                      <p class="font-bold leading-none text-white">
                         {match.core}
-
                         {/* {Object.keys(match.traits)[0]}
                         {Object.values(match.traits)[0]} */}
                       </p>
@@ -49,63 +45,17 @@ const Deck = () => {
                     <BoxHeaderReinForceMain>
                       <BoxHeaderReinForceMain2>
                         {SynergyImg(Object.keys(match.traits)[0])}
+                        {/* {match.traits.map((e, i) => (
+                          <div>{SynergyImg(Object.keys(match.traits)[i])}</div>
+                        ))} */}
 
-                        <BoxHeaderReinForceDummy>
+                        {/* <BoxHeaderReinForceDummy>
                           <img
                             src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
                             alt=""
                             class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
                           />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
+                        </BoxHeaderReinForceDummy> */}
                       </BoxHeaderReinForceMain2>
                     </BoxHeaderReinForceMain>
                   </BoxHeader>
@@ -116,70 +66,17 @@ const Deck = () => {
                         <BoxChampionBody>
                           <BoxChampionBody2>
                             {/* 챔피언 얼굴? */}
-                            {/* 여기를 map을 써서 units수만큼 돌리도록 바꿔야함 */}
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[0])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[1])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[2])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[3])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[4])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[5])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[6])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[7])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
-                            <BoxChampionMain key={index}>
-                              <BoxChampionImgAndItems>
-                                <BoxChampionImg>
-                                  {ChampionImg(match.units[8])}
-                                </BoxChampionImg>
-                              </BoxChampionImgAndItems>
-                            </BoxChampionMain>
+
+                            {match.units.map((e, i) => (
+                              <BoxChampionMain key={i}>
+                                <BoxChampionImgAndItems>
+                                  <BoxChampionImg>
+                                    {ChampionImg(match.units[i])}
+                                  </BoxChampionImg>
+                                </BoxChampionImgAndItems>
+                              </BoxChampionMain>
+                            ))}
+
                             {/* 챔피언 얼굴?  */}
                           </BoxChampionBody2>
                         </BoxChampionBody>
@@ -460,30 +357,30 @@ const BoxChampionImg = styled.div`
   width: 45px;
 `;
 
-const BoxChampionImgDetail = styled.div`
-  position: relative;
-  display: inline-flex;
-  height: 45px;
-  width: 45px;
-  overflow: hidden;
-  border-radius: 8px;
-  border-width: 2.5px;
-  border-color: ${(props) => props.bdColor};
-`;
+// const BoxChampionImgDetail = styled.div`
+//   position: relative;
+//   display: inline-flex;
+//   height: 45px;
+//   width: 45px;
+//   overflow: hidden;
+//   border-radius: 8px;
+//   border-width: 2.5px;
+//   border-color: ${(props) => props.bdColor};
+// `;
 
-const BoxChampionCoreItems = styled.div`
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-`;
+// const BoxChampionCoreItems = styled.div`
+//   display: inline-flex;
+//   width: 100%;
+//   align-items: center;
+//   justify-content: center;
+// `;
 
-const BoxChampionCoreItem = styled.div`
-  position: relative;
-  height: 15px;
-  width: 15px;
-  overflow: hidden;
-`;
+// const BoxChampionCoreItem = styled.div`
+//   position: relative;
+//   height: 15px;
+//   width: 15px;
+//   overflow: hidden;
+// `;
 
 const BoxSider = styled.div`
   display: grid;
