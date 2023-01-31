@@ -68,8 +68,22 @@ const Deck = () => {
                             {/* 챔피언 얼굴? */}
 
                             {match.units.map((e, i) => (
-                              <BoxChampionMain key={i}>
+                              <BoxChampionMain>
                                 <BoxChampionImgAndItems>
+                                  {/* 코어 챔피언 손봐야함 */}
+                                  {match.units[i] === match.core[i] ? (
+                                    <div class="absolute top-0 left-1/2 z-20 flex -translate-x-1/2">
+                                      <div class="inline-flex items-center justify-center rounded-[4px] bg-orange-300 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
+                                        <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
+                                          CORE
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    ""
+                                  )}
+                                  {/* 코어 챔피언 손봐야함 */}
+
                                   <BoxChampionImg>
                                     {ChampionImg(match.units[i])}
                                   </BoxChampionImg>
@@ -88,17 +102,15 @@ const Deck = () => {
                                 상위 증강체
                               </BoxSiderHighReinforceHeaderText>
                             </BoxSiderHighReinforceHeader>
+                            {/* 증강체 */}
                             <BoxSiderHighReinforceBody>
-                              <BoxSiderHighReinforceBodyImg>
-                                {AugmentsImg(match.augments[0])}
-                              </BoxSiderHighReinforceBodyImg>
-                              <BoxSiderHighReinforceBodyImg>
-                                {AugmentsImg(match.augments[1])}
-                              </BoxSiderHighReinforceBodyImg>
-                              <BoxSiderHighReinforceBodyImg>
-                                {AugmentsImg(match.augments[2])}
-                              </BoxSiderHighReinforceBodyImg>
+                              {match.augments.map((e, i) => (
+                                <BoxSiderHighReinforceBodyImg>
+                                  {AugmentsImg(match.augments[i])}
+                                </BoxSiderHighReinforceBodyImg>
+                              ))}
                             </BoxSiderHighReinforceBody>
+                            {/* 증강체 */}
                           </BoxSiderHighReinforce>
                           <BoxSiderAvg>
                             <BoxSiderAvgText>
@@ -256,15 +268,15 @@ const BoxHeaderReinForceMain2 = styled.div`
   gap: 2px;
 `;
 
-const BoxHeaderReinForceDummy = styled.div`
-  background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");
-  width: 26px;
-  height: 26px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-`;
+// const BoxHeaderReinForceDummy = styled.div`
+//   background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");
+//   width: 26px;
+//   height: 26px;
+//   position: relative;
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// `;
 
 const BoxBody = styled.div``;
 
@@ -345,7 +357,6 @@ const BoxChampionImgAndItems = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
 `;
 
 const BoxChampionImg = styled.div`

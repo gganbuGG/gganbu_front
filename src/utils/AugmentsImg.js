@@ -819,6 +819,6 @@ export default function AugmentsImg(event) {
 
 const Augments = styled.img`
   margin-right: 15px;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 `;
