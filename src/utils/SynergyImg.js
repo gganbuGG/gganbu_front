@@ -34,640 +34,574 @@ import 플래티넘타일 from "../images/Synergy/Tile/platinum.svg";
 
 export default function SynergyImg(key, value) {
   switch (key) {
-    case "기계유망주":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={기계유망주} alt="기계유망주" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 6) {
-        return (
-          <BronzeTile>
-            <Synergy src={기계유망주} alt="기계유망주" />
-          </BronzeTile>
-        );
-      } else if (value >= 6) {
-        return (
-          <GoldTile>
-            <Synergy src={기계유망주} alt="기계유망주" />
-          </GoldTile>
-        );
-      }
-      break;
+    case "기계유망주3":
+    case "기계유망주4":
+    case "기계유망주5":
+      return (
+        <BronzeTile>
+          <Synergy src={기계유망주} alt="기계유망주" />
+        </BronzeTile>
+      );
+    case "기계유망주6":
+    case "기계유망주7":
+    case "기계유망주8":
+    case "기계유망주9":
+      return (
+        <GoldTile>
+          <Synergy src={기계유망주} alt="기계유망주" />
+        </GoldTile>
+      );
 
-    case "동물특공대":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={동물특공대} alt="동물특공대" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 5) {
-        return (
-          <BronzeTile>
-            <Synergy src={동물특공대} alt="동물특공대" />
-          </BronzeTile>
-        );
-      } else if (value >= 5 && value < 7) {
-        return (
-          <GoldTile>
-            <Synergy src={동물특공대} alt="동물특공대" />
-          </GoldTile>
-        );
-      } else if (value >= 7) {
-        return (
-          <PlatinumTile>
-            <Synergy src={동물특공대} alt="동물특공대" />
-          </PlatinumTile>
-        );
-      }
-      break;
+    case "동물특공대3":
+    case "동물특공대4":
+      return (
+        <BronzeTile>
+          <Synergy src={동물특공대} alt="동물특공대" />
+        </BronzeTile>
+      );
+    case "동물특공대5":
+    case "동물특공대6":
+      return (
+        <GoldTile>
+          <Synergy src={동물특공대} alt="동물특공대" />
+        </GoldTile>
+      );
+    case "동물특공대7":
+    case "동물특공대8":
+    case "동물특공대9":
+      return (
+        <PlatinumTile>
+          <Synergy src={동물특공대} alt="동물특공대" />
+        </PlatinumTile>
+      );
 
-    case "레이저단":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={레이저단} alt="레이저단" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 6) {
-        return (
-          <BronzeTile>
-            <Synergy src={레이저단} alt="레이저단" />
-          </BronzeTile>
-        );
-      } else if (value >= 6 && value < 9) {
-        return (
-          <GoldTile>
-            <Synergy src={레이저단} alt="레이저단" />
-          </GoldTile>
-        );
-      } else if (value >= 7) {
-        return (
-          <PlatinumTile>
-            <Synergy src={레이저단} alt="레이저단" />
-          </PlatinumTile>
-        );
-      }
-      break;
+    case "레이저단3":
+    case "레이저단4":
+    case "레이저단5":
+      return (
+        <BronzeTile>
+          <Synergy src={레이저단} alt="레이저단" />
+        </BronzeTile>
+      );
+    case "레이저단6":
+    case "레이저단7":
+    case "레이저단8":
+      return (
+        <GoldTile>
+          <Synergy src={레이저단} alt="레이저단" />
+        </GoldTile>
+      );
+    case "레이저단9":
+    case "레이저단10":
+      return (
+        <PlatinumTile>
+          <Synergy src={레이저단} alt="레이저단" />
+        </PlatinumTile>
+      );
 
-    case "메카: 프라임":
-      // return (
-      //   <SynergyBox src={브론즈타일} alt="브론즈">
-      //     <Synergy src={메카프라임} alt="메카프라임" />
-      //   </SynergyBox>
-      // );
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={메카프라임} alt="메카프라임" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 5) {
-        return (
-          <BronzeTile>
-            <Synergy src={메카프라임} alt="메카프라임" />
-          </BronzeTile>
-        );
-      } else if (value >= 5) {
-        return (
-          <GoldTile>
-            <Synergy src={메카프라임} alt="메카프라임" />
-          </GoldTile>
-        );
-      }
-      break;
+    case "메카: 프라임3":
+    case "메카: 프라임4":
+      return (
+        <BronzeTile>
+          <Synergy src={메카프라임} alt="메카프라임" />
+        </BronzeTile>
+      );
+    case "메카: 프라임5":
+    case "메카: 프라임6":
+    case "메카: 프라임7":
+    case "메카: 프라임8":
+      return (
+        <GoldTile>
+          <Synergy src={메카프라임} alt="메카프라임" />
+        </GoldTile>
+      );
 
-    case "민간인":
-      if (value === 1) {
-        return (
-          <BronzeTile>
-            <Synergy src={민간인} alt="민간인" />
-          </BronzeTile>
-        );
-      } else if (value === 2) {
-        return (
-          <SilverTile>
-            <Synergy src={민간인} alt="민간인" />
-          </SilverTile>
-        );
-      } else if (value === 3) {
-        return (
-          <GoldTile>
-            <Synergy src={민간인} alt="민간인" />
-          </GoldTile>
-        );
-      }
-      break;
+    case "민간인1":
+      return (
+        <BronzeTile>
+          <Synergy src={민간인} alt="민간인" />
+        </BronzeTile>
+      );
+    case "민간인2":
+      return (
+        <SilverTile>
+          <Synergy src={민간인} alt="민간인" />
+        </SilverTile>
+      );
+    case "민간인3":
+    case "민간인4":
+    case "민간인5":
+      return (
+        <GoldTile>
+          <Synergy src={민간인} alt="민간인" />
+        </GoldTile>
+      );
 
-    case "별 수호자":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={별수호자} alt="별수호자" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 5) {
-        return (
-          <BronzeTile>
-            <Synergy src={별수호자} alt="별수호자" />
-          </BronzeTile>
-        );
-      } else if (value >= 5 && value < 7) {
-        return (
-          <SilverTile>
-            <Synergy src={별수호자} alt="별수호자" />
-          </SilverTile>
-        );
-      } else if (value >= 7 && value < 9) {
-        return (
-          <GoldTile>
-            <Synergy src={별수호자} alt="별수호자" />
-          </GoldTile>
-        );
-      } else if (value >= 9) {
-        return (
-          <PlatinumTile>
-            <Synergy src={별수호자} alt="별수호자" />
-          </PlatinumTile>
-        );
-      }
-      break;
+    case "별 수호자3":
+    case "별 수호자4":
+      return (
+        <BronzeTile>
+          <Synergy src={별수호자} alt="별수호자" />
+        </BronzeTile>
+      );
+    case "별 수호자5":
+    case "별 수호자6":
+      return (
+        <SilverTile>
+          <Synergy src={별수호자} alt="별수호자" />
+        </SilverTile>
+      );
+    case "별 수호자7":
+    case "별 수호자8":
+      return (
+        <GoldTile>
+          <Synergy src={별수호자} alt="별수호자" />
+        </GoldTile>
+      );
+    case "별 수호자9":
+    case "별 수호자10":
+    case "별 수호자11":
+      return (
+        <PlatinumTile>
+          <Synergy src={별수호자} alt="별수호자" />
+        </PlatinumTile>
+      );
 
-    case "병기고":
+    case "병기고1":
       return (
         <GoldTile>
           <Synergy src={병기고} alt="병기고" />
         </GoldTile>
       );
 
-    case "우세":
-      if (value < 3) {
-        <DarkTile>
-          <Synergy src={우세} alt="우세" />
-        </DarkTile>;
-      } else if (value >= 3) {
+    case "우세3":
+    case "우세4":
+    case "우세5":
+    case "우세6":
+      return (
         <GoldTile>
           <Synergy src={우세} alt="우세" />
-        </GoldTile>;
-      }
-      break;
+        </GoldTile>
+      );
 
-    case "위협":
+    case "위협1":
+    case "위협2":
+    case "위협3":
+    case "위협4":
+    case "위협5":
+    case "위협6":
+    case "위협7":
+    case "위협8":
+    case "위협9":
+    case "위협10":
       return (
         <GoldTile>
           <Synergy src={위협} alt="위협" />
         </GoldTile>
       );
 
-    case "자동방어체계":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <GoldTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />
-          </GoldTile>
-        );
-      } else if (value >= 6) {
-        return (
-          <PlatinumTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "지하세계":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={지하세계} alt="지하세계" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 5) {
-        return (
-          <BronzeTile>
-            <Synergy src={지하세계} alt="지하세계" />
-          </BronzeTile>
-        );
-      } else if (value >= 5) {
-        return (
-          <GoldTile>
-            <Synergy src={지하세계} alt="지하세계" />
-          </GoldTile>
-        );
-      }
-      break;
-    case "황소부대":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={황소부대} alt="황소부대" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={황소부대} alt="황소부대" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={황소부대} alt="황소부대" />
-          </SilverTile>
-        );
-      } else if (value >= 6 && value < 8) {
-        return (
-          <GoldTile>
-            <Synergy src={황소부대} alt="황소부대" />
-          </GoldTile>
-        );
-      } else if (value >= 8) {
-        return (
-          <PlatinumTile>
-            <Synergy src={황소부대} alt="황소부대" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "결투가":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={결투가} alt="결투가" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={결투가} alt="결투가" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={결투가} alt="결투가" />
-          </SilverTile>
-        );
-      } else if (value >= 6 && value < 8) {
-        return (
-          <GoldTile>
-            <Synergy src={결투가} alt="결투가" />
-          </GoldTile>
-        );
-      } else if (value >= 8) {
-        return (
-          <PlatinumTile>
-            <Synergy src={결투가} alt="결투가" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "기상캐스터":
+    case "자동방어체계2":
+    case "자동방어체계3":
+      return (
+        <BronzeTile>
+          <Synergy src={자동방어체계} alt="자동방어체계" />
+        </BronzeTile>
+      );
+    case "자동방어체계4":
+    case "자동방어체계5":
+      return (
+        <GoldTile>
+          <Synergy src={자동방어체계} alt="자동방어체계" />
+        </GoldTile>
+      );
+    case "자동방어체계6":
+    case "자동방어체계7":
+    case "자동방어체계8":
+    case "자동방어체계9":
+      return (
+        <PlatinumTile>
+          <Synergy src={자동방어체계} alt="자동방어체계" />
+        </PlatinumTile>
+      );
+
+    case "지하세계3":
+    case "지하세계4":
+      return (
+        <BronzeTile>
+          <Synergy src={지하세계} alt="지하세계" />
+        </BronzeTile>
+      );
+    case "지하세계5":
+    case "지하세계6":
+    case "지하세계7":
+    case "지하세계8":
+      return (
+        <GoldTile>
+          <Synergy src={지하세계} alt="지하세계" />
+        </GoldTile>
+      );
+
+    case "황소부대2":
+    case "황소부대3":
+      return (
+        <BronzeTile>
+          <Synergy src={황소부대} alt="황소부대" />
+        </BronzeTile>
+      );
+    case "황소부대4":
+    case "황소부대5":
+      return (
+        <SilverTile>
+          <Synergy src={황소부대} alt="황소부대" />
+        </SilverTile>
+      );
+    case "황소부대6":
+    case "황소부대7":
+      return (
+        <GoldTile>
+          <Synergy src={황소부대} alt="황소부대" />
+        </GoldTile>
+      );
+    case "황소부대8":
+    case "황소부대9":
+    case "황소부대10":
+    case "황소부대11":
+      return (
+        <PlatinumTile>
+          <Synergy src={황소부대} alt="황소부대" />
+        </PlatinumTile>
+      );
+
+    case "결투가2":
+    case "결투가3":
+      return (
+        <BronzeTile>
+          <Synergy src={결투가} alt="결투가" />
+        </BronzeTile>
+      );
+    case "결투가4":
+    case "결투가5":
+      return (
+        <SilverTile>
+          <Synergy src={결투가} alt="결투가" />
+        </SilverTile>
+      );
+    case "결투가6":
+    case "결투가7":
+      return (
+        <GoldTile>
+          <Synergy src={결투가} alt="결투가" />
+        </GoldTile>
+      );
+    case "결투가8":
+    case "결투가9":
+    case "결투가10":
+    case "결투가11":
+      return (
+        <PlatinumTile>
+          <Synergy src={결투가} alt="결투가" />
+        </PlatinumTile>
+      );
+
+    case "기상캐스터1":
       return (
         <GoldTile>
           <Synergy src={기상캐스터} alt="기상캐스터" />
         </GoldTile>
       );
-    case "마스코트":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={마스코트} alt="마스코트" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={마스코트} alt="마스코트" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={마스코트} alt="마스코트" />
-          </SilverTile>
-        );
-      } else if (value >= 6 && value < 8) {
-        return (
-          <GoldTile>
-            <Synergy src={마스코트} alt="마스코트" />
-          </GoldTile>
-        );
-      } else if (value >= 8) {
-        return (
-          <PlatinumTile>
-            <Synergy src={마스코트} alt="마스코트" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "무법자":
-      if (value < 3) {
-        return (
-          <DarkTile>
-            <Synergy src={무법자} alt="무법자" />
-          </DarkTile>
-        );
-      } else if (value >= 3 && value < 6) {
-        return (
-          <BronzeTile>
-            <Synergy src={무법자} alt="무법자" />
-          </BronzeTile>
-        );
-      } else if (value >= 6) {
-        return (
-          <GoldTile>
-            <Synergy src={무법자} alt="무법자" />
-          </GoldTile>
-        );
-      }
-      break;
-    case "방패대":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={방패대} alt="방패대" />
-          </DarkTile>
-        );
-      } else if (value === 2) {
-        return (
-          <BronzeTile>
-            <Synergy src={방패대} alt="방패대" />
-          </BronzeTile>
-        );
-      } else if (value === 3) {
-        return (
-          <SilverTile>
-            <Synergy src={방패대} alt="방패대" />
-          </SilverTile>
-        );
-      } else if (value === 4) {
-        return (
-          <GoldTile>
-            <Synergy src={방패대} alt="방패대" />
-          </GoldTile>
-        );
-      } else if (value >= 5) {
-        return (
-          <PlatinumTile>
-            <Synergy src={방패대} alt="방패대" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "선의":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={선의} alt="선의" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={선의} alt="선의" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={선의} alt="선의" />
-          </SilverTile>
-        );
-      } else if (value >= 6) {
-        return (
-          <GoldTile>
-            <Synergy src={선의} alt="선의" />
-          </GoldTile>
-        );
-      }
-      break;
-    case "싸움꾼":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />
-          </SilverTile>
-        );
-      } else if (value >= 6 && value < 8) {
-        return (
-          <GoldTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />
-          </GoldTile>
-        );
-      } else if (value >= 8) {
-        return (
-          <PlatinumTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "엄호대":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={엄호대} alt="엄호대" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={엄호대} alt="엄호대" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <GoldTile>
-            <Synergy src={엄호대} alt="엄호대" />
-          </GoldTile>
-        );
-      } else if (value >= 6) {
-        return (
-          <PlatinumTile>
-            <Synergy src={엄호대} alt="엄호대" />
-          </PlatinumTile>
-        );
-      }
-      break;
+    case "마스코트2":
+    case "마스코트3":
+      return (
+        <BronzeTile>
+          <Synergy src={마스코트} alt="마스코트" />
+        </BronzeTile>
+      );
+    case "마스코트4":
+    case "마스코트5":
+      return (
+        <SilverTile>
+          <Synergy src={마스코트} alt="마스코트" />
+        </SilverTile>
+      );
+    case "마스코트6":
+    case "마스코트7":
+      return (
+        <GoldTile>
+          <Synergy src={마스코트} alt="마스코트" />
+        </GoldTile>
+      );
+    case "마스코트8":
+    case "마스코트9":
+    case "마스코트10":
+    case "마스코트11":
+      return (
+        <PlatinumTile>
+          <Synergy src={마스코트} alt="마스코트" />
+        </PlatinumTile>
+      );
 
-    case "에이스":
-      if (value === 1) {
+    case "무법자3":
+    case "무법자4":
+    case "무법자5":
+      return (
+        <BronzeTile>
+          <Synergy src={무법자} alt="무법자" />
+        </BronzeTile>
+      );
+    case "무법자6":
+    case "무법자7":
+    case "무법자8":
+    case "무법자9":
+      return (
+        <GoldTile>
+          <Synergy src={무법자} alt="무법자" />
+        </GoldTile>
+      );
+
+    case "방패대2":
+      return (
+        <BronzeTile>
+          <Synergy src={방패대} alt="방패대" />
+        </BronzeTile>
+      );
+    case "방패대3":
+      return (
+        <SilverTile>
+          <Synergy src={방패대} alt="방패대" />
+        </SilverTile>
+      );
+    case "방패대4":
+      return (
+        <GoldTile>
+          <Synergy src={방패대} alt="방패대" />
+        </GoldTile>
+      );
+    case "방패대5":
+    case "방패대6":
+    case "방패대7":
+      return (
+        <PlatinumTile>
+          <Synergy src={방패대} alt="방패대" />
+        </PlatinumTile>
+      );
+
+    case "선의2":
+    case "선의3":
+      return (
+        <BronzeTile>
+          <Synergy src={선의} alt="선의" />
+        </BronzeTile>
+      );
+    case "선의4":
+    case "선의5":
+      return (
+        <SilverTile>
+          <Synergy src={선의} alt="선의" />
+        </SilverTile>
+      );
+    case "선의6":
+    case "선의7":
+    case "선의8":
+    case "선의9":
+      return (
+        <GoldTile>
+          <Synergy src={선의} alt="선의" />
+        </GoldTile>
+      );
+
+    case "싸움꾼2":
+    case "싸움꾼3":
+      return (
+        <BronzeTile>
+          <Synergy src={싸움꾼} alt="싸움꾼" />
+        </BronzeTile>
+      );
+    case "싸움꾼4":
+    case "싸움꾼5":
+      return (
+        <SilverTile>
+          <Synergy src={싸움꾼} alt="싸움꾼" />
+        </SilverTile>
+      );
+    case "싸움꾼6":
+    case "싸움꾼7":
+      return (
+        <GoldTile>
+          <Synergy src={싸움꾼} alt="싸움꾼" />
+        </GoldTile>
+      );
+    case "싸움꾼8":
+    case "싸움꾼9":
+    case "싸움꾼10":
+    case "싸움꾼11":
+      return (
+        <PlatinumTile>
+          <Synergy src={싸움꾼} alt="싸움꾼" />
+        </PlatinumTile>
+      );
+
+    case "엄호대2":
+    case "엄호대3":
+      return (
+        <BronzeTile>
+          <Synergy src={엄호대} alt="엄호대" />
+        </BronzeTile>
+      );
+    case "엄호대4":
+    case "엄호대5":
+      return (
+        <GoldTile>
+          <Synergy src={엄호대} alt="엄호대" />
+        </GoldTile>
+      );
+    case "엄호대6":
+    case "엄호대7":
+    case "엄호대8":
+    case "엄호대9":
+      return (
+        <PlatinumTile>
+          <Synergy src={엄호대} alt="엄호대" />
+        </PlatinumTile>
+      );
+
+    case "에이스1":
+      return (
         <BronzeTile>
           <Synergy src={에이스} alt="에이스" />
-        </BronzeTile>;
-      } else if (value === 2 || value === 3) {
+        </BronzeTile>
+      );
+    case "에이스2":
+    case "에이스3":
+      return (
         <DarkTile>
           <Synergy src={에이스} alt="에이스" />
-        </DarkTile>;
-      } else if (value >= 4) {
+        </DarkTile>
+      );
+    case "에이스4":
+    case "에이스5":
+    case "에이스6":
+    case "에이스7":
+      return (
         <GoldTile>
           <Synergy src={에이스} alt="에이스" />
-        </GoldTile>;
-      }
-      break;
+        </GoldTile>
+      );
 
-    case "익살꾼":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={익살꾼} alt="익살꾼" />
-          </DarkTile>
-        );
-      } else if (value === 2) {
-        return (
-          <BronzeTile>
-            <Synergy src={익살꾼} alt="익살꾼" />
-          </BronzeTile>
-        );
-      } else if (value >= 3) {
-        return (
-          <GoldTile>
-            <Synergy src={익살꾼} alt="익살꾼" />
-          </GoldTile>
-        );
-      }
-      break;
+    case "익살꾼2":
+      return (
+        <BronzeTile>
+          <Synergy src={익살꾼} alt="익살꾼" />
+        </BronzeTile>
+      );
+    case "익살꾼3":
+    case "익살꾼4":
+    case "익살꾼5":
+    case "익살꾼6":
+      return (
+        <GoldTile>
+          <Synergy src={익살꾼} alt="익살꾼" />
+        </GoldTile>
+      );
 
-    case "정찰단":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={정찰단} alt="정찰단" />
-          </DarkTile>
-        );
-      } else if (value === 2) {
-        return (
-          <BronzeTile>
-            <Synergy src={정찰단} alt="정찰단" />
-          </BronzeTile>
-        );
-      } else if (value === 3) {
-        return (
-          <SilverTile>
-            <Synergy src={정찰단} alt="정찰단" />
-          </SilverTile>
-        );
-      } else if (value >= 4) {
-        return (
-          <GoldTile>
-            <Synergy src={정찰단} alt="정찰단" />
-          </GoldTile>
-        );
-      }
-      break;
-    case "주문투척자":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={주문투척자} alt="주문투척자" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={주문투척자} alt="주문투척자" />
-          </BronzeTile>
-        );
-      } else if (value >= 4 && value < 6) {
-        return (
-          <SilverTile>
-            <Synergy src={주문투척자} alt="주문투척자" />
-          </SilverTile>
-        );
-      } else if (value >= 6 && value < 8) {
-        return (
-          <GoldTile>
-            <Synergy src={주문투척자} alt="주문투척자" />
-          </GoldTile>
-        );
-      } else if (value >= 8) {
-        return (
-          <PlatinumTile>
-            <Synergy src={주문투척자} alt="주문투척자" />
-          </PlatinumTile>
-        );
-      }
-      break;
-    case "타락":
+    case "정찰단2":
+      return (
+        <BronzeTile>
+          <Synergy src={정찰단} alt="정찰단" />
+        </BronzeTile>
+      );
+    case "정찰단3":
+      return (
+        <SilverTile>
+          <Synergy src={정찰단} alt="정찰단" />
+        </SilverTile>
+      );
+    case "정찰단4":
+    case "정찰단5":
+    case "정찰단6":
+    case "정찰단7":
+      return (
+        <GoldTile>
+          <Synergy src={정찰단} alt="정찰단" />
+        </GoldTile>
+      );
+
+    case "주문투척자2":
+    case "주문투척자3":
+      return (
+        <BronzeTile>
+          <Synergy src={주문투척자} alt="주문투척자" />
+        </BronzeTile>
+      );
+    case "주문투척자4":
+    case "주문투척자5":
+      return (
+        <SilverTile>
+          <Synergy src={주문투척자} alt="주문투척자" />
+        </SilverTile>
+      );
+    case "주문투척자6":
+    case "주문투척자7":
+      return (
+        <GoldTile>
+          <Synergy src={주문투척자} alt="주문투척자" />
+        </GoldTile>
+      );
+    case "주문투척자8":
+    case "주문투척자9":
+    case "주문투척자10":
+    case "주문투척자11":
+      return (
+        <PlatinumTile>
+          <Synergy src={주문투척자} alt="주문투척자" />
+        </PlatinumTile>
+      );
+
+    case "타락1":
       return (
         <GoldTile>
           <Synergy src={타락} alt="타락" />
         </GoldTile>
       );
-    case "특등사수":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={특등사수} alt="특등사수" />
-          </DarkTile>
-        );
-      } else if (value >= 2 && value < 4) {
-        return (
-          <BronzeTile>
-            <Synergy src={특등사수} alt="특등사수" />
-          </BronzeTile>
-        );
-      } else if (value >= 4) {
-        return (
-          <GoldTile>
-            <Synergy src={특등사수} alt="특등사수" />
-          </GoldTile>
-        );
-      }
-      break;
-    case "해커":
-      if (value < 2) {
-        return (
-          <DarkTile>
-            <Synergy src={해커} alt="해커" />
-          </DarkTile>
-        );
-      } else if (value === 2) {
-        return (
-          <BronzeTile>
-            <Synergy src={해커} alt="해커" />
-          </BronzeTile>
-        );
-      } else if (value === 3) {
-        return (
-          <SilverTile>
-            <Synergy src={해커} alt="해커" />
-          </SilverTile>
-        );
-      } else if (value >= 4) {
-        return (
-          <GoldTile>
-            <Synergy src={해커} alt="해커" />
-          </GoldTile>
-        );
-      }
-      break;
+
+    case "특등사수2":
+    case "특등사수3":
+      return (
+        <BronzeTile>
+          <Synergy src={특등사수} alt="특등사수" />
+        </BronzeTile>
+      );
+    case "특등사수4":
+    case "특등사수5":
+    case "특등사수6":
+    case "특등사수7":
+      return (
+        <GoldTile>
+          <Synergy src={특등사수} alt="특등사수" />
+        </GoldTile>
+      );
+
+    case "해커2":
+      return (
+        <BronzeTile>
+          <Synergy src={해커} alt="해커" />
+        </BronzeTile>
+      );
+    case "해커3":
+      return (
+        <SilverTile>
+          <Synergy src={해커} alt="해커" />
+        </SilverTile>
+      );
+    case "해커4":
+    case "해커5":
+    case "해커6":
+    case "해커7":
+      return (
+        <GoldTile>
+          <Synergy src={해커} alt="해커" />
+        </GoldTile>
+      );
+
     default:
       break;
   }

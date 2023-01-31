@@ -36,18 +36,24 @@ const Deck = () => {
                   <BoxHeader>
                     <BoxHeaderText>
                       <p class="font-bold leading-none text-white">
-                        {match.core}
-                        {/* {Object.keys(match.traits)[0]}
-                        {Object.values(match.traits)[0]} */}
+                        {match.core.map((e, i) => (
+                          <span>{match.core[i]} </span>
+                        ))}
                       </p>
                       <span class="text-[12px] leading-none text-[#999]"></span>
                     </BoxHeaderText>
                     <BoxHeaderReinForceMain>
                       <BoxHeaderReinForceMain2>
-                        {SynergyImg(Object.keys(match.traits)[0])}
-                        {/* {match.traits.map((e, i) => (
-                          <div>{SynergyImg(Object.keys(match.traits)[i])}</div>
-                        ))} */}
+                        {/* 시너지 */}
+                        {Object.keys(match.traits).map((e, i) => (
+                          <div>
+                            {SynergyImg(
+                              Object.keys(match.traits)[i] +
+                                Object.values(match.traits)[i]
+                            )}
+                          </div>
+                        ))}
+                        {/* 시너지 */}
 
                         {/* <BoxHeaderReinForceDummy>
                           <img
@@ -464,8 +470,8 @@ const BoxSiderHighReinforceBodyImg = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 `;
 
 const BoxSiderAvg = styled.div`
