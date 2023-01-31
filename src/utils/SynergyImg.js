@@ -38,19 +38,19 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={기계유망주} alt="기계유망주" />;
+            <Synergy src={기계유망주} alt="기계유망주" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
           <BronzeTile>
-            <Synergy src={기계유망주} alt="기계유망주" />;
+            <Synergy src={기계유망주} alt="기계유망주" />
           </BronzeTile>
         );
       } else if (event >= 6) {
         return (
           <GoldTile>
-            <Synergy src={기계유망주} alt="기계유망주" />;
+            <Synergy src={기계유망주} alt="기계유망주" />
           </GoldTile>
         );
       }
@@ -60,25 +60,25 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={동물특공대} alt="동물특공대" />;
+            <Synergy src={동물특공대} alt="동물특공대" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
           <BronzeTile>
-            <Synergy src={동물특공대} alt="동물특공대" />;
+            <Synergy src={동물특공대} alt="동물특공대" />
           </BronzeTile>
         );
       } else if (event >= 5 && event < 7) {
         return (
           <GoldTile>
-            <Synergy src={동물특공대} alt="동물특공대" />;
+            <Synergy src={동물특공대} alt="동물특공대" />
           </GoldTile>
         );
       } else if (event >= 7) {
         return (
           <PlatinumTile>
-            <Synergy src={동물특공대} alt="동물특공대" />;
+            <Synergy src={동물특공대} alt="동물특공대" />
           </PlatinumTile>
         );
       }
@@ -88,25 +88,25 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={레이저단} alt="레이저단" />;
+            <Synergy src={레이저단} alt="레이저단" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
           <BronzeTile>
-            <Synergy src={레이저단} alt="레이저단" />;
+            <Synergy src={레이저단} alt="레이저단" />
           </BronzeTile>
         );
       } else if (event >= 6 && event < 9) {
         return (
           <GoldTile>
-            <Synergy src={레이저단} alt="레이저단" />;
+            <Synergy src={레이저단} alt="레이저단" />
           </GoldTile>
         );
       } else if (event >= 7) {
         return (
           <PlatinumTile>
-            <Synergy src={레이저단} alt="레이저단" />;
+            <Synergy src={레이저단} alt="레이저단" />
           </PlatinumTile>
         );
       }
@@ -121,19 +121,19 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={메카프라임} alt="메카프라임" />;
+            <Synergy src={메카프라임} alt="메카프라임" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
           <BronzeTile>
-            <Synergy src={메카프라임} alt="메카프라임" />;
+            <Synergy src={메카프라임} alt="메카프라임" />
           </BronzeTile>
         );
       } else if (event >= 5) {
         return (
           <GoldTile>
-            <Synergy src={메카프라임} alt="메카프라임" />;
+            <Synergy src={메카프라임} alt="메카프라임" />
           </GoldTile>
         );
       }
@@ -143,19 +143,19 @@ export default function SynergyImg(event) {
       if (event === 1) {
         return (
           <BronzeTile>
-            <Synergy src={민간인} alt="민간인" />;
+            <Synergy src={민간인} alt="민간인" />
           </BronzeTile>
         );
       } else if (event === 2) {
         return (
           <SilverTile>
-            <Synergy src={민간인} alt="민간인" />;
+            <Synergy src={민간인} alt="민간인" />
           </SilverTile>
         );
       } else if (event === 3) {
         return (
           <GoldTile>
-            <Synergy src={민간인} alt="민간인" />;
+            <Synergy src={민간인} alt="민간인" />
           </GoldTile>
         );
       }
@@ -165,31 +165,31 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={별수호자} alt="별수호자" />;
+            <Synergy src={별수호자} alt="별수호자" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
           <BronzeTile>
-            <Synergy src={별수호자} alt="별수호자" />;
+            <Synergy src={별수호자} alt="별수호자" />
           </BronzeTile>
         );
       } else if (event >= 5 && event < 7) {
         return (
           <SilverTile>
-            <Synergy src={별수호자} alt="별수호자" />;
+            <Synergy src={별수호자} alt="별수호자" />
           </SilverTile>
         );
       } else if (event >= 7 && event < 9) {
         return (
           <GoldTile>
-            <Synergy src={별수호자} alt="별수호자" />;
+            <Synergy src={별수호자} alt="별수호자" />
           </GoldTile>
         );
       } else if (event >= 9) {
         return (
           <PlatinumTile>
-            <Synergy src={별수호자} alt="별수호자" />;
+            <Synergy src={별수호자} alt="별수호자" />
           </PlatinumTile>
         );
       }
@@ -198,18 +198,18 @@ export default function SynergyImg(event) {
     case "병기고":
       return (
         <GoldTile>
-          <Synergy src={병기고} alt="병기고" />;
+          <Synergy src={병기고} alt="병기고" />
         </GoldTile>
       );
 
     case "우세":
       if (event < 3) {
         <DarkTile>
-          <Synergy src={우세} alt="우세" />;
+          <Synergy src={우세} alt="우세" />
         </DarkTile>;
       } else if (event >= 3) {
         <GoldTile>
-          <Synergy src={우세} alt="우세" />;
+          <Synergy src={우세} alt="우세" />
         </GoldTile>;
       }
       break;
@@ -217,7 +217,7 @@ export default function SynergyImg(event) {
     case "위협":
       return (
         <GoldTile>
-          <Synergy src={위협} alt="위협" />;
+          <Synergy src={위협} alt="위협" />
         </GoldTile>
       );
 
@@ -225,25 +225,25 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />;
+            <Synergy src={자동방어체계} alt="자동방어체계" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />;
+            <Synergy src={자동방어체계} alt="자동방어체계" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <GoldTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />;
+            <Synergy src={자동방어체계} alt="자동방어체계" />
           </GoldTile>
         );
       } else if (event >= 6) {
         return (
           <PlatinumTile>
-            <Synergy src={자동방어체계} alt="자동방어체계" />;
+            <Synergy src={자동방어체계} alt="자동방어체계" />
           </PlatinumTile>
         );
       }
@@ -252,19 +252,19 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={지하세계} alt="지하세계" />;
+            <Synergy src={지하세계} alt="지하세계" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
           <BronzeTile>
-            <Synergy src={지하세계} alt="지하세계" />;
+            <Synergy src={지하세계} alt="지하세계" />
           </BronzeTile>
         );
       } else if (event >= 5) {
         return (
           <GoldTile>
-            <Synergy src={지하세계} alt="지하세계" />;
+            <Synergy src={지하세계} alt="지하세계" />
           </GoldTile>
         );
       }
@@ -273,31 +273,31 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={황소부대} alt="황소부대" />;
+            <Synergy src={황소부대} alt="황소부대" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={황소부대} alt="황소부대" />;
+            <Synergy src={황소부대} alt="황소부대" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={황소부대} alt="황소부대" />;
+            <Synergy src={황소부대} alt="황소부대" />
           </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
           <GoldTile>
-            <Synergy src={황소부대} alt="황소부대" />;
+            <Synergy src={황소부대} alt="황소부대" />
           </GoldTile>
         );
       } else if (event >= 8) {
         return (
           <PlatinumTile>
-            <Synergy src={황소부대} alt="황소부대" />;
+            <Synergy src={황소부대} alt="황소부대" />
           </PlatinumTile>
         );
       }
@@ -306,31 +306,31 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={결투가} alt="결투가" />;
+            <Synergy src={결투가} alt="결투가" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={결투가} alt="결투가" />;
+            <Synergy src={결투가} alt="결투가" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={결투가} alt="결투가" />;
+            <Synergy src={결투가} alt="결투가" />
           </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
           <GoldTile>
-            <Synergy src={결투가} alt="결투가" />;
+            <Synergy src={결투가} alt="결투가" />
           </GoldTile>
         );
       } else if (event >= 8) {
         return (
           <PlatinumTile>
-            <Synergy src={결투가} alt="결투가" />;
+            <Synergy src={결투가} alt="결투가" />
           </PlatinumTile>
         );
       }
@@ -338,38 +338,38 @@ export default function SynergyImg(event) {
     case "기상캐스터":
       return (
         <GoldTile>
-          <Synergy src={기상캐스터} alt="기상캐스터" />;
+          <Synergy src={기상캐스터} alt="기상캐스터" />
         </GoldTile>
       );
     case "마스코트":
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={마스코트} alt="마스코트" />;
+            <Synergy src={마스코트} alt="마스코트" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={마스코트} alt="마스코트" />;
+            <Synergy src={마스코트} alt="마스코트" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={마스코트} alt="마스코트" />;
+            <Synergy src={마스코트} alt="마스코트" />
           </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
           <GoldTile>
-            <Synergy src={마스코트} alt="마스코트" />;
+            <Synergy src={마스코트} alt="마스코트" />
           </GoldTile>
         );
       } else if (event >= 8) {
         return (
           <PlatinumTile>
-            <Synergy src={마스코트} alt="마스코트" />;
+            <Synergy src={마스코트} alt="마스코트" />
           </PlatinumTile>
         );
       }
@@ -378,19 +378,19 @@ export default function SynergyImg(event) {
       if (event < 3) {
         return (
           <DarkTile>
-            <Synergy src={무법자} alt="무법자" />;
+            <Synergy src={무법자} alt="무법자" />
           </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
           <BronzeTile>
-            <Synergy src={무법자} alt="무법자" />;
+            <Synergy src={무법자} alt="무법자" />
           </BronzeTile>
         );
       } else if (event >= 6) {
         return (
           <GoldTile>
-            <Synergy src={무법자} alt="무법자" />;
+            <Synergy src={무법자} alt="무법자" />
           </GoldTile>
         );
       }
@@ -399,31 +399,31 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={방패대} alt="방패대" />;
+            <Synergy src={방패대} alt="방패대" />
           </DarkTile>
         );
       } else if (event === 2) {
         return (
           <BronzeTile>
-            <Synergy src={방패대} alt="방패대" />;
+            <Synergy src={방패대} alt="방패대" />
           </BronzeTile>
         );
       } else if (event === 3) {
         return (
           <SilverTile>
-            <Synergy src={방패대} alt="방패대" />;
+            <Synergy src={방패대} alt="방패대" />
           </SilverTile>
         );
       } else if (event === 4) {
         return (
           <GoldTile>
-            <Synergy src={방패대} alt="방패대" />;
+            <Synergy src={방패대} alt="방패대" />
           </GoldTile>
         );
       } else if (event >= 5) {
         return (
           <PlatinumTile>
-            <Synergy src={방패대} alt="방패대" />;
+            <Synergy src={방패대} alt="방패대" />
           </PlatinumTile>
         );
       }
@@ -432,25 +432,25 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={선의} alt="선의" />;
+            <Synergy src={선의} alt="선의" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={선의} alt="선의" />;
+            <Synergy src={선의} alt="선의" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={선의} alt="선의" />;
+            <Synergy src={선의} alt="선의" />
           </SilverTile>
         );
       } else if (event >= 6) {
         return (
           <GoldTile>
-            <Synergy src={선의} alt="선의" />;
+            <Synergy src={선의} alt="선의" />
           </GoldTile>
         );
       }
@@ -459,31 +459,31 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />;
+            <Synergy src={싸움꾼} alt="싸움꾼" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />;
+            <Synergy src={싸움꾼} alt="싸움꾼" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />;
+            <Synergy src={싸움꾼} alt="싸움꾼" />
           </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
           <GoldTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />;
+            <Synergy src={싸움꾼} alt="싸움꾼" />
           </GoldTile>
         );
       } else if (event >= 8) {
         return (
           <PlatinumTile>
-            <Synergy src={싸움꾼} alt="싸움꾼" />;
+            <Synergy src={싸움꾼} alt="싸움꾼" />
           </PlatinumTile>
         );
       }
@@ -492,25 +492,25 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={엄호대} alt="엄호대" />;
+            <Synergy src={엄호대} alt="엄호대" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={엄호대} alt="엄호대" />;
+            <Synergy src={엄호대} alt="엄호대" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <GoldTile>
-            <Synergy src={엄호대} alt="엄호대" />;
+            <Synergy src={엄호대} alt="엄호대" />
           </GoldTile>
         );
       } else if (event >= 6) {
         return (
           <PlatinumTile>
-            <Synergy src={엄호대} alt="엄호대" />;
+            <Synergy src={엄호대} alt="엄호대" />
           </PlatinumTile>
         );
       }
@@ -519,15 +519,15 @@ export default function SynergyImg(event) {
     case "에이스":
       if (event === 1) {
         <BronzeTile>
-          <Synergy src={에이스} alt="에이스" />;
+          <Synergy src={에이스} alt="에이스" />
         </BronzeTile>;
       } else if (event === 2 || event === 3) {
         <DarkTile>
-          <Synergy src={에이스} alt="에이스" />;
+          <Synergy src={에이스} alt="에이스" />
         </DarkTile>;
       } else if (event >= 4) {
         <GoldTile>
-          <Synergy src={에이스} alt="에이스" />;
+          <Synergy src={에이스} alt="에이스" />
         </GoldTile>;
       }
       break;
@@ -536,19 +536,19 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={익살꾼} alt="익살꾼" />;
+            <Synergy src={익살꾼} alt="익살꾼" />
           </DarkTile>
         );
       } else if (event === 2) {
         return (
           <BronzeTile>
-            <Synergy src={익살꾼} alt="익살꾼" />;
+            <Synergy src={익살꾼} alt="익살꾼" />
           </BronzeTile>
         );
       } else if (event >= 3) {
         return (
           <GoldTile>
-            <Synergy src={익살꾼} alt="익살꾼" />;
+            <Synergy src={익살꾼} alt="익살꾼" />
           </GoldTile>
         );
       }
@@ -558,25 +558,25 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={정찰단} alt="정찰단" />;
+            <Synergy src={정찰단} alt="정찰단" />
           </DarkTile>
         );
       } else if (event === 2) {
         return (
           <BronzeTile>
-            <Synergy src={정찰단} alt="정찰단" />;
+            <Synergy src={정찰단} alt="정찰단" />
           </BronzeTile>
         );
       } else if (event === 3) {
         return (
           <SilverTile>
-            <Synergy src={정찰단} alt="정찰단" />;
+            <Synergy src={정찰단} alt="정찰단" />
           </SilverTile>
         );
       } else if (event >= 4) {
         return (
           <GoldTile>
-            <Synergy src={정찰단} alt="정찰단" />;
+            <Synergy src={정찰단} alt="정찰단" />
           </GoldTile>
         );
       }
@@ -585,31 +585,31 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={주문투척자} alt="주문투척자" />;
+            <Synergy src={주문투척자} alt="주문투척자" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={주문투척자} alt="주문투척자" />;
+            <Synergy src={주문투척자} alt="주문투척자" />
           </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
           <SilverTile>
-            <Synergy src={주문투척자} alt="주문투척자" />;
+            <Synergy src={주문투척자} alt="주문투척자" />
           </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
           <GoldTile>
-            <Synergy src={주문투척자} alt="주문투척자" />;
+            <Synergy src={주문투척자} alt="주문투척자" />
           </GoldTile>
         );
       } else if (event >= 8) {
         return (
           <PlatinumTile>
-            <Synergy src={주문투척자} alt="주문투척자" />;
+            <Synergy src={주문투척자} alt="주문투척자" />
           </PlatinumTile>
         );
       }
@@ -617,26 +617,26 @@ export default function SynergyImg(event) {
     case "타락":
       return (
         <GoldTile>
-          <Synergy src={타락} alt="타락" />;
+          <Synergy src={타락} alt="타락" />
         </GoldTile>
       );
     case "특등사수":
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={특등사수} alt="특등사수" />;
+            <Synergy src={특등사수} alt="특등사수" />
           </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
           <BronzeTile>
-            <Synergy src={특등사수} alt="특등사수" />;
+            <Synergy src={특등사수} alt="특등사수" />
           </BronzeTile>
         );
       } else if (event >= 4) {
         return (
           <GoldTile>
-            <Synergy src={특등사수} alt="특등사수" />;
+            <Synergy src={특등사수} alt="특등사수" />
           </GoldTile>
         );
       }
@@ -645,25 +645,25 @@ export default function SynergyImg(event) {
       if (event < 2) {
         return (
           <DarkTile>
-            <Synergy src={해커} alt="해커" />;
+            <Synergy src={해커} alt="해커" />
           </DarkTile>
         );
       } else if (event === 2) {
         return (
           <BronzeTile>
-            <Synergy src={해커} alt="해커" />;
+            <Synergy src={해커} alt="해커" />
           </BronzeTile>
         );
       } else if (event === 3) {
         return (
           <SilverTile>
-            <Synergy src={해커} alt="해커" />;
+            <Synergy src={해커} alt="해커" />
           </SilverTile>
         );
       } else if (event >= 4) {
         return (
           <GoldTile>
-            <Synergy src={해커} alt="해커" />;
+            <Synergy src={해커} alt="해커" />
           </GoldTile>
         );
       }
@@ -710,10 +710,10 @@ const PlatinumTile = styled.div`
 
 const Synergy = styled.img`
   position: absolute;
-  top: 10%;
-  left: 12%;
-  height: 20px;
-  width: 20px;
+  top: 18%;
+  left: 18%;
+  height: 16px;
+  width: 16px;
   object-fit: cover;
   object-position: center;
 `;

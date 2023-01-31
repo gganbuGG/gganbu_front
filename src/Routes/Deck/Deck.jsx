@@ -48,7 +48,7 @@ const Deck = () => {
                     </BoxHeaderText>
                     <BoxHeaderReinForceMain>
                       <BoxHeaderReinForceMain2>
-                        {SynergyImg(Object.keys(match.traits))}
+                        {SynergyImg(Object.keys(match.traits)[0])}
 
                         <BoxHeaderReinForceDummy>
                           <img
