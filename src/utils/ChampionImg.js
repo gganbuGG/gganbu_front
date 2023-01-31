@@ -205,7 +205,7 @@ const Champion3 = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 4px solid var(--cost3-color);
+  border: 3px solid var(--cost3-color);
   border-radius: 10px;
 `;
 

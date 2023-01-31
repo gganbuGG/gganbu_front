@@ -54,14 +54,6 @@ const Deck = () => {
                           </div>
                         ))}
                         {/* 시너지 */}
-
-                        {/* <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy> */}
                       </BoxHeaderReinForceMain2>
                     </BoxHeaderReinForceMain>
                   </BoxHeader>
