@@ -4,6 +4,7 @@ import { getDeckWinRate } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
 import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionImg from "../../utils/ChampionImg";
+import SynergyImg from "../../utils/SynergyImg";
 
 const Deck = () => {
   const [info, setInfo] = useState([]);
@@ -28,27 +29,27 @@ const Deck = () => {
               <DeckHeaderP>최종 업데이트: {info["updated_time"]}</DeckHeaderP>
             </DeckHeaderText>
           </DeckHeader>
-          {info["data"]?.map((match) => (
+          {info["data"]?.map((match, index) => (
             <DeckBody>
               <FirstBox>
                 <BoxMain>
                   <BoxHeader>
                     <BoxHeaderText>
-                      <strong class="gap-2 font-bold leading-none text-white">
-                        {match.core[0]} {match.core[1]}
-                        {/* {Object.values(match.traits)[0]} */}
-                      </strong>
+                      <p
+                        key={index}
+                        class="gap-2 font-bold leading-none text-white"
+                      >
+                        {match.core}
+
+                        {/* {Object.keys(match.traits)[0]}
+                        {Object.values(match.traits)[0]} */}
+                      </p>
                       <span class="text-[12px] leading-none text-[#999]"></span>
                     </BoxHeaderText>
                     <BoxHeaderReinForceMain>
                       <BoxHeaderReinForceMain2>
-                        <BoxHeaderReinForceDummy>
-                          <img
-                            src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
-                            alt=""
-                            class="absolute top-1/2 left-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 object-cover object-center"
-                          />
-                        </BoxHeaderReinForceDummy>
+                        {SynergyImg(Object.keys(match.traits))}
+
                         <BoxHeaderReinForceDummy>
                           <img
                             src="//cdn.lolchess.gg/upload/images/traits/Arsenal_black_1668169947-Arsenal.svg"
@@ -115,10 +116,67 @@ const Deck = () => {
                         <BoxChampionBody>
                           <BoxChampionBody2>
                             {/* 챔피언 얼굴? */}
-                            <BoxChampionMain>
+                            {/* 여기를 map을 써서 units수만큼 돌리도록 바꿔야함 */}
+                            <BoxChampionMain key={index}>
                               <BoxChampionImgAndItems>
                                 <BoxChampionImg>
                                   {ChampionImg(match.units[0])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[1])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[2])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[3])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[4])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[5])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[6])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[7])}
+                                </BoxChampionImg>
+                              </BoxChampionImgAndItems>
+                            </BoxChampionMain>
+                            <BoxChampionMain key={index}>
+                              <BoxChampionImgAndItems>
+                                <BoxChampionImg>
+                                  {ChampionImg(match.units[8])}
                                 </BoxChampionImg>
                               </BoxChampionImgAndItems>
                             </BoxChampionMain>

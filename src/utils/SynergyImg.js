@@ -37,627 +37,681 @@ export default function SynergyImg(event) {
     case "기계유망주":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={기계유망주} alt="기계유망주" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={기계유망주} alt="기계유망주" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 6) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={기계유망주} alt="기계유망주" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
 
     case "동물특공대":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={동물특공대} alt="동물특공대" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={동물특공대} alt="동물특공대" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 5 && event < 7) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={동물특공대} alt="동물특공대" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 7) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={동물특공대} alt="동물특공대" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
 
     case "레이저단":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={레이저단} alt="레이저단" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={레이저단} alt="레이저단" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 6 && event < 9) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={레이저단} alt="레이저단" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 7) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={레이저단} alt="레이저단" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
 
-    case "메카프라임":
+    case "메카: 프라임":
+      // return (
+      //   <SynergyBox src={브론즈타일} alt="브론즈">
+      //     <Synergy src={메카프라임} alt="메카프라임" />
+      //   </SynergyBox>
+      // );
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={메카프라임} alt="메카프라임" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={메카프라임} alt="메카프라임" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 5) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={메카프라임} alt="메카프라임" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
 
     case "민간인":
       if (event === 1) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={민간인} alt="민간인" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event === 2) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={민간인} alt="민간인" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event === 3) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={민간인} alt="민간인" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
 
     case "별 수호자":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={별수호자} alt="별수호자" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={별수호자} alt="별수호자" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 5 && event < 7) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={별수호자} alt="별수호자" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 7 && event < 9) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={별수호자} alt="별수호자" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 9) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={별수호자} alt="별수호자" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
 
     case "병기고":
       return (
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={병기고} alt="병기고" />;
-        </SynergyBox>
+        </GoldTile>
       );
 
     case "우세":
       if (event < 3) {
-        <SynergyBox src={암흑타일}>
+        <DarkTile>
           <Synergy src={우세} alt="우세" />;
-        </SynergyBox>;
+        </DarkTile>;
       } else if (event >= 3) {
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={우세} alt="우세" />;
-        </SynergyBox>;
-      } else break;
+        </GoldTile>;
+      }
+      break;
 
     case "위협":
       return (
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={위협} alt="위협" />;
-        </SynergyBox>
+        </GoldTile>
       );
 
     case "자동방어체계":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={자동방어체계} alt="자동방어체계" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={자동방어체계} alt="자동방어체계" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={자동방어체계} alt="자동방어체계" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 6) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={자동방어체계} alt="자동방어체계" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "지하세계":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={지하세계} alt="지하세계" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 5) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={지하세계} alt="지하세계" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 5) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={지하세계} alt="지하세계" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     case "황소부대":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={황소부대} alt="황소부대" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={황소부대} alt="황소부대" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={황소부대} alt="황소부대" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={황소부대} alt="황소부대" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 8) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={황소부대} alt="황소부대" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "결투가":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={결투가} alt="결투가" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={결투가} alt="결투가" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={결투가} alt="결투가" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={결투가} alt="결투가" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 8) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={결투가} alt="결투가" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "기상캐스터":
       return (
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={기상캐스터} alt="기상캐스터" />;
-        </SynergyBox>
+        </GoldTile>
       );
     case "마스코트":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={마스코트} alt="마스코트" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={마스코트} alt="마스코트" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={마스코트} alt="마스코트" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={마스코트} alt="마스코트" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 8) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={마스코트} alt="마스코트" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "무법자":
       if (event < 3) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={무법자} alt="무법자" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 3 && event < 6) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={무법자} alt="무법자" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 6) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={무법자} alt="무법자" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     case "방패대":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={방패대} alt="방패대" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event === 2) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={방패대} alt="방패대" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event === 3) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={방패대} alt="방패대" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event === 4) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={방패대} alt="방패대" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 5) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={방패대} alt="방패대" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "선의":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={선의} alt="선의" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={선의} alt="선의" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={선의} alt="선의" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={선의} alt="선의" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     case "싸움꾼":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={싸움꾼} alt="싸움꾼" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={싸움꾼} alt="싸움꾼" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={싸움꾼} alt="싸움꾼" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={싸움꾼} alt="싸움꾼" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 8) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={싸움꾼} alt="싸움꾼" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "엄호대":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={엄호대} alt="엄호대" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={엄호대} alt="엄호대" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={엄호대} alt="엄호대" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 6) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={엄호대} alt="엄호대" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
 
     case "에이스":
       if (event === 1) {
-        <SynergyBox src={브론즈타일}>
+        <BronzeTile>
           <Synergy src={에이스} alt="에이스" />;
-        </SynergyBox>;
+        </BronzeTile>;
       } else if (event === 2 || event === 3) {
-        <SynergyBox src={암흑타일}>
+        <DarkTile>
           <Synergy src={에이스} alt="에이스" />;
-        </SynergyBox>;
+        </DarkTile>;
       } else if (event >= 4) {
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={에이스} alt="에이스" />;
-        </SynergyBox>;
-      } else break;
+        </GoldTile>;
+      }
+      break;
 
     case "익살꾼":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={익살꾼} alt="익살꾼" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event === 2) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={익살꾼} alt="익살꾼" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 3) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={익살꾼} alt="익살꾼" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
 
     case "정찰단":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={정찰단} alt="정찰단" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event === 2) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={정찰단} alt="정찰단" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event === 3) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={정찰단} alt="정찰단" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 4) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={정찰단} alt="정찰단" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     case "주문투척자":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={주문투척자} alt="주문투척자" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={주문투척자} alt="주문투척자" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4 && event < 6) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={주문투척자} alt="주문투척자" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 6 && event < 8) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={주문투척자} alt="주문투척자" />;
-          </SynergyBox>
+          </GoldTile>
         );
       } else if (event >= 8) {
         return (
-          <SynergyBox src={플래티넘타일}>
+          <PlatinumTile>
             <Synergy src={주문투척자} alt="주문투척자" />;
-          </SynergyBox>
+          </PlatinumTile>
         );
-      } else break;
+      }
+      break;
     case "타락":
       return (
-        <SynergyBox src={골드타일}>
+        <GoldTile>
           <Synergy src={타락} alt="타락" />;
-        </SynergyBox>
+        </GoldTile>
       );
     case "특등사수":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={특등사수} alt="특등사수" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event >= 2 && event < 4) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={특등사수} alt="특등사수" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event >= 4) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={특등사수} alt="특등사수" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     case "해커":
       if (event < 2) {
         return (
-          <SynergyBox src={암흑타일}>
+          <DarkTile>
             <Synergy src={해커} alt="해커" />;
-          </SynergyBox>
+          </DarkTile>
         );
       } else if (event === 2) {
         return (
-          <SynergyBox src={브론즈타일}>
+          <BronzeTile>
             <Synergy src={해커} alt="해커" />;
-          </SynergyBox>
+          </BronzeTile>
         );
       } else if (event === 3) {
         return (
-          <SynergyBox src={실버타일}>
+          <SilverTile>
             <Synergy src={해커} alt="해커" />;
-          </SynergyBox>
+          </SilverTile>
         );
       } else if (event >= 4) {
         return (
-          <SynergyBox src={골드타일}>
+          <GoldTile>
             <Synergy src={해커} alt="해커" />;
-          </SynergyBox>
+          </GoldTile>
         );
-      } else break;
+      }
+      break;
     default:
       break;
   }
 }
 
-const SynergyBox = styled.div`
+const DarkTile = styled.div`
+  background: url(${암흑타일}) center/cover no-repeat;
   width: 26px;
   height: 26px;
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+`;
+
+const BronzeTile = styled.div`
+  background: url(${브론즈타일}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
+`;
+
+const SilverTile = styled.div`
+  background: url(${실버타일}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
+`;
+
+const GoldTile = styled.div`
+  background: url(${골드타일}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
+`;
+
+const PlatinumTile = styled.div`
+  background: url(${플래티넘타일}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
 `;
 
 const Synergy = styled.img`
   position: absolute;
-  /* top: 50%;
-  left: 50%; */
+  top: 10%;
+  left: 12%;
   height: 20px;
   width: 20px;
   object-fit: cover;
