@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
+import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 
 const Deck = () => {
   const [info, setInfo] = useState([]);
@@ -33,14 +34,17 @@ const Deck = () => {
             <DeckBody>
               <FirstBox>
                 <BoxMain>
+                  {/* 헤더 */}
                   <BoxHeader>
                     <BoxHeaderText>
+                      {/* 덱 이름 */}
                       <p class="font-bold leading-none text-white">
                         {match.core.map((e, i) => (
                           <span>{match.core[i]} </span>
                         ))}
                       </p>
                       <span class="text-[12px] leading-none text-[#999]"></span>
+                      {/* 덱 이름 */}
                     </BoxHeaderText>
                     <BoxHeaderReinForceMain>
                       <BoxHeaderReinForceMain2>
@@ -57,13 +61,14 @@ const Deck = () => {
                       </BoxHeaderReinForceMain2>
                     </BoxHeaderReinForceMain>
                   </BoxHeader>
-
+                  {/* 헤더 */}
+                  {/* 바디 */}
                   <BoxBody>
                     <BoxBodyImage>
                       <BoxBodyMain>
                         <BoxChampionBody>
                           <BoxChampionBody2>
-                            {/* 챔피언 얼굴? */}
+                            {/* 챔피언 사진? */}
 
                             {match.units.map((e, i) => (
                               <BoxChampionMain>
@@ -89,7 +94,7 @@ const Deck = () => {
                               </BoxChampionMain>
                             ))}
 
-                            {/* 챔피언 얼굴?  */}
+                            {/* 챔피언 사진?  */}
                           </BoxChampionBody2>
                         </BoxChampionBody>
 
@@ -136,6 +141,7 @@ const Deck = () => {
                       </BoxBodyMain>
                     </BoxBodyImage>
                   </BoxBody>
+                  {/* 바디 */}
                 </BoxMain>
               </FirstBox>
             </DeckBody>
@@ -279,7 +285,8 @@ const BoxHeaderReinForceMain2 = styled.div`
 const BoxBody = styled.div``;
 
 const BoxBodyImage = styled.div`
-  background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Samira.jpg");
+  background: url(${(props) => props.background});
+  /* background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Samira.jpg"); */
   background-size: cover;
   flex-direction: column;
   background-position: center;
