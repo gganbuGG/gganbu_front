@@ -188,7 +188,6 @@ export default function ChampionBackgroundImg(event) {
 const Background = styled.img`
   z-index: 0;
   position: relative;
-
   background-size: cover;
   flex-direction: column;
   background-position: center;

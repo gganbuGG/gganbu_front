@@ -101,7 +101,8 @@ const Wrapper = styled.div`
 `;
 
 const ChampionGroup = styled.div`
-  background-color: darkgray;
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 50 50 / var(--tw-bg-opacity));
   height: 100%;
   padding-top: 20px;
   padding-bottom: 20px;

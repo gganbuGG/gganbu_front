@@ -26,8 +26,10 @@ const Deck = () => {
         <main class="container">
           <DeckHeader>
             <DeckHeaderText>
-              <DeckHeaderH2>덱 개인 통계</DeckHeaderH2>
-              <DeckHeaderP>최종 업데이트: {info["updated_time"]}</DeckHeaderP>
+              <DeckHeaderTitle>덱 개인 통계</DeckHeaderTitle>
+              <DeckHeaderUpdatedTime>
+                최종 업데이트: {info["updated_time"]}
+              </DeckHeaderUpdatedTime>
             </DeckHeaderText>
           </DeckHeader>
           {info["data"]?.map((match) => (
@@ -46,20 +48,24 @@ const Deck = () => {
                       <span class="text-[12px] leading-none text-[#999]"></span>
                       {/* 덱 이름 */}
                     </BoxHeaderText>
-                    <BoxHeaderReinForceMain>
-                      <BoxHeaderReinForceMain2>
+                    <BoxHeaderSynergyMain>
+                      <BoxHeaderSynergyMain2>
                         {/* 시너지 */}
                         {Object.keys(match.traits).map((e, i) => (
-                          <div>
+                          <SynergyMain>
                             {SynergyImg(
                               Object.keys(match.traits)[i] +
                                 Object.values(match.traits)[i]
                             )}
-                          </div>
+                            <SynergyName>
+                              {Object.keys(match.traits)[i]}(
+                              {Object.values(match.traits)[i]})
+                            </SynergyName>
+                          </SynergyMain>
                         ))}
                         {/* 시너지 */}
-                      </BoxHeaderReinForceMain2>
-                    </BoxHeaderReinForceMain>
+                      </BoxHeaderSynergyMain2>
+                    </BoxHeaderSynergyMain>
                   </BoxHeader>
                   {/* 헤더 */}
                   {/* 바디 */}
@@ -72,25 +78,26 @@ const Deck = () => {
 
                             {match.units.map((e, i) => (
                               <BoxChampionMain>
+                                {match.units[i] === match.core[i] ? (
+                                  <div class="absolute top-0 left-1/2 z-20 flex -translate-x-1/2">
+                                    <div class="inline-flex items-center justify-center rounded-[4px] bg-orange-300 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
+                                      <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
+                                        CORE
+                                      </strong>
+                                    </div>
+                                  </div>
+                                ) : (
+                                  ""
+                                )}
                                 <BoxChampionImgAndItems>
                                   {/* 코어 챔피언 손봐야함 */}
-                                  {match.units[i] === match.core[i] ? (
-                                    <div class="absolute top-0 left-1/2 z-20 flex -translate-x-1/2">
-                                      <div class="inline-flex items-center justify-center rounded-[4px] bg-orange-300 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
-                                        <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
-                                          CORE
-                                        </strong>
-                                      </div>
-                                    </div>
-                                  ) : (
-                                    ""
-                                  )}
-                                  {/* 코어 챔피언 손봐야함 */}
 
+                                  {/* 코어 챔피언 손봐야함 */}
                                   <BoxChampionImg>
                                     {ChampionImg(match.units[i])}
                                   </BoxChampionImg>
                                 </BoxChampionImgAndItems>
+                                <ChampionName>{match.units[i]}</ChampionName>
                               </BoxChampionMain>
                             ))}
 
@@ -99,22 +106,27 @@ const Deck = () => {
                         </BoxChampionBody>
 
                         <BoxSider>
-                          <BoxSiderHighReinforce>
-                            <BoxSiderHighReinforceHeader>
-                              <BoxSiderHighReinforceHeaderText>
+                          <BoxSiderAugments>
+                            <BoxSiderAugmentsHeader>
+                              <BoxSiderAugmentsHeaderText>
                                 상위 증강체
-                              </BoxSiderHighReinforceHeaderText>
-                            </BoxSiderHighReinforceHeader>
+                              </BoxSiderAugmentsHeaderText>
+                            </BoxSiderAugmentsHeader>
                             {/* 증강체 */}
-                            <BoxSiderHighReinforceBody>
+                            <BoxSiderAugmentsBody>
                               {match.augments.map((e, i) => (
-                                <BoxSiderHighReinforceBodyImg>
-                                  {AugmentsImg(match.augments[i])}
-                                </BoxSiderHighReinforceBodyImg>
+                                <AugmentsBody>
+                                  <BoxSiderAugmentsBodyImg>
+                                    {AugmentsImg(match.augments[i])}
+                                  </BoxSiderAugmentsBodyImg>
+                                  <AugmentsName>
+                                    {match.augments[i]}
+                                  </AugmentsName>
+                                </AugmentsBody>
                               ))}
-                            </BoxSiderHighReinforceBody>
+                            </BoxSiderAugmentsBody>
                             {/* 증강체 */}
-                          </BoxSiderHighReinforce>
+                          </BoxSiderAugments>
                           <BoxSiderAvg>
                             <BoxSiderAvgText>
                               <div>평균 등수</div>
@@ -179,7 +191,7 @@ const DeckHeaderText = styled.div`
   align-items: center;
 `;
 
-const DeckHeaderH2 = styled.h2`
+const DeckHeaderTitle = styled.h2`
   margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
@@ -188,7 +200,7 @@ const DeckHeaderH2 = styled.h2`
   color: rgb(202 147 114 / var(--tw-text-opacity));
 `;
 
-const DeckHeaderP = styled.p`
+const DeckHeaderUpdatedTime = styled.p`
   font-size: 12px;
   line-height: 130%;
   --tw-text-opacity: 1;
@@ -260,16 +272,51 @@ const BoxHeaderText = styled.div`
   }
 `;
 
-const BoxHeaderReinForceMain = styled.div`
+const BoxHeaderSynergyMain = styled.div`
   display: inline-flex;
   flex-shrink: 0;
   gap: 22px;
 `;
 
-const BoxHeaderReinForceMain2 = styled.div`
+const BoxHeaderSynergyMain2 = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 2px;
+`;
+const SynergyName = styled.span`
+  position: absolute;
+  background-color: #000;
+  width: 130px;
+  color: #fff;
+  top: -40px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
+  }
+`;
+
+const SynergyMain = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  &:hover ${SynergyName} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 // const BoxHeaderReinForceDummy = styled.div`
@@ -327,6 +374,59 @@ const BoxBodyMain = styled.div`
     padding-right: 24px;
   }
 `;
+const ChampionName = styled.span`
+  position: absolute;
+  background-color: #000;
+  width: 100px;
+  color: #fff;
+  top: -30px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
+  }
+`;
+
+const AugmentsName = styled.span`
+  position: absolute;
+  background-color: #000;
+  width: 130px;
+  color: #fff;
+  top: -30px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
+  }
+`;
 
 const BoxChampionBody = styled.div`
   margin-bottom: 16px;
@@ -356,12 +456,17 @@ const BoxChampionMain = styled.div`
   display: inline-flex;
   flex-direction: column;
   padding-top: 9px;
+  &:hover ${ChampionName} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 const BoxChampionImgAndItems = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const BoxChampionImg = styled.div`
@@ -373,7 +478,7 @@ const BoxChampionImg = styled.div`
   width: 45px;
 `;
 
-// const BoxChampionImgDetail = styled.div`
+// const BoxChampionImgDetail = styled.div
 //   position: relative;
 //   display: inline-flex;
 //   height: 45px;
@@ -414,7 +519,7 @@ const BoxSider = styled.div`
   }
 `;
 
-const BoxSiderHighReinforce = styled.div`
+const BoxSiderAugments = styled.div`
   display: flex;
   height: 98px;
   flex-direction: column;
@@ -436,24 +541,24 @@ const BoxSiderHighReinforce = styled.div`
   }
 `;
 
-const BoxSiderHighReinforceHeader = styled.div`
+const BoxSiderAugmentsHeader = styled.div`
   display: flex;
   justify-content: center;
   gap: 2px;
 `;
 
-const BoxSiderHighReinforceHeaderText = styled.span`
+const BoxSiderAugmentsHeaderText = styled.span`
   font-size: 12px;
   line-height: 1;
   --tw-text-opacity: 1;
   color: rgb(153 153 153 / var(--tw-text-opacity));
 `;
 
-const BoxSiderHighReinforceBody = styled.div`
+const BoxSiderAugmentsBody = styled.div`
   display: flex;
-  margin-left: 10px;
+  margin-left: 13px;
   justify-content: center;
-  gap: 3px;
+  gap: 2px;
   @media (min-width: 1024px) {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -464,13 +569,24 @@ const BoxSiderHighReinforceBody = styled.div`
   }
 `;
 
-const BoxSiderHighReinforceBodyImg = styled.div`
+const BoxSiderAugmentsBodyImg = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 35px;
   width: 35px;
+`;
+
+const AugmentsBody = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  padding-top: 9px;
+  &:hover ${AugmentsName} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 const BoxSiderAvg = styled.div`
