@@ -41,9 +41,13 @@ const Deck = () => {
                     <BoxHeaderText>
                       {/* 덱 이름 */}
                       <p class="font-bold leading-none text-white">
-                        {match.core.map((e, i) => (
-                          <span>{match.core[i]} </span>
-                        ))}
+                        <span>
+                          {Object.keys(match.traits)[0]} {match.core[0]}
+                        </span>
+                        {/* {match.core.map((e, i) => (
+                          <span>{match.core[i]}</span>
+                        ))} */}
+                        덱
                       </p>
                       <span class="text-[12px] leading-none text-[#999]"></span>
                       {/* 덱 이름 */}
