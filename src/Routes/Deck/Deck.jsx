@@ -319,21 +319,10 @@ const SynergyMain = styled.div`
   }
 `;
 
-// const BoxHeaderReinForceDummy = styled.div`
-//   background-image: url("https://cdn.dak.gg/tft/images2/tft/traits/background/gold.svg");
-//   width: 26px;
-//   height: 26px;
-//   position: relative;
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-// `;
-
 const BoxBody = styled.div``;
 
 const BoxBodyImage = styled.div`
-  background: url(${(props) => props.background});
-  /* background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Samira.jpg"); */
+  background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Samira.jpg");
   background-size: cover;
   flex-direction: column;
   background-position: center;
@@ -477,31 +466,6 @@ const BoxChampionImg = styled.div`
   height: 45px;
   width: 45px;
 `;
-
-// const BoxChampionImgDetail = styled.div
-//   position: relative;
-//   display: inline-flex;
-//   height: 45px;
-//   width: 45px;
-//   overflow: hidden;
-//   border-radius: 8px;
-//   border-width: 2.5px;
-//   border-color: ${(props) => props.bdColor};
-// `;
-
-// const BoxChampionCoreItems = styled.div`
-//   display: inline-flex;
-//   width: 100%;
-//   align-items: center;
-//   justify-content: center;
-// `;
-
-// const BoxChampionCoreItem = styled.div`
-//   position: relative;
-//   height: 15px;
-//   width: 15px;
-//   overflow: hidden;
-// `;
 
 const BoxSider = styled.div`
   display: grid;
