@@ -344,18 +344,18 @@ export default function SynergyImg(key, value) {
     case "무법자4":
     case "무법자5":
       return (
-        <BronzeTile>
+        <GoldTile>
           <Synergy src={무법자} alt="무법자" />
-        </BronzeTile>
+        </GoldTile>
       );
     case "무법자6":
     case "무법자7":
     case "무법자8":
     case "무법자9":
       return (
-        <GoldTile>
+        <PlatinumTile>
           <Synergy src={무법자} alt="무법자" />
-        </GoldTile>
+        </PlatinumTile>
       );
 
     case "방패대2":
