@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+function Footer() {
+  return (
+    <Span>
+      <Copyright>© GGanBu.GG. All Rights Reserved.</Copyright>
+    </Span>
+  );
+}
+
 const Span = styled.div`
   height: 70px;
   position: relative;
@@ -15,12 +23,4 @@ const Copyright = styled.div`
   align-items: center;
   margin-bottom: 5px;
 `;
-
-function Footer() {
-  return (
-    <Span>
-      <Copyright>© GGanBu.GG. All Rights Reserved.</Copyright>
-    </Span>
-  );
-}
 export default Footer;

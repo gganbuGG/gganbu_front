@@ -443,6 +443,31 @@ const BoxChampionBody2 = styled.div`
   gap: 6px;
 `;
 
+const CoreChampionMain = styled.div`
+  position: absolute;
+  display: flex;
+  top: 0px;
+  left: 50%;
+  z-index: 20;
+  margin-top: 20px;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+`;
+
+const CoreChampionMainDiv = styled.div`
+  height: 18px;
+  width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: orange;
+  padding: 2px;
+  text-align: center;
+`;
+
 const BoxChampionMain = styled.div`
   position: relative;
   display: inline-flex;

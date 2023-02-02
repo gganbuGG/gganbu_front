@@ -20,14 +20,14 @@ function Modal({ closeModal, closeModalUntilExpires }) {
         {/* <IntroPage /> */}
         <Wrapper>
           <ProjectBox>
-            <button onClick={closeModal}>
+            <ProjectButton onClick={closeModal}>
               <Link to="/project">프로젝트 소개</Link>
-            </button>
+            </ProjectButton>
           </ProjectBox>
           <TeamBox>
-            <button onClick={closeModal}>
+            <ProjectButton onClick={closeModal}>
               <Link to="/team">팀원 소개</Link>
-            </button>
+            </ProjectButton>
           </TeamBox>
         </Wrapper>
       </ModalBackground>
@@ -86,6 +86,7 @@ const ProjectBox = styled.div`
     transform: scale(1.2);
   }
 `;
+const ProjectButton = styled.button``;
 
 const TeamBox = styled.div`
   margin-top: 20%;
