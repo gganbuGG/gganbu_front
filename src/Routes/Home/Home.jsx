@@ -13,9 +13,9 @@ const Home = () => {
       <Header />
       <Outlet />
       <MetaForm />
-      <div className=" container text-5xl font-bold">
-        <span>글로벌 Top 10</span>
-      </div>
+      <GlobalTop>
+        <GlobalSpan>Global Top 10</GlobalSpan>
+      </GlobalTop>
       <Board />
     </Wrapper>
   );
@@ -23,6 +23,19 @@ const Home = () => {
 
 const Wrapper = styled.div`
   background-color: var(--main-bg-color);
+`;
+const GlobalTop = styled.div`
+  display: flex;
+  font-size: 32px;
+  font-weight: bold;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+`;
+
+const GlobalSpan = styled.span`
+  display: flex;
+  margin-left: 20px;
 `;
 
 export default Home;

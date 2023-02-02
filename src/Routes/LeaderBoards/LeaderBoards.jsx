@@ -23,15 +23,11 @@ const LeaderBoards = () => {
   return (
     <Wrapper>
       <Navbar />
-      <p className=" mt-20 flex justify-center text-center font-sans text-6xl font-bold">
-        🎅전체 순위
-      </p>
-      <p className=" mx-96 mt-20 flex justify-center bg-slate-50 text-center font-sans font-bold">
-        최종 업데이트 : {info["updated_time"]}
-      </p>
-      <div className="mt-20 mb-44">
+      <TotalRate>🎅전체 순위</TotalRate>
+      <LastUpdate>최종 업데이트 : {info["updated_time"]}</LastUpdate>
+      <Boards>
         <Board />
-      </div>
+      </Boards>
     </Wrapper>
   );
 };
@@ -39,6 +35,36 @@ const LeaderBoards = () => {
 const Wrapper = styled.div`
   height: 670vh;
   background-color: var(--main-bg-color);
+`;
+
+const TotalRate = styled.p`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  line-height: 0px;
+  font-weight: bold;
+`;
+
+const LastUpdate = styled.p`
+  margin: 0px 400px;
+  margin-top: 90px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 0px;
+  font-weight: bold;
+`;
+
+const Boards = styled.div`
+  margin: 20px 0px;
 `;
 
 export default LeaderBoards;
