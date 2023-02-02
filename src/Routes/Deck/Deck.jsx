@@ -5,7 +5,6 @@ import Navbar from "../../Components/Navbar/Navbar";
 import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
-import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 
 const Deck = () => {
   const [info, setInfo] = useState([]);
