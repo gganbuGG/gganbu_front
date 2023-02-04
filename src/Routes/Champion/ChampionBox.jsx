@@ -107,7 +107,7 @@ const ChampionGroup = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   border-width: 2px;
-  border-color: gray;
+  border-color: rgb(61, 60, 60);
   margin-bottom: 30px;
 `;
 

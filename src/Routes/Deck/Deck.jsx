@@ -4,9 +4,16 @@ import { getDeckWinRate } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
 import AvgPlace from "./AvgPlaceBox";
 import WindefenceRate from "./WindefencerateBox";
-import WinRate from "./WinRateBox";
+// import WinRate from "./WinRateBox";
 
 const Deck = () => {
+  const [isNow, setIsNow] = useState(true);
+  const handleNow = () => {
+    setIsNow(true);
+  };
+  const handleAuc = () => {
+    setIsNow(false);
+  };
   const [info, setInfo] = useState([]);
   useEffect(() => {
     (async () => {
@@ -31,14 +38,32 @@ const Deck = () => {
               </DeckHeaderUpdatedTime>
             </DeckHeaderText>
           </DeckHeader>
-          <WinRate />
+          <Buttons>
+            <Button onClick={handleNow}>평균 등수</Button>
+            <Button onClick={handleAuc}>순방률</Button>
+          </Buttons>
+          {isNow ? <AvgPlace /> : <WindefenceRate />}
+          {/* <WinRate />
           <WindefenceRate />
-          <AvgPlace />
+          <AvgPlace /> */}
         </main>
       </DeckMain>
     </body>
   );
 };
+
+const Buttons = styled.div`
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const Button = styled.button`
+  color: white;
+  border: 1px solid darkgray;
+`;
 
 const DeckMain = styled.div`
   position: relative;

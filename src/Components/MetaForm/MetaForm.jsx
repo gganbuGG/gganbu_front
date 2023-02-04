@@ -334,6 +334,7 @@ const Explain = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px double black;
+  border-radius: 12px;
   height: 50%;
   padding: 3px;
   margin-top: 10px;
