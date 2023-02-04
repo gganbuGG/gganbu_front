@@ -172,7 +172,7 @@ const MetaGroupDeck = styled.div`
 
 const MetaDeckName = styled.div`
   display: flex;
-  padding: 22px 13px;
+  padding: 22px 14px;
   flex-direction: column;
 `;
 
