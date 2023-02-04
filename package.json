@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/wkdrhkdwls/wkdrhkdwls.github.io.git",
   "name": "doubleup_gg",
   "version": "0.1.0",
   "private": true,
@@ -33,7 +34,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "prebuild": "npm run tailwind:build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
