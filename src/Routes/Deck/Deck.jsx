@@ -4,16 +4,21 @@ import { getDeckWinRate } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
 import AvgPlace from "./AvgPlaceBox";
 import WindefenceRate from "./WindefencerateBox";
+import Winrate from "./WinRateBox";
 // import WinRate from "./WinRateBox";
 
 const Deck = () => {
-  const [isNow, setIsNow] = useState(true);
-  const handleNow = () => {
-    setIsNow(true);
+  const [isNow, setIsNow] = useState();
+  const handleOne = () => {
+    setIsNow(1);
   };
-  const handleAuc = () => {
-    setIsNow(false);
+  const handleTwo = () => {
+    setIsNow(2);
   };
+  const handleThree = () => {
+    setIsNow(3);
+  };
+
   const [info, setInfo] = useState([]);
   useEffect(() => {
     (async () => {
@@ -39,13 +44,14 @@ const Deck = () => {
             </DeckHeaderText>
           </DeckHeader>
           <Buttons>
-            <Button onClick={handleNow}>평균 등수</Button>
-            <Button onClick={handleAuc}>순방률</Button>
+            <Button onClick={handleOne}>평균 등수</Button>
+            <Button onClick={handleTwo}>순방률</Button>
+            <Button onClick={handleThree}>승률</Button>
           </Buttons>
-          {isNow ? <AvgPlace /> : <WindefenceRate />}
-          {/* <WinRate />
-          <WindefenceRate />
-          <AvgPlace /> */}
+
+          {isNow === 1 ? <AvgPlace /> : null}
+          {isNow === 2 ? <WindefenceRate /> : null}
+          {isNow === 3 ? <Winrate /> : null}
         </main>
       </DeckMain>
     </body>
@@ -57,7 +63,7 @@ const Buttons = styled.div`
   margin-top: 50px;
   margin-bottom: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 `;
 
 const Button = styled.button`

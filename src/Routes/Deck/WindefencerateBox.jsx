@@ -5,7 +5,7 @@ import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
 
-const WinRate = () => {
+const WindefenceRate = () => {
   const [info, setInfo] = useState([]);
   useEffect(() => {
     (async () => {
@@ -558,4 +558,4 @@ const BoxSiderTopRateRate = styled.dt`
   color: white;
 `;
 
-export default WinRate;
+export default WindefenceRate;

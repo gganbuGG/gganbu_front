@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
+import ModalMetaForm from "../Modal/ModalMeta";
 
 const MetaForm = () => {
   const navigate = useNavigate();
@@ -126,7 +127,7 @@ const MetaForm = () => {
                     <MetaDeckExplain>
                       <Explain>
                         <DeckSpan>
-                          <Link to="/deck">자세히 보기</Link>
+                          <ModalMetaForm />
                         </DeckSpan>
                       </Explain>
                     </MetaDeckExplain>

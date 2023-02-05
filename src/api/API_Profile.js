@@ -69,12 +69,3 @@ export const getProfile = async () => {
     return error.message;
   }
 };
-
-export const getDeck = async () => {
-  try {
-    const res = await axios.get(`${BASE_URL}/deck`);
-    return res.data;
-  } catch (error) {
-    return error.message;
-  }
-};
