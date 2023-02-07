@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { getLeaderBoard } from "../../api/API_Profile";
 import Board from "../../Components/Board/LeaderBoardsBoard";
 import Navbar from "../../Components/Navbar/Navbar";
+import HeaderSrc from "../../images/newjeans.jpg";
 
 const LeaderBoards = () => {
   const [info, setInfo] = useState([]);
@@ -33,6 +34,8 @@ const LeaderBoards = () => {
 };
 
 const Wrapper = styled.div`
+  border: 1px solid black;
+  background: url(${HeaderSrc});
   height: 670vh;
   background-color: var(--main-bg-color);
 `;

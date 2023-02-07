@@ -37,10 +37,10 @@ function ModalMetaForm() {
   };
 
   return (
-    <div>
+    <ExplainBox>
       <button onClick={showModal}>자세히 보기</button>
       {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
-    </div>
+    </ExplainBox>
   );
 }
 
@@ -79,5 +79,7 @@ const ModalHeader = styled.div`
   text-align: center;
   justify-content: center;
 `;
+
+const ExplainBox = styled.div``;
 
 export default ModalMetaForm;
