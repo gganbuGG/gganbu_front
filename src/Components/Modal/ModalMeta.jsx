@@ -1,25 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getDeckWinRate } from "../../api/API_Profile";
+import HeaderSrc from "../../images/newjeans.jpg";
 
 function ModalBasic({ setModalOpen }) {
   const closeModal = () => {
     setModalOpen(false);
   };
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getDeckWinRate();
+        setInfo(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
 
   return (
     <Wrapper>
-      <Button onClick={closeModal}>❌</Button>
-      <p>모달창입니다.</p>
+      <ModalBackground>
+        <Button onClick={closeModal}>❌</Button>
+        <ModalHeader>뉴진스 하입보이요~</ModalHeader>
+      </ModalBackground>
     </Wrapper>
   );
 }
 
-// 모달을 노출하는 페이지
 function ModalMetaForm() {
-  // 모달창 노출 여부 state
   const [modalOpen, setModalOpen] = useState(false);
 
-  // 모달창 노출
   const showModal = () => {
     setModalOpen(true);
   };
@@ -33,8 +45,8 @@ function ModalMetaForm() {
 }
 
 const Wrapper = styled.div`
-  width: 800px;
-  height: 600px;
+  width: 620px;
+  height: 750px;
   z-index: 999;
   position: absolute;
   top: 25%;
@@ -50,6 +62,22 @@ const Button = styled.button`
   right: 10px;
   top: 10px;
   font-size: 24px;
+`;
+
+const ModalBackground = styled.div`
+  background: url(${HeaderSrc}) center/cover no-repeat;
+  width: 620px;
+  height: 750px;
+  z-index: 0;
+`;
+
+const ModalHeader = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  color: red;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 `;
 
 export default ModalMetaForm;

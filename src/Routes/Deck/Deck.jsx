@@ -5,7 +5,6 @@ import Navbar from "../../Components/Navbar/Navbar";
 import AvgPlace from "./AvgPlaceBox";
 import WindefenceRate from "./WindefencerateBox";
 import Winrate from "./WinRateBox";
-// import WinRate from "./WinRateBox";
 
 const Deck = () => {
   const [isNow, setIsNow] = useState();
@@ -37,7 +36,7 @@ const Deck = () => {
         <main class="container">
           <DeckHeader>
             <DeckHeaderText>
-              <DeckHeaderTitle>덱 개인 통계</DeckHeaderTitle>
+              <DeckHeaderTitle>단일 덱 통계</DeckHeaderTitle>
               <DeckHeaderUpdatedTime>
                 최종 업데이트: {info["updated_time"]}
               </DeckHeaderUpdatedTime>
@@ -49,9 +48,11 @@ const Deck = () => {
             <Button onClick={handleThree}>승률</Button>
           </Buttons>
 
-          {isNow === 1 ? <AvgPlace /> : null}
-          {isNow === 2 ? <WindefenceRate /> : null}
-          {isNow === 3 ? <Winrate /> : null}
+          <div>
+            {isNow === 1 ? <AvgPlace /> : null}
+            {isNow === 2 ? <WindefenceRate /> : null}
+            {isNow === 3 ? <Winrate /> : null}
+          </div>
         </main>
       </DeckMain>
     </body>
@@ -69,6 +70,7 @@ const Buttons = styled.div`
 const Button = styled.button`
   color: white;
   border: 1px solid darkgray;
+  background-color: rgb(45 47 55);
 `;
 
 const DeckMain = styled.div`
