@@ -186,6 +186,7 @@ export default function ItemImg(event) {
 }
 
 const Item = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;

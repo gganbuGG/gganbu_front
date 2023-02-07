@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import { getChampion } from "../../api/API_Profile";
+import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
 import ItemImg from "../../utils/ItemImg";
 
@@ -43,6 +44,8 @@ export default function Card() {
               })
               .map((match, i) => (
                 <ChampionGroup>
+                  {ChampionBackgroundImg(match.name)}
+
                   <ChapionGroupContents>
                     {/*  */}
                     <ChampionMain>
@@ -101,7 +104,9 @@ const Wrapper = styled.div`
 `;
 
 const ChampionGroup = styled.div`
+  background: url(${(props) => props.imgUrl}) center/cover no-repeat;
   --tw-bg-opacity: 1;
+  position: relative;
   background-color: rgb(50 50 50 / var(--tw-bg-opacity));
   height: 100%;
   padding-top: 20px;
@@ -125,6 +130,7 @@ const ChampionRanking = styled.div`
 `;
 const ChampionName = styled.div`
   display: inline-flex;
+  position: relative;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
@@ -165,6 +171,7 @@ const DeckName = styled.div`
 `;
 
 const Ranking = styled.p`
+  position: relative;
   margin-left: 20px;
   font-size: 30px;
 `;

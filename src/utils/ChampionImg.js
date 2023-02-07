@@ -186,6 +186,7 @@ export default function ChampionImg(event) {
 }
 
 const Champion1 = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;
@@ -194,6 +195,7 @@ const Champion1 = styled.img`
 `;
 
 const Champion2 = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;
@@ -202,6 +204,7 @@ const Champion2 = styled.img`
 `;
 
 const Champion3 = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;
@@ -210,6 +213,7 @@ const Champion3 = styled.img`
 `;
 
 const Champion4 = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;
@@ -218,6 +222,7 @@ const Champion4 = styled.img`
 `;
 
 const Champion5 = styled.img`
+  position: relative;
   margin-right: 15px;
   height: 65px;
   width: 65px;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckAvgplace } from "../../api/API_Profile";
 import AugmentsImg from "../../utils/AugmentsImg";
+import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
 
@@ -63,6 +64,7 @@ const AvgPlace = () => {
               {/* 바디 */}
               <BoxBody>
                 <BoxBodyImage>
+                  {ChampionBackgroundImg(match.core[0])}
                   <BoxBodyMain>
                     <BoxChampionBody>
                       <BoxChampionBody2>
@@ -265,15 +267,15 @@ const SynergyMain = styled.div`
 const BoxBody = styled.div``;
 
 const BoxBodyImage = styled.div`
-  background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Viego.jpg");
-  background-size: cover;
+  /* background: url("https://cdn.dak.gg/tft/images2/tft/meta/champions/TFT8_Viego.jpg")
+    center/cover no-repeat; */
   flex-direction: column;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow: visible;
+  position: relative;
 `;
 
 const BoxBodyMain = styled.div`
+  position: relative;
   display: flex;
   min-height: 150px;
   flex-direction: column;
