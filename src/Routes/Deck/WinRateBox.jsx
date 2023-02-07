@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
+import Core from "../../Components/Core/Core";
 import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
@@ -72,17 +73,7 @@ const WinRate = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
-                            {match.units[i] === match.core[i] ? (
-                              <div class="absolute top-0 left-1/2 z-20 flex -translate-x-1/2">
-                                <div class="inline-flex items-center justify-center rounded-[4px] bg-orange-300 p-[2px] text-center lg:h-[18px] lg:w-[38px]">
-                                  <strong class="text-[9px] font-bold leading-none text-white lg:text-[11px]">
-                                    CORE
-                                  </strong>
-                                </div>
-                              </div>
-                            ) : (
-                              ""
-                            )}
+                            {match.units[i] === match.core[i] ? <Core /> : ""}
                             <BoxChampionImgAndItems>
                               {/* 코어 챔피언 손봐야함 */}
 
