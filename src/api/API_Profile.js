@@ -11,6 +11,41 @@ export const CHAMPION_BASE_URL =
 export const DECK_BASE_URL =
   "https://gganbuback1.pythonanywhere.com/api/onedeck/";
 
+export const USER_BASE_URL = "https://ggback2.pythonanywhere.com/user/";
+
+export const USERINFO_BASE_URL = "http://ggback2.pythonanywhere.com/user/info/";
+
+export const postUserInfo = async () => {
+  try {
+    const res = await axios.post(`${USERINFO_BASE_URL}`);
+    // console.log(res.data);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const getUserInfo = async () => {
+  try {
+    const res = await axios.get(`${USERINFO_BASE_URL}`);
+    // console.log(res.data);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+export const getUser = async () => {
+  try {
+    const res = await axios.get(`${USER_BASE_URL}`);
+    // console.log(res.data);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+};
+
+// 랭커 100명
 export const getLeaderBoard = async () => {
   try {
     const res = await axios.get(`${SUMMONER_BASE_URL}`);
@@ -21,16 +56,17 @@ export const getLeaderBoard = async () => {
   }
 };
 
+//챔피언 기물 통계 및 아이템
 export const getChampion = async () => {
   try {
     const res = await axios.get(`${CHAMPION_BASE_URL}`);
-    // console.log(res.data);
     return res.data;
   } catch (error) {
     return error.message;
   }
 };
 
+// 단일 덱 통계 -승률
 export const getDeckWinRate = async () => {
   try {
     const res = await axios.get(`${DECK_BASE_URL}winrate/`);
@@ -41,26 +77,27 @@ export const getDeckWinRate = async () => {
   }
 };
 
+// 단일 덱 통계 -승방률
 export const getDeckWindefenceRate = async () => {
   try {
     const res = await axios.get(`${DECK_BASE_URL}windefencerate/`);
-    // console.log(res.data);
     return res.data;
   } catch (error) {
     return error.message;
   }
 };
 
+// 단일 덱 통계 -평균등수
 export const getDeckAvgplace = async () => {
   try {
     const res = await axios.get(`${DECK_BASE_URL}avgplace/`);
-    // console.log(res.data);
     return res.data;
   } catch (error) {
     return error.message;
   }
 };
 
+// 더미파일(navbar에 삭제시 같이 삭제할 것)
 export const getProfile = async () => {
   try {
     const res = await axios.get(`${BASE_URL}/profile`);
