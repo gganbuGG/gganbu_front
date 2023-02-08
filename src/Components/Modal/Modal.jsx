@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import React, { useEffect } from "react";
+import React from "react";
 import HeaderSrc from "../../images/intromain.jpg";
-import AOS from "aos";
 import { Link } from "react-router-dom";
 
 function Modal({ closeModal, closeModalUntilExpires }) {
-  useEffect(() => {
-    AOS.init();
-  });
   return (
     <Container>
       <ModalBackground>
