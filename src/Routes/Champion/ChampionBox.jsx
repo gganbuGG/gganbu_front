@@ -31,6 +31,8 @@ export default function Card() {
   // 3. rarity : 챔피언 코스트(1코: 0, 2코: 1, 3코: 2, 4코: 4, 5코: 6)
   // 4. tier : 몇성인지 (별로 나타냄 1~3개(성))
   // 5. how_many : 빈도수(내림차순으로 정렬할 것.)
+  
+  // 챔피언 코스트 수로 분리 (1,2,3,4,5코스트로 컴포넌트 분리)
   return (
     <div class="container">
       <Wrapper>

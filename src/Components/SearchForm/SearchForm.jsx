@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getLeaderBoard } from "../../api/API_Profile";
 
-// const API_KEY = "RGAPI-56cd37e9-6c32-4a22-a6ae-918ec5321c1f"; //하루마다 바꿔야됨.
-
 const SearchForm = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);

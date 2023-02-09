@@ -11,40 +11,6 @@ export const CHAMPION_BASE_URL =
 export const DECK_BASE_URL =
   "https://gganbuback1.pythonanywhere.com/api/onedeck/";
 
-export const USER_BASE_URL = "https://ggback2.pythonanywhere.com/user/";
-
-export const USERINFO_BASE_URL = "http://ggback2.pythonanywhere.com/user/info/";
-
-export const postUserInfo = async () => {
-  try {
-    const res = await axios.post(`${USERINFO_BASE_URL}`);
-    // console.log(res.data);
-    return res.data;
-  } catch (error) {
-    return error.message;
-  }
-};
-
-export const getUserInfo = async () => {
-  try {
-    const res = await axios.get(`${USERINFO_BASE_URL}`);
-    // console.log(res.data);
-    return res.data;
-  } catch (error) {
-    return error.message;
-  }
-};
-
-export const getUser = async () => {
-  try {
-    const res = await axios.get(`${USER_BASE_URL}`);
-    // console.log(res.data);
-    return res.data;
-  } catch (error) {
-    return error.message;
-  }
-};
-
 // 랭커 100명
 export const getLeaderBoard = async () => {
   try {
