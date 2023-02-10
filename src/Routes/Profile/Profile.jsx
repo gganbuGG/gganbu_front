@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import ProductCard from "./ProfileDetail";
+import { Link, useSearchParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { USERINFO_BASE_URL } from "../../api/API_User";
 import styled from "styled-components";
@@ -43,38 +42,39 @@ const Profile = () => {
             <h2>{error}</h2>
           ) : (
             <div>
-              <DeckHeader>
-                <DeckHeaderText>
-                  <DeckHeaderTitle>{productList.Name}asdf</DeckHeaderTitle>
-                </DeckHeaderText>
-              </DeckHeader>
+              <ProfileHeader>
+                <ProfileHeaderText>
+                  <ProfileHeaderTitle>
+                    {productList.Name}asdf
+                  </ProfileHeaderTitle>
+                </ProfileHeaderText>
+              </ProfileHeader>
 
-              {/* <MetaForm /> */}
               {productList.length > 0 &&
-                productList.slice(0, 8).map((match, i) => (
-                  <MetaGroup>
-                    <MetaGroupContent>
-                      <MetaGroupDeckBox>
-                        <MetaGroupDeck>
+                productList.slice(0, 10).map((match, i) => (
+                  <Main>
+                    <MainContent>
+                      <MainBox>
+                        <ProfileGroup>
                           {/* 1. #등수 */}
-                          <MetaDeckName>
+                          <Rank>
                             <DeckName>
                               <P>
                                 <DeckSpan>#{match.Rank}</DeckSpan>
                               </P>
                             </DeckName>
-                          </MetaDeckName>
+                          </Rank>
                           {/* #등수 */}
                           {/* 2. 아이콘 이미지 */}
-                          <div>
-                            <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 text-xs">
-                              {match.PetID}
-                            </div>
-                          </div>
+                          <Icons>
+                            <IconsImg>
+                              <Span>{match.PetID}</Span>
+                            </IconsImg>
+                          </Icons>
                           {/* 아이콘 이미지 */}
 
                           {/*3. 시너지 */}
-                          <MetaDeckTraits>
+                          <Traits>
                             {Object.keys(match.Traits).map((e, i) => (
                               <SynergyMain>
                                 {SynergyImg(
@@ -87,11 +87,11 @@ const Profile = () => {
                                 </SynergyName>
                               </SynergyMain>
                             ))}
-                          </MetaDeckTraits>
+                          </Traits>
                           {/* 시너지 */}
                           {/* 4. 증강체 */}
                           <div>
-                            <BoxSiderAugmentsBody>
+                            <BoxAugmentsBody>
                               {match.Augments.map((e, i) => (
                                 <AugmentsBody>
                                   <BoxSiderAugmentsBodyImg>
@@ -102,7 +102,7 @@ const Profile = () => {
                                   </AugmentsName>
                                 </AugmentsBody>
                               ))}
-                            </BoxSiderAugmentsBody>
+                            </BoxAugmentsBody>
                           </div>
                           {/* 증강체 */}
 
@@ -126,23 +126,55 @@ const Profile = () => {
                           {/* 챔피언 */}
 
                           {/* 6. 같이 플레이한인원 */}
-                          <MetaDeckExplain>
-                            <div className="grid grid-flow-col grid-rows-4 gap-4 text-xs">
-                              <span>{match.Participant1}</span>
-                              <span>{match.Participant2}</span>
-                              <span>{match.Participant3}</span>
-                              <span>{match.Participant4}</span>
-                              <span>{match.Participant5}</span>
-                              <span>{match.Participant6}</span>
-                              <span>{match.Participant7}</span>
-                              <span>{match.Participant8}</span>
-                            </div>
-                          </MetaDeckExplain>
+                          <Participants>
+                            <Participant>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant1}`}>
+                                  {match.Participant1}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant2}`}>
+                                  {match.Participant2}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant3}`}>
+                                  {match.Participant3}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant4}`}>
+                                  {match.Participant4}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant5}`}>
+                                  {match.Participant5}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant6}`}>
+                                  {match.Participant6}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant7}`}>
+                                  {match.Participant7}
+                                </Link>
+                              </span>
+                              <span>
+                                <Link to={`/profile?q=${match.Participant8}`}>
+                                  {match.Participant8}
+                                </Link>
+                              </span>
+                            </Participant>
+                          </Participants>
                           {/* 같이 플레이한인원 */}
-                        </MetaGroupDeck>
-                      </MetaGroupDeckBox>
-                    </MetaGroupContent>
-                  </MetaGroup>
+                        </ProfileGroup>
+                      </MainBox>
+                    </MainContent>
+                  </Main>
                 ))}
             </div>
           )}
@@ -159,7 +191,7 @@ const Wrapper = styled.div`
   height: 200vh;
 `;
 
-const DeckHeader = styled.div`
+const ProfileHeader = styled.div`
   margin-top: 100px;
   min-height: 20vh;
   margin-bottom: 20px;
@@ -169,7 +201,7 @@ const DeckHeader = styled.div`
   padding: 0 12px;
 `;
 
-const DeckHeaderText = styled.div`
+const ProfileHeaderText = styled.div`
   position: relative;
   display: flex;
   height: 230px;
@@ -178,7 +210,7 @@ const DeckHeaderText = styled.div`
   align-items: center;
 `;
 
-const DeckHeaderTitle = styled.h2`
+const ProfileHeaderTitle = styled.h2`
   margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
@@ -213,26 +245,47 @@ const AugmentsName = styled.span`
   }
 `;
 
-const MetaGroup = styled.div`
+const Main = styled.div`
+  display: flex;
+  align-items: center;
   min-height: 100px;
   border-width: 2px;
   border-color: lightgray;
   margin-bottom: 10px;
 `;
 
-const MetaGroupContent = styled.div``;
+const MainContent = styled.div``;
 
-const MetaGroupDeckBox = styled.div``;
+const MainBox = styled.div``;
 
-const MetaGroupDeck = styled.div`
+const ProfileGroup = styled.div`
   display: grid;
+
   grid-template-columns: 3fr 3fr 7fr 2fr 25fr 15fr;
 `;
 
-const MetaDeckName = styled.div`
+const Rank = styled.div`
   display: flex;
   padding: 22px 14px;
   flex-direction: column;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const IconsImg = styled.div`
+  width: 60px;
+  height: 60px;
+
+  border-radius: 100px;
+  border: 2px solid black;
+`;
+const Span = styled.span`
+  font-size: 10px;
+  text-align: center;
 `;
 
 const DeckName = styled.div`
@@ -240,21 +293,17 @@ const DeckName = styled.div`
   font-weight: inherit;
 `;
 
-const DeckNameHot = styled.div`
-  font-size: 10px;
-`;
-
 const P = styled.p``;
 
 const DeckSpan = styled.span``;
 
-const MetaDeckTraits = styled.div`
+const Traits = styled.div`
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   flex-shrink: 0;
-  margin: 15px 0px;
+  margin: 15px 5px;
 `;
 
 const SynergyName = styled.span`
@@ -292,12 +341,6 @@ const SynergyMain = styled.div`
     opacity: 1;
     visibility: visible;
   }
-`;
-
-const MetaDeckChampions = styled.div`
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 4px;
 `;
 
 const ChampionName = styled.span`
@@ -354,11 +397,12 @@ const BoxChampionImg = styled.div`
   width: 45px;
 `;
 
-const BoxSiderAugmentsBody = styled.div`
+const BoxAugmentsBody = styled.div`
   display: flex;
+  flex-direction: column;
   margin-left: 13px;
+  gap: 1px;
   justify-content: center;
-  gap: 2px;
   @media (min-width: 1024px) {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -368,62 +412,13 @@ const BoxSiderAugmentsBody = styled.div`
     padding-right: 6px;
   }
 `;
-// const BoxChampionImgDetail = styled.div`
-//   position: relative;
-//   display: inline-flex;
-//   height: 45px;
-//   width: 45px;
-//   overflow: hidden;
-//   border-radius: 8px;
-//   border-width: 2px;
-//   border-color: ${(props) => props.bdColor};
-// `;
-
-// const BoxChampionCoreItems = styled.div`
-//   position: absolute;
-//   display: inline-flex;
-//   width: 100%;
-//   align-items: center;
-//   justify-content: center;
-//   padding-top: 50px;
-// `;
-
-// const BoxChampionCoreItem = styled.div`
-//   position: relative;
-
-//   height: 15px;
-//   width: 15px;
-//   overflow: hidden;
-// `;
-
-const MetaDeckExplain = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Explain = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px double black;
-  border-radius: 12px;
-  height: 50%;
-  padding: 3px;
-  margin-top: 10px;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  align-items: center;
-  border: 1px solid black;
-`;
 
 const AugmentsBody = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  padding-top: 9px;
+
+  /* padding-top: 9px; */
   &:hover ${AugmentsName} {
     opacity: 1;
     visibility: visible;
@@ -435,8 +430,24 @@ const BoxSiderAugmentsBodyImg = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 35px;
   width: 35px;
+  height: 35px;
+`;
+
+const Participants = styled.div`
+  margin-top: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Participant = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  font-size: 10px;
+  /* border: 1px solid black; */
 `;
 
 export default Profile;
