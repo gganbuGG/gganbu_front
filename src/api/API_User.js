@@ -1,4 +1,5 @@
 // import axios from "axios";
+import axios from "axios";
 import React from "react";
 import { Component } from "react";
 
@@ -36,22 +37,22 @@ export default class postUserInfo extends Component {
 //   }
 // };
 
-// export const getUserInfo = async () => {
-//   try {
-//     const res = await axios.get(`${USERINFO_BASE_URL}`);
-//     // console.log(res.data);
-//     return res.data;
-//   } catch (error) {
-//     return error.message;
-//   }
-// };
+export const getUserInfo = async () => {
+  try {
+    const res = await axios.get(`${USERINFO_BASE_URL}`);
+    // console.log(res.data);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+};
 
-// export const getUser = async () => {
-//   try {
-//     const res = await axios.get(`${USER_BASE_URL}`);
-//     // console.log(res.data);
-//     return res.data;
-//   } catch (error) {
-//     return error.message;
-//   }
-// };
+export const getUser = async () => {
+  try {
+    const res = await axios.get(`${USER_BASE_URL}`);
+    // console.log(res.data);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+};

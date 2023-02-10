@@ -1,12 +1,32 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { getLeaderBoard } from "../../api/API_Profile";
+import postUserInfo from "../../api/API_User";
 
 const SearchForm = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);
+  const [data, setData] = useState(null);
+  const reqData = JSON.stringify({
+    Name: "",
+  });
+
+  const url = "http://ggback2.pythonanywhere.com/user/info/";
+  const onClick = async () => {
+    navigate(`/profile?q=${searchText}`);
+    try {
+      const response = await axios.post(url, reqData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setData(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const searchData = () => {
     navigate(`/profile?q=${searchText}`);
@@ -21,7 +41,7 @@ const SearchForm = () => {
   useEffect(() => {
     (async () => {
       try {
-        const result = await getLeaderBoard();
+        const result = await postUserInfo();
         setSearchText(result);
       } catch (e) {
         console.error(e.message);
@@ -41,7 +61,7 @@ const SearchForm = () => {
                 onKeyPress={(event) => searchEnter(event)}
                 minLength="2"
               />
-              <Button type="submit" minLength="2" onClick={searchData}>
+              <Button type="submit" minLength="2" onClick={onClick}>
                 <FaSearch className="text-purple" size={32} />
               </Button>
             </SearchElem>
