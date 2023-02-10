@@ -45,7 +45,7 @@ const Profile = () => {
             <div>
               <DeckHeader>
                 <DeckHeaderText>
-                  <DeckHeaderTitle>{productList.name}</DeckHeaderTitle>
+                  <DeckHeaderTitle>{productList.Name}asdf</DeckHeaderTitle>
                 </DeckHeaderText>
               </DeckHeader>
 
@@ -67,8 +67,8 @@ const Profile = () => {
                           {/* #등수 */}
                           {/* 2. 아이콘 이미지 */}
                           <div>
-                            <div className="flex h-20 w-20 items-center justify-center rounded-full border-2">
-                              원
+                            <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 text-xs">
+                              {match.PetID}
                             </div>
                           </div>
                           {/* 아이콘 이미지 */}
@@ -163,7 +163,7 @@ const DeckHeader = styled.div`
   margin-top: 100px;
   min-height: 20vh;
   margin-bottom: 20px;
-  background-color: blanchedalmond;
+  background-color: black;
   display: flex;
   flex-direction: column;
   padding: 0 12px;
@@ -183,8 +183,7 @@ const DeckHeaderTitle = styled.h2`
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
-  --tw-text-opacity: 1;
-  color: rgb(202 147 114 / var(--tw-text-opacity));
+  color: white;
 `;
 
 const AugmentsName = styled.span`
