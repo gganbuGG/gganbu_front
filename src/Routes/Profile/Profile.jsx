@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { USER_BASE_URL } from "../../api/API_User";
+import { getUser } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
 
@@ -43,17 +44,17 @@ const Profile = () => {
               <ProfileHeader>
                 <ProfileHeaderText>
                   <ProfileHeaderTitle>
-                    {productList.map((match) => (
+                    {Object.values(productList).map((e) => (
                       <div>
-                        <div>소환사 명 : {match.name}</div>
-                        <div>Level : {match.Level}</div>
+                        <div>{e.name}</div>
+                        <div>레벨: {e.Level}</div>
                       </div>
                     ))}
                   </ProfileHeaderTitle>
                 </ProfileHeaderText>
-                {/* 미구현 버튼 */}
-                <button>업데이트</button>
+                {/* 미구현 버튼 */} <Button>업데이트</Button>
               </ProfileHeader>
+
               <ProfileDetail />
             </div>
           )}
@@ -72,8 +73,8 @@ const Wrapper = styled.div`
 
 const ProfileHeader = styled.div`
   margin-top: 100px;
-  min-height: 20vh;
-  margin-bottom: 20px;
+  height: 20vh;
+  margin-bottom: 50px;
   background-color: gray;
   display: flex;
   flex-direction: column;
@@ -85,11 +86,11 @@ const ProfileHeaderText = styled.div`
   display: flex;
   height: 230px;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
 `;
 
-const ProfileHeaderTitle = styled.h2`
+const ProfileHeaderTitle = styled.div`
   margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
@@ -97,31 +98,12 @@ const ProfileHeaderTitle = styled.h2`
   color: white;
 `;
 
-const AugmentsName = styled.span`
-  position: absolute;
-  background-color: #000;
-  width: 130px;
-  color: #fff;
-  top: -30px;
-  text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-radius: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: 0.5s;
-  visibility: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    background-color: #000;
-    width: 5px;
-    height: 5px;
-    transform: rotate(45deg) translateX(-50%);
-    bottom: -5px;
-    left: 50%;
-  }
+const Button = styled.button`
+  margin-bottom: 5px;
+  border-radius: 100px;
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
 `;
 
 export default Profile;
