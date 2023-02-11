@@ -87,14 +87,10 @@ const ProfileDetail = () => {
                       <BoxChampionMain>
                         <BoxChampionImgAndItems>
                           <BoxChampionImg>
-                            {ChampionImg(
-                              Object.values(match.Units[i].Champion)
-                            )}
+                            {ChampionImg(match.Units[i].Champion)}
                           </BoxChampionImg>
                         </BoxChampionImgAndItems>
-                        <ChampionName>
-                          {Object.values(match.Units[i].Champion)}
-                        </ChampionName>
+                        <ChampionName>{match.Units[i].Champion}</ChampionName>
                       </BoxChampionMain>
                     ))}
                   </div>
@@ -103,46 +99,13 @@ const ProfileDetail = () => {
                   {/* 6. 같이 플레이한인원 */}
                   <Participants>
                     <Participant>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant1}`}>
-                          {match.Participant1}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant2}`}>
-                          {match.Participant2}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant3}`}>
-                          {match.Participant3}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant4}`}>
-                          {match.Participant4}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant5}`}>
-                          {match.Participant5}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant6}`}>
-                          {match.Participant6}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant7}`}>
-                          {match.Participant7}
-                        </Link>
-                      </span>
-                      <span>
-                        <Link to={`/profile?q=${match.Participant8}`}>
-                          {match.Participant8}
-                        </Link>
-                      </span>
+                      {match.Participant.map((e, i) => (
+                        <span>
+                          <Link to={`/profile?q=${match.Participant[i]}`}>
+                            {match.Participant[i]}
+                          </Link>
+                        </span>
+                      ))}
                     </Participant>
                   </Participants>
                   {/* 같이 플레이한인원 */}
@@ -203,8 +166,9 @@ const ProfileGroup = styled.div`
 
 const Rank = styled.div`
   display: flex;
-  padding: 22px 14px;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 22px 14px; */
 `;
 
 const Icons = styled.div`
@@ -311,7 +275,9 @@ const BoxChampionMain = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  padding-top: 28px;
+  margin-left: 8px;
+  top: 25%;
+  /* padding-top: 30px; */
   &:hover ${ChampionName} {
     opacity: 1;
     visibility: visible;
@@ -330,6 +296,7 @@ const BoxChampionImg = styled.div`
   display: inline-flex;
   flex-direction: column;
   overflow: hidden;
+
   height: 45px;
   width: 45px;
 `;

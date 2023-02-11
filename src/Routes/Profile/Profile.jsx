@@ -46,7 +46,7 @@ const Profile = () => {
                   <ProfileHeaderTitle>
                     {Object.values(productList).map((e) => (
                       <div>
-                        <div>{e.name}</div>
+                        <div className="mb-4">{e.name}</div>
                         <div>레벨: {e.Level}</div>
                       </div>
                     ))}
