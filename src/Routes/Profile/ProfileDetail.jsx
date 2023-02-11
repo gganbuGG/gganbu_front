@@ -87,7 +87,7 @@ const ProfileDetail = () => {
                     {match.Units.map((e, i) => (
                       <BoxChampionMain>
                         <BoxChampionImgAndItems>
-                          <div className="inline-flex  text-xs">
+                          <div className="relative inline-flex text-xs">
                             {ChampionStatsTierStar(
                               match.Units[i].tier,
                               match.Units[i].rarity
@@ -159,6 +159,7 @@ const Main = styled.div`
   border-width: 2px;
   border-color: lightgray;
   margin-bottom: 10px;
+  object-fit: cover;
 `;
 
 const MainContent = styled.div``;
@@ -168,14 +169,13 @@ const MainBox = styled.div``;
 const ProfileGroup = styled.div`
   display: grid;
 
-  grid-template-columns: 3fr 3fr 7fr 2fr 25fr 15fr;
+  grid-template-columns: 3fr 3fr 7fr 2fr 30fr 15fr;
 `;
 
 const Rank = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 22px 14px; */
 `;
 
 const Icons = styled.div`
@@ -284,7 +284,6 @@ const BoxChampionMain = styled.div`
   flex-direction: column;
   margin-left: 8px;
   top: 25%;
-  /* padding-top: 30px; */
   &:hover ${ChampionName} {
     opacity: 1;
     visibility: visible;
@@ -328,8 +327,6 @@ const AugmentsBody = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
-
-  /* padding-top: 9px; */
   &:hover ${AugmentsName} {
     opacity: 1;
     visibility: visible;
@@ -358,6 +355,6 @@ const Participant = styled.div`
   grid-template-rows: repeat(4, minmax(0, 1fr));
   gap: 12px;
   font-size: 10px;
-  /* border: 1px solid black; */
+  font-weight: bolder;
 `;
 export default ProfileDetail;
