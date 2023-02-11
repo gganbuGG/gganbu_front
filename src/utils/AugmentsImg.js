@@ -821,4 +821,5 @@ const Augments = styled.img`
   margin-right: 15px;
   height: 35px;
   width: 35px;
+  border: 2px solid black;
 `;
