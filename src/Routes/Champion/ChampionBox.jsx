@@ -6,6 +6,7 @@ import { getChampion } from "../../api/API_Profile";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
 import ItemImg from "../../utils/ItemImg";
+import TierStar from "../../utils/Star";
 
 export default function Card() {
   const [info, setInfo] = useState([]);
@@ -22,17 +23,6 @@ export default function Card() {
     })();
   }, []);
 
-  const Star = (event) => {
-    return "⭐".repeat(event);
-  };
-
-  // 1. name : 챔피언 이름
-  // 2. items : 아이템 이름 => 사진으로 변경
-  // 3. rarity : 챔피언 코스트(1코: 0, 2코: 1, 3코: 2, 4코: 4, 5코: 6)
-  // 4. tier : 몇성인지 (별로 나타냄 1~3개(성))
-  // 5. how_many : 빈도수(내림차순으로 정렬할 것.)
-  
-  // 챔피언 코스트 수로 분리 (1,2,3,4,5코스트로 컴포넌트 분리)
   return (
     <div class="container">
       <Wrapper>
@@ -60,7 +50,7 @@ export default function Card() {
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
                         <Tiers>
-                          <Tier>{Star(match.tier)}</Tier>
+                          <Tier>{TierStar(match.tier, match.rarity)}</Tier>
                         </Tiers>
                         <div>
                           <div>{ChampionImg(match.name)}</div>
