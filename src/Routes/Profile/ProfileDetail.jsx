@@ -5,6 +5,7 @@ import { USERINFO_BASE_URL } from "../../api/API_User";
 import AugmentsImg from "../../utils/AugmentsImg";
 import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
+import ChampionStatsTierStar from "../../utils/Star";
 
 const ProfileDetail = () => {
   const [productList, setProductList] = useState({});
@@ -86,6 +87,12 @@ const ProfileDetail = () => {
                     {match.Units.map((e, i) => (
                       <BoxChampionMain>
                         <BoxChampionImgAndItems>
+                          <div className="inline-flex  text-xs">
+                            {ChampionStatsTierStar(
+                              match.Units[i].tier,
+                              match.Units[i].rarity
+                            )}
+                          </div>
                           <BoxChampionImg>
                             {ChampionImg(match.Units[i].Champion)}
                           </BoxChampionImg>

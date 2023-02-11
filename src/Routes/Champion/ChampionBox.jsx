@@ -6,7 +6,7 @@ import { getChampion } from "../../api/API_Profile";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
 import ItemImg from "../../utils/ItemImg";
-import TierStar from "../../utils/Star";
+import ChampionStatsTierStar from "../../utils/Star";
 
 export default function Card() {
   const [info, setInfo] = useState([]);
@@ -50,7 +50,9 @@ export default function Card() {
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
                         <Tiers>
-                          <Tier>{TierStar(match.tier, match.rarity)}</Tier>
+                          <Tier>
+                            {ChampionStatsTierStar(match.tier, match.rarity)}
+                          </Tier>
                         </Tiers>
                         <div>
                           <div>{ChampionImg(match.name)}</div>

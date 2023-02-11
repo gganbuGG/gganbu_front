@@ -1,7 +1,6 @@
 import { FaStar } from "react-icons/fa";
 
-export default function TierStar(event, rarity) {
-  //   return "⭐".repeat(event);
+export default function ChampionStatsTierStar(event, rarity) {
   if (rarity === 0) {
     return Array(event).fill(<FaStar size="18" color="var(--cost1-color)" />);
   } else if (rarity === 1) {
@@ -14,9 +13,3 @@ export default function TierStar(event, rarity) {
     return Array(event).fill(<FaStar size="18" color="var(--cost5-color)" />);
   }
 }
-
-// function StarColor(rarity){
-//     if(rarity===0){
-
-//     }
-// }

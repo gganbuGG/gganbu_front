@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { USER_BASE_URL } from "../../api/API_User";
-import { getUser } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
+import HeaderSrc from "../../images/header.jpg";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -75,7 +75,7 @@ const ProfileHeader = styled.div`
   margin-top: 100px;
   height: 20vh;
   margin-bottom: 50px;
-  background-color: gray;
+  background: url(${HeaderSrc}) center/cover no-repeat;
   display: flex;
   flex-direction: column;
   padding: 0 12px;
@@ -95,7 +95,7 @@ const ProfileHeaderTitle = styled.div`
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
-  color: white;
+  color: var(--main-bg-color);
 `;
 
 const Button = styled.button`
@@ -104,6 +104,7 @@ const Button = styled.button`
   width: 100px;
   height: 50px;
   border: 1px solid black;
+  background-color: white;
 `;
 
 export default Profile;
