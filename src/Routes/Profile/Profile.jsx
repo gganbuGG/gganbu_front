@@ -5,6 +5,8 @@ import { USER_BASE_URL } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
 import HeaderSrc from "../../images/header.jpg";
+import RefreshButton from "./ProfileRefresh";
+import PostButton from "./ProfileRefresh";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -52,9 +54,9 @@ const Profile = () => {
                     ))}
                   </ProfileHeaderTitle>
                 </ProfileHeaderText>
-                {/* 미구현 버튼 */} <Button>업데이트</Button>
+                {/* 미구현 버튼 */} <Button>s</Button>
               </ProfileHeader>
-
+              <PostButton className="border-2" />
               <ProfileDetail />
             </div>
           )}
