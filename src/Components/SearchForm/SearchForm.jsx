@@ -9,11 +9,13 @@ const SearchForm = () => {
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState([]);
   const [data, setData] = useState(null);
+
   const reqData = JSON.stringify({
     Name: "",
   });
 
-  const url = "http://ggback2.pythonanywhere.com/user/info/";
+  const url = `http://ggback2.pythonanywhere.com/user/info/${searchText}`;
+
   const onClick = async () => {
     navigate(`/profile?q=${searchText}`);
     try {
@@ -48,6 +50,7 @@ const SearchForm = () => {
       }
     })();
   }, []);
+
   return (
     <SearchMain>
       <div className="container">
@@ -102,5 +105,4 @@ const Button = styled.button`
   align-items: center;
 `;
 
-// export default SearchForm;
 export default SearchForm;
