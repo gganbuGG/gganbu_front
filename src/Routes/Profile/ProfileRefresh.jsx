@@ -15,10 +15,10 @@ export default function PostButton() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle response data here
+        
       })
       .catch((error) => {
-        // Handle errors here
+      
       });
   };
 
