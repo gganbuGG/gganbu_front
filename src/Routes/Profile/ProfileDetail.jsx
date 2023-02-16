@@ -95,11 +95,7 @@ const ProfileDetail = () => {
                           </div>
                           <BoxChampionImg>
                             {/* {ChampionImg(match.Units[i].Champion)} */}
-                            <img
-                              className="h-16 w-16"
-                              src={match.Units[i].champion_image}
-                              alt="none"
-                            />
+                            <ChampionImgs src={match.Units[i].champion_image} />
                           </BoxChampionImg>
                         </BoxChampionImgAndItems>
                         <ChampionName>{match.Units[i].Champion}</ChampionName>
@@ -310,6 +306,15 @@ const BoxChampionImg = styled.div`
 
   height: 45px;
   width: 45px;
+`;
+
+const ChampionImgs = styled.img`
+  position: relative;
+  margin-right: 15px;
+  height: 65px;
+  width: 65px;
+  border: 3px solid var(--cost1-color);
+  border-radius: 10px;
 `;
 
 const BoxAugmentsBody = styled.div`
