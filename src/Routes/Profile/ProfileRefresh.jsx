@@ -1,35 +1,35 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PostButton() {
-  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const handleButtonClick = () => {
-    navigate(`/profile?q=${searchQuery}`);
-    fetch(`https://ggback2.pythonanywhere.com/user/info/${searchQuery}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ search: searchQuery }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        
-      })
-      .catch((error) => {
-      
-      });
+
+  const [name, setName] = useState("");
+  const [info, setInfo] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
   };
 
-  const handleInputChange = (event) => {
-    setSearchQuery(event.target.value);
+  const handleClick = async () => {
+    try {
+      const response = await axios.post(
+        `https://ggback2.pythonanywhere.com/user/info/${name}/`
+      );
+
+      setInfo(response.data);
+      navigate(`/profile?q=${name}`);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div>
-      <input type="text" value={searchQuery} onChange={handleInputChange} />
-      <button onClick={handleButtonClick}>Post</button>
+      <input type="text" value={name} onChange={handleNameChange} />
+      <button onClick={handleClick}>이름 정보 보내기</button>
+      {/* {info && <div>{info}</div>} */}
     </div>
   );
 }
