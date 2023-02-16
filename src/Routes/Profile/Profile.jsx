@@ -54,7 +54,7 @@ const Profile = () => {
                     ))}
                   </ProfileHeaderTitle>
                 </ProfileHeaderText>
-                {/* 미구현 버튼 */} <Button>s</Button>
+                {/* 미구현 버튼 */} <Button>Update</Button>
               </ProfileHeader>
               <PostButton className="border-2" />
               <ProfileDetail />

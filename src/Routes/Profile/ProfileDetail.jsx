@@ -94,7 +94,8 @@ const ProfileDetail = () => {
                             )}
                           </div>
                           <BoxChampionImg>
-                            {ChampionImg(match.Units[i].Champion)}
+                            {/* {ChampionImg(match.Units[i].Champion)} */}
+                            <img src={match.Units.champion_image} alt="none" />
                           </BoxChampionImg>
                         </BoxChampionImgAndItems>
                         <ChampionName>{match.Units[i].Champion}</ChampionName>
