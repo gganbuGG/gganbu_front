@@ -9,10 +9,10 @@ function Footer() {
 }
 
 const Span = styled.div`
-  height: 70px;
   position: relative;
   transform: translateY(0%);
   padding: 10px 150px;
+
   font-size: 14px;
   background-color: #2f2c2c;
   text-align: left;
@@ -20,7 +20,7 @@ const Span = styled.div`
 `;
 const Copyright = styled.div`
   display: flex;
+  margin: 20px 0px;
   align-items: center;
-  margin-bottom: 5px;
 `;
 export default Footer;

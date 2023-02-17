@@ -7,7 +7,7 @@ import WindefenceRate from "./WindefencerateBox";
 import Winrate from "./WinRateBox";
 
 const Deck = () => {
-  const [isNow, setIsNow] = useState();
+  const [isNow, setIsNow] = useState(1);
   const handleOne = () => {
     setIsNow(1);
   };

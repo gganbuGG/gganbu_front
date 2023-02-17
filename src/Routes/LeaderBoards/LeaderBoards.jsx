@@ -36,7 +36,7 @@ const LeaderBoards = () => {
 const Wrapper = styled.div`
   border: 1px solid black;
   background: url(${HeaderSrc});
-  height: 670vh;
+  /* height: 670vh; */
   background-color: var(--main-bg-color);
 `;
 
