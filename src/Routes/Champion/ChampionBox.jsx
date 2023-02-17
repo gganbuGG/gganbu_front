@@ -49,17 +49,39 @@ export default function Card() {
                       </ChampionRanking>
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
-                        <Tiers>
+                        {/* 추후 추가할지 말지 논의 */}
+                        {/* <Tiers>
                           <Tier>
-                            {ChampionStatsTierStar(match.tier, match.rarity)}
+                            {ChampionStatsTierStar(
+                              Object.keys(match.tier),
+                              match.rarity
+                            )}
                           </Tier>
-                        </Tiers>
+                        </Tiers> */}
                         <div>
                           <div>{ChampionImg(match.name)}</div>
                         </div>
                         <div>{match.name}</div>
                       </ChampionName>
-                      {/*3번 grid  아이템 사진*/}
+                      {/* 3번 별 rate */}
+                      <div className="flex justify-start">
+                        <div>
+                          {Object.keys(match.tier).map((e, i) => (
+                            <div className="relative flex">
+                              <div className="flex">
+                                {ChampionStatsTierStar(
+                                  parseInt(Object.keys(match.tier)[i]),
+                                  match.rarity
+                                )}
+                                <span className="flex justify-center">
+                                  {Object.values(match.tier)[i]}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      {/*4번 grid  아이템 사진*/}
                       <ChampionItem>
                         <div>
                           {ItemImg(match.items[2])}
@@ -114,7 +136,7 @@ const ChapionGroupContents = styled.div``;
 
 const ChampionMain = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 3fr 3fr;
+  grid-template-columns: 2fr 3fr 3fr 5fr;
 `;
 
 const ChampionRanking = styled.div`
