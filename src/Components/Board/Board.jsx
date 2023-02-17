@@ -17,7 +17,7 @@ const Board = () => {
   }, []);
   return (
     <div className=" container mx-auto">
-      <table className="min-w-full table-auto bg-slate-500 text-black">
+      <table className=" min-w-full table-auto bg-slate-500 text-black">
         <thead className="justify-between">
           <th className="px-4 py-3 text-white">순위</th>
           <th className="px-4 py-3 text-white">소환사</th>

@@ -12,7 +12,6 @@ const Span = styled.div`
   position: relative;
   transform: translateY(0%);
   padding: 10px 150px;
-
   font-size: 14px;
   background-color: #2f2c2c;
   text-align: left;

@@ -69,7 +69,7 @@ export default function ChampionImg(event) {
       return <Champion5 src={Aphelios} alt="Aphelios" />;
     case "애쉬":
       return <Champion1 src={Ashe} alt="Ashe" />;
-    case "아우렐리온솔":
+    case "아우렐리온 솔":
       return <Champion4 src={AurelionSol} alt="AurelionSol" />;
     case "벨베스":
       return <Champion4 src={Belveth} alt="Belveth" />;
@@ -105,7 +105,7 @@ export default function ChampionImg(event) {
       return <Champion1 src={Kayle} alt="Kayle" />;
     case "르블랑":
       return <Champion3 src={Leblanc} alt="Leblanc" />;
-    case "리신":
+    case "리 신":
       return <Champion2 src={LeeSin} alt="LeeSin" />;
     case "레오나":
       return <Champion5 src={Leona} alt="Leona" />;
@@ -115,7 +115,7 @@ export default function ChampionImg(event) {
       return <Champion1 src={Lux} alt="Lux" />;
     case "말파이트":
       return <Champion2 src={Malphite} alt="Malphite" />;
-    case "미스포츈":
+    case "미스 포츈":
       return <Champion4 src={MissFortune} alt="MissFortune" />;
     case "모데카이저":
       return <Champion5 src={Mordekaiser} alt="Mordekaiser" />;
@@ -123,7 +123,7 @@ export default function ChampionImg(event) {
       return <Champion1 src={Nasus} alt="Nasus" />;
     case "닐라":
       return <Champion3 src={Nilah} alt="Nilah" />;
-    case "누누":
+    case "누누와 윌럼프":
       return <Champion5 src={Nunu} alt="Nunu" />;
     case "뽀삐":
       return <Champion1 src={Poppy} alt="Poppy" />;

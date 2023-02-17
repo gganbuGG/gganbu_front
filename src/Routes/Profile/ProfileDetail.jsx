@@ -83,7 +83,7 @@ const ProfileDetail = () => {
                   {/* 증강체 */}
 
                   {/*5. 챔피언 */}
-                  <div>
+                  <div className="py-9">
                     {match.Units.map((e, i) => (
                       <BoxChampionMain>
                         <BoxChampionImgAndItems>
@@ -169,7 +169,6 @@ const MainBox = styled.div``;
 
 const ProfileGroup = styled.div`
   display: grid;
-
   grid-template-columns: 3fr 3fr 7fr 2fr 30fr 15fr;
 `;
 
@@ -281,10 +280,9 @@ const ChampionName = styled.span`
 
 const BoxChampionMain = styled.div`
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   flex-direction: column;
   margin-left: 8px;
-  top: 25%;
   &:hover ${ChampionName} {
     opacity: 1;
     visibility: visible;
