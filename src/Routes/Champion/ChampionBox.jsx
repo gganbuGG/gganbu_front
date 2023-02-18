@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { getChampion } from "../../api/API_Profile";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import ChampionImg from "../../utils/ChampionImg";
-import ItemImg from "../../utils/ItemImg";
 import ChampionStatsTierStar from "../../utils/Star";
 
 export default function Card() {
@@ -83,24 +82,18 @@ export default function Card() {
                       </div>
                       {/*4번 grid  아이템 사진*/}
                       <ChampionItem>
-                        <div>
-                          {ItemImg(match.items[2])}
-                          <span className="absolute text-base font-bold">
-                            {match.items[2]}
-                          </span>
-                        </div>
-                        <div>
-                          {ItemImg(match.items[1])}
-                          <span className="absolute text-base font-bold">
-                            {match.items[1]}
-                          </span>
-                        </div>
-                        <div>
-                          {ItemImg(match.items[0])}
-                          <span className="absolute text-base font-bold">
-                            {match.items[0]}
-                          </span>
-                        </div>
+                        {Object.keys(match.items).map((e, i) => (
+                          <div>
+                            <img
+                              className="mr-5 h-20 w-20"
+                              src={Object.values(match.items)[i]}
+                              alt="items"
+                            />
+                            <span className="flex justify-start text-xs">
+                              {Object.keys(match.items)[i].slice(0, 8)}
+                            </span>
+                          </div>
+                        ))}
                       </ChampionItem>
 
                       {/*  */}
@@ -156,6 +149,7 @@ const ChampionName = styled.div`
 `;
 
 const ChampionItem = styled.div`
+  position: relative;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
@@ -165,21 +159,21 @@ const ChampionItem = styled.div`
   margin: 15px 0px;
 `;
 
-const Tiers = styled.div`
-  position: absolute;
-  margin-bottom: 90px;
-  display: flex;
-  align-items: center;
-`;
+// const Tiers = styled.div`
+//   position: absolute;
+//   margin-bottom: 90px;
+//   display: flex;
+//   align-items: center;
+// `;
 
-const Tier = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  text-align: center;
-  font-weight: bold;
-`;
+// const Tier = styled.div`
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 16px;
+//   text-align: center;
+//   font-weight: bold;
+// `;
 
 const DeckName = styled.div`
   font-size: 18px;
