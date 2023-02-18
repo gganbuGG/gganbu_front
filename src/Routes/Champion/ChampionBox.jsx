@@ -64,18 +64,18 @@ export default function Card() {
                         <div>{match.name}</div>
                       </ChampionName>
                       {/* 3번 별 rate */}
-                      <div className="flex justify-start">
+                      <div className="relative flex">
                         <div>
                           {Object.keys(match.tier).map((e, i) => (
-                            <div className="relative flex">
-                              <div className="flex">
-                                {ChampionStatsTierStar(
-                                  parseInt(Object.keys(match.tier)[i]),
-                                  match.rarity
-                                )}
-                                <span className="flex justify-center">
-                                  {Object.values(match.tier)[i]}
-                                </span>
+                            <div>
+                              <div className=" flex flex-row justify-between">
+                                <div className="mr-10 flex ">
+                                  {ChampionStatsTierStar(
+                                    parseInt(Object.keys(match.tier)[i]),
+                                    match.rarity
+                                  )}
+                                </div>
+                                <span>{Object.values(match.tier)[i]}</span>
                               </div>
                             </div>
                           ))}
@@ -136,7 +136,7 @@ const ChapionGroupContents = styled.div``;
 
 const ChampionMain = styled.div`
   display: grid;
-  grid-template-columns: 2fr 3fr 3fr 5fr;
+  grid-template-columns: 2fr 2fr 3fr 5fr;
 `;
 
 const ChampionRanking = styled.div`
