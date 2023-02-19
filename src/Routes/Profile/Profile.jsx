@@ -5,7 +5,6 @@ import { USER_BASE_URL } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
 import HeaderSrc from "../../images/deck_main.jpg";
-import PostButton from "./ProfileRefresh";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -60,7 +59,7 @@ const Profile = () => {
                 </ProfileHeaderText>
                 <Button>Update</Button>
               </ProfileHeader>
-              <PostButton className="border-2" />
+
               <ProfileDetail />
             </div>
           )}

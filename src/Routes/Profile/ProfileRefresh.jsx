@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function PostButton() {
   const navigate = useNavigate();
-
   const [name, setName] = useState("");
   const [info, setInfo] = useState("");
 

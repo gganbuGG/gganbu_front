@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import { USERINFO_BASE_URL } from "../../api/API_User";
-import AugmentsImg from "../../utils/AugmentsImg";
 import SynergyImg from "../../utils/SynergyImg";
 import ChampionStatsTierStar from "../../utils/Star";
 

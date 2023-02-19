@@ -1,55 +1,35 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import postUserInfo from "../../api/API_User";
 
 const SearchForm = () => {
   const navigate = useNavigate();
-  const [searchText, setSearchText] = useState([]);
-  const [data, setData] = useState(null);
+  const [name, setName] = useState("");
+  const [info, setInfo] = useState("");
 
-  const reqData = JSON.stringify({
-    Name: "",
-  });
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
-  const url = `http://ggback2.pythonanywhere.com/user/info/${searchText}`;
-
-  const onClick = async () => {
-    navigate(`/profile?q=${searchText}`);
+  const handleClick = async (event) => {
     try {
-      const response = await axios.post(url, reqData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      setData(response.data);
-    } catch (e) {
-      console.log(e);
+      const response = await axios.post(
+        `https://ggback2.pythonanywhere.com/user/info/${name}/`
+      );
+      setInfo(response.data);
+      navigate(`/profile?q=${name}`);
+    } catch (error) {
+      console.error(error);
     }
   };
 
-  const searchData = () => {
-    navigate(`/profile?q=${searchText}`);
-  };
-
-  const searchEnter = (event) => {
+  const searchEnter = async (event) => {
     if (event.key === "Enter") {
-      navigate(`/profile?q=${searchText}`);
+      navigate(`/profile?q=${name}`);
     }
   };
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const result = await postUserInfo();
-        setSearchText(result);
-      } catch (e) {
-        console.error(e.message);
-      }
-    })();
-  }, []);
 
   return (
     <SearchMain>
@@ -60,11 +40,11 @@ const SearchForm = () => {
               <Input
                 type="text"
                 placeholder="소환사 검색"
-                onChange={(e) => setSearchText(e.target.value)}
+                onChange={handleNameChange}
                 onKeyPress={(event) => searchEnter(event)}
                 minLength="2"
               />
-              <Button type="submit" minLength="2" onClick={onClick}>
+              <Button type="submit" minLength="2" onClick={handleClick}>
                 <FaSearch className="text-purple" size={32} />
               </Button>
             </SearchElem>
