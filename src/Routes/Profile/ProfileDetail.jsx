@@ -3,7 +3,6 @@ import { Link, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import { USERINFO_BASE_URL } from "../../api/API_User";
 import AugmentsImg from "../../utils/AugmentsImg";
-import ChampionImg from "../../utils/ChampionImg";
 import SynergyImg from "../../utils/SynergyImg";
 import ChampionStatsTierStar from "../../utils/Star";
 
@@ -45,9 +44,11 @@ const ProfileDetail = () => {
                   {/* #등수 */}
                   {/* 2. 아이콘 이미지 */}
                   <Icons>
-                    <IconsImg>
-                      <Span>{match.PetID}</Span>
-                    </IconsImg>
+                    <img
+                      className="h-24 w-24 rounded-full border-2 border-slate-400"
+                      src={match.Pet_Img}
+                      alt="Pet_Img"
+                    />
                   </Icons>
                   {/* 아이콘 이미지 */}
 
@@ -68,18 +69,23 @@ const ProfileDetail = () => {
                   </Traits>
                   {/* 시너지 */}
                   {/* 4. 증강체 */}
-                  <div>
-                    <BoxAugmentsBody>
-                      {match.Augments.map((e, i) => (
-                        <AugmentsBody>
-                          <BoxSiderAugmentsBodyImg>
-                            {AugmentsImg(match.Augments[i])}
-                          </BoxSiderAugmentsBodyImg>
-                          <AugmentsName>{match.Augments[i]}</AugmentsName>
-                        </AugmentsBody>
-                      ))}
-                    </BoxAugmentsBody>
-                  </div>
+
+                  <BoxAugmentsBody>
+                    {Object.keys(match.Augments).map((e, i) => (
+                      <AugmentsBody>
+                        <BoxSiderAugmentsBodyImg>
+                          <img
+                            src={Object.values(match.Augments)[i]}
+                            alt="Augments None"
+                          />
+                        </BoxSiderAugmentsBodyImg>
+                        <AugmentsName>
+                          {Object.keys(match.Augments)[i]}
+                        </AugmentsName>
+                      </AugmentsBody>
+                    ))}
+                  </BoxAugmentsBody>
+
                   {/* 증강체 */}
 
                   {/*5. 챔피언 */}
@@ -182,18 +188,6 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const IconsImg = styled.div`
-  width: 60px;
-  height: 60px;
-
-  border-radius: 100px;
-  border: 2px solid black;
-`;
-const Span = styled.span`
-  font-size: 10px;
-  text-align: center;
 `;
 
 const DeckName = styled.div`
@@ -318,23 +312,15 @@ const ChampionImgs = styled.img`
 const BoxAugmentsBody = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 13px;
+  margin-top: 2px;
   gap: 1px;
-  justify-content: center;
-  @media (min-width: 1024px) {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  @media (min-width: 1024px) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
+  justify-content: flex-start;
 `;
 
 const AugmentsBody = styled.div`
-  position: relative;
   display: inline-flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   &:hover ${AugmentsName} {
     opacity: 1;
     visibility: visible;

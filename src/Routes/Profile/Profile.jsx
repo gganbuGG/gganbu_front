@@ -4,8 +4,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import { USER_BASE_URL } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
-import HeaderSrc from "../../images/header.jpg";
-import RefreshButton from "./ProfileRefresh";
+import HeaderSrc from "../../images/deck_main.jpg";
 import PostButton from "./ProfileRefresh";
 
 const Profile = () => {
@@ -48,13 +47,18 @@ const Profile = () => {
                   <ProfileHeaderTitle>
                     {Object.values(productList).map((e) => (
                       <div>
+                        <img
+                          className="mt-5 mb-3 h-24 w-24 rounded-full"
+                          src={e.profile_img}
+                          alt="profile_img"
+                        />
                         <div className="mb-4">{e.name}</div>
                         <div>레벨: {e.Level}</div>
                       </div>
                     ))}
                   </ProfileHeaderTitle>
                 </ProfileHeaderText>
-                {/* 미구현 버튼 */} <Button>Update</Button>
+                <Button>Update</Button>
               </ProfileHeader>
               <PostButton className="border-2" />
               <ProfileDetail />
