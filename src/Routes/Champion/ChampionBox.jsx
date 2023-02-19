@@ -84,6 +84,7 @@ export default function Card() {
                       <ChampionItem>
                         {Object.keys(match.items).map((e, i) => (
                           <div>
+                            <p className="text-xl">{i + 1}순위</p>
                             <img
                               className="mr-5 h-20 w-20"
                               src={Object.values(match.items)[i]}

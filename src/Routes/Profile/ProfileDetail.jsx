@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { USERINFO_BASE_URL } from "../../api/API_User";
 import SynergyImg from "../../utils/SynergyImg";
 import ChampionStatsTierStar from "../../utils/Star";
+import 블랙타일 from "../../images/Synergy/Tile/black.svg";
 
 const ProfileDetail = () => {
   const [productList, setProductList] = useState({});
@@ -73,10 +74,13 @@ const ProfileDetail = () => {
                     {Object.keys(match.Augments).map((e, i) => (
                       <AugmentsBody>
                         <BoxSiderAugmentsBodyImg>
-                          <img
-                            src={Object.values(match.Augments)[i]}
-                            alt="Augments None"
-                          />
+                          <DarkTile>
+                            <img
+                              className="flex h-8 w-8 items-center justify-center rounded-3xl"
+                              src={Object.values(match.Augments)[i]}
+                              alt="Augments None"
+                            />
+                          </DarkTile>
                         </BoxSiderAugmentsBodyImg>
                         <AugmentsName>
                           {Object.keys(match.Augments)[i]}
@@ -313,7 +317,7 @@ const BoxAugmentsBody = styled.div`
   flex-direction: column;
   margin-top: 2px;
   gap: 1px;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 `;
 
 const AugmentsBody = styled.div`
@@ -327,12 +331,21 @@ const AugmentsBody = styled.div`
 `;
 
 const BoxSiderAugmentsBodyImg = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  /* display: inline-flex; */
+
   position: relative;
   width: 35px;
   height: 35px;
+`;
+
+const DarkTile = styled.div`
+  background: url(${블랙타일}) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  position: relative;
 `;
 
 const Participants = styled.div`
