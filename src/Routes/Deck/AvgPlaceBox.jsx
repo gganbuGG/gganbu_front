@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckAvgplace } from "../../api/API_Profile";
-import Core from "../../Components/Core/Core";
-import AugmentsImg from "../../utils/AugmentsImg";
+// import Core from "../../Components/Core/Core";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
-import ChampionImg from "../../utils/ChampionImg";
-import SynergyImg from "../../utils/SynergyImg";
 
 const AvgPlace = () => {
   const [info, setInfo] = useState([]);
@@ -32,7 +29,7 @@ const AvgPlace = () => {
                   {/* 덱 이름 */}
                   <p class="font-bold leading-none text-white">
                     <span>
-                      {Object.keys(match.traits)[0]} {match.core[0]}
+                      {match.traits[0].name} {match.core[0].name}
                     </span>
                     {/* {match.core.map((e, i) => (
                           <span>{match.core[i]}</span>
@@ -44,15 +41,11 @@ const AvgPlace = () => {
                 <BoxHeaderSynergyMain>
                   <BoxHeaderSynergyMain2>
                     {/* 시너지 */}
-                    {Object.keys(match.traits).map((e, i) => (
+                    {match.traits.map((e, i) => (
                       <SynergyMain>
-                        {SynergyImg(
-                          Object.keys(match.traits)[i] +
-                            Object.values(match.traits)[i]
-                        )}
+                        <Synergy src={match.traits[i].img} alt="traits" />
                         <SynergyName>
-                          {Object.keys(match.traits)[i]}(
-                          {Object.values(match.traits)[i]})
+                          {match.traits[i].name}({match.traits[i].count})
                         </SynergyName>
                       </SynergyMain>
                     ))}
@@ -64,7 +57,7 @@ const AvgPlace = () => {
               {/* 바디 */}
               <BoxBody>
                 <BoxBodyImage>
-                  {ChampionBackgroundImg(match.core[0])}
+                  {ChampionBackgroundImg(match.core[0].name)}
                   <BoxBodyMain>
                     <BoxChampionBody>
                       <BoxChampionBody2>
@@ -72,16 +65,23 @@ const AvgPlace = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
-                            {match.units[i] === match.core[i] ? <Core /> : ""}
+                            {/* {match.units[i].name === match.core[i].name ? (
+                              <Core />
+                            ) : (
+                              ""
+                            )} */}
                             <BoxChampionImgAndItems>
                               {/* 코어 챔피언 손봐야함 */}
 
                               {/* 코어 챔피언 손봐야함 */}
                               <BoxChampionImg>
-                                {ChampionImg(match.units[i])}
+                                <Champions
+                                  src={match.units[i].img}
+                                  alt="Unit"
+                                />
                               </BoxChampionImg>
                             </BoxChampionImgAndItems>
-                            <ChampionName>{match.units[i]}</ChampionName>
+                            <ChampionName>{match.units[i].name}</ChampionName>
                           </BoxChampionMain>
                         ))}
 
@@ -101,9 +101,15 @@ const AvgPlace = () => {
                           {match.augments.map((e, i) => (
                             <AugmentsBody>
                               <BoxSiderAugmentsBodyImg>
-                                {AugmentsImg(match.augments[i])}
+                                <img
+                                  className="mr-5"
+                                  src={match.augments[i].img}
+                                  alt="augments"
+                                />
                               </BoxSiderAugmentsBodyImg>
-                              <AugmentsName>{match.augments[i]}</AugmentsName>
+                              <AugmentsName>
+                                {match.augments[i].name}
+                              </AugmentsName>
                             </AugmentsBody>
                           ))}
                         </BoxSiderAugmentsBody>
@@ -254,6 +260,16 @@ const SynergyMain = styled.div`
   }
 `;
 
+const Synergy = styled.img`
+  position: relative;
+  /* top: 18%; */
+  /* left: 18%; */
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+  object-position: center;
+`;
+
 const BoxBody = styled.div``;
 
 const BoxBodyImage = styled.div`
@@ -328,7 +344,7 @@ const ChampionName = styled.span`
 const AugmentsName = styled.span`
   position: absolute;
   background-color: #000;
-  width: 130px;
+  width: 150px;
   color: #fff;
   top: -30px;
   text-align: center;
@@ -400,6 +416,15 @@ const BoxChampionImg = styled.div`
   overflow: hidden;
   height: 45px;
   width: 45px;
+`;
+
+const Champions = styled.img`
+  position: relative;
+  margin-right: 15px;
+  height: 65px;
+  width: 65px;
+  border: 3px solid var(--cost1-color);
+  border-radius: 10px;
 `;
 
 const BoxSider = styled.div`

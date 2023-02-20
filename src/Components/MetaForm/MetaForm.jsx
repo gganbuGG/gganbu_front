@@ -48,7 +48,7 @@ const MetaForm = () => {
                     {/* 덱이름 */}
                     {/* 시너지 */}
                     <MetaDeckTraits>
-                      {Object.values(match.traits).map((e, i) => (
+                      {match.traits.map((e, i) => (
                         <SynergyMain>
                           <Synergy src={match.traits[i].img} alt="traits" />
                           <SynergyName>
