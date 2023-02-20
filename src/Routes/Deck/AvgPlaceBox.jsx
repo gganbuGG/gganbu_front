@@ -39,7 +39,6 @@ const AvgPlace = () => {
                         ))} */}
                     덱
                   </p>
-                  <span class="text-[12px] leading-none text-[#999]"></span>
                   {/* 덱 이름 */}
                 </BoxHeaderText>
                 <BoxHeaderSynergyMain>

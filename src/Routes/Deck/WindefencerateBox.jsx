@@ -99,12 +99,18 @@ const WindefenceRate = () => {
                         </BoxSiderAugmentsHeader>
                         {/* 증강체 */}
                         <BoxSiderAugmentsBody>
-                          {match.augments.map((e, i) => (
+                          {Object.keys(match.augments.name).map((e, i) => (
                             <AugmentsBody>
                               <BoxSiderAugmentsBodyImg>
-                                {AugmentsImg(match.augments[i])}
+                                {/* {AugmentsImg(match.augments[i])} */}
+                                <img
+                                  src={Object.values(match.augments.img)[i]}
+                                  alt="d"
+                                />
                               </BoxSiderAugmentsBodyImg>
-                              <AugmentsName>{match.augments[i]}</AugmentsName>
+                              <AugmentsName>
+                                {Object.values(match.augments.name)[i]}
+                              </AugmentsName>
                             </AugmentsBody>
                           ))}
                         </BoxSiderAugmentsBody>

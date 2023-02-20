@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
-import ChampionImg from "../../utils/ChampionImg";
-import SynergyImg from "../../utils/SynergyImg";
 import ModalMetaForm from "../Modal/ModalMeta";
 
 const MetaForm = () => {
@@ -37,8 +35,8 @@ const MetaForm = () => {
                       <DeckName>
                         <P>
                           <DeckSpan>
-                            {Object.keys(match.traits)[0]}
-                            {match.core[0]}
+                            {match.traits[0].name}
+                            {match.core[0].name}
                           </DeckSpan>
                           덱
                         </P>
@@ -50,21 +48,16 @@ const MetaForm = () => {
                     {/* 덱이름 */}
                     {/* 시너지 */}
                     <MetaDeckTraits>
-                      {Object.keys(match.traits).map((e, i) => (
+                      {Object.values(match.traits).map((e, i) => (
                         <SynergyMain>
-                          {SynergyImg(
-                            Object.keys(match.traits)[i] +
-                              Object.values(match.traits)[i]
-                          )}
+                          <Synergy src={match.traits[i].img} alt="traits" />
                           <SynergyName>
-                            {Object.keys(match.traits)[i]}(
-                            {Object.values(match.traits)[i]})
+                            {match.traits[i].name}({match.traits[i].count})
                           </SynergyName>
                         </SynergyMain>
                       ))}
                     </MetaDeckTraits>
                     {/* 시너지 */}
-
                     {/* 챔피언 */}
                     <MetaDeckChampions>
                       {match.units.map((e, i) => (
@@ -74,10 +67,11 @@ const MetaForm = () => {
 
                             {/* 코어 챔피언 손봐야함 */}
                             <BoxChampionImg>
-                              {ChampionImg(match.units[i])}
+                              {/* {ChampionImg(match.units[i])} */}
+                              <Champions src={match.units[i].img} alt="Unit" />
                             </BoxChampionImg>
                           </BoxChampionImgAndItems>
-                          <ChampionName>{match.units[i]}</ChampionName>
+                          <ChampionName>{match.units[i].name}</ChampionName>
                         </BoxChampionMain>
                       ))}
                       {/* 아이템 가지고 있는 챔피언 예시 */}
@@ -236,6 +230,16 @@ const SynergyMain = styled.div`
   }
 `;
 
+const Synergy = styled.img`
+  position: relative;
+  top: 18%;
+  left: 18%;
+  height: 16px;
+  width: 16px;
+  object-fit: cover;
+  object-position: center;
+`;
+
 const MetaDeckChampions = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
@@ -247,7 +251,7 @@ const ChampionName = styled.span`
   background-color: #000;
   width: 100px;
   color: #fff;
-  top: -30px;
+  top: -15px;
   text-align: center;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -296,6 +300,14 @@ const BoxChampionImg = styled.div`
   width: 45px;
 `;
 
+const Champions = styled.img`
+  position: relative;
+  margin-right: 15px;
+  height: 65px;
+  width: 65px;
+  border: 3px solid var(--cost1-color);
+  border-radius: 10px;
+`;
 // const BoxChampionImgDetail = styled.div`
 //   position: relative;
 //   display: inline-flex;
