@@ -35,8 +35,7 @@ export default function Champion() {
   );
 }
 const Wrapper = styled.div`
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 34 34 / var(--tw-bg-opacity));
+  background-color: rgb(34 34 34);
 `;
 const DeckHeader = styled.div`
   min-height: 20vh;

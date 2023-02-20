@@ -35,7 +35,7 @@ const MetaForm = () => {
                       <DeckName>
                         <P>
                           <DeckSpan>
-                            {match.traits[0].name}
+                            {match.traits[0].name}{`  `}
                             {match.core[0].name}
                           </DeckSpan>
                           덱
