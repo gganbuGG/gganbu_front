@@ -9,7 +9,6 @@ import 블랙타일 from "../../images/Synergy/Tile/black.svg";
 const ProfileDetail = () => {
   const [productList, setProductList] = useState({});
   const [query, setQuery] = useSearchParams();
-  let [error, setError] = useState("");
 
   const getProduct = async () => {
     let searchQuery = query.get("q") || "";

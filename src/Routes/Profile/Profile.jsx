@@ -13,7 +13,7 @@ const Profile = () => {
 
   const getProduct = async () => {
     let searchQuery = query.get("q") || "";
-    console.log("쿼리 값: ", searchQuery);
+    // console.log("쿼리 값: ", searchQuery);
     let url = `${USER_BASE_URL}${searchQuery}`;
     let response = await fetch(url);
     let data = await response.json();
@@ -73,12 +73,12 @@ const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 200vh;
+  /* height: 200vh; */
 `;
 
 const ProfileHeader = styled.div`
   margin-top: 100px;
-  height: 20vh;
+  /* height: 20vh; */
   margin-bottom: 50px;
   background: url(${HeaderSrc}) center/cover no-repeat;
   display: flex;
@@ -91,7 +91,7 @@ const ProfileHeaderText = styled.div`
   display: flex;
   height: 230px;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
 `;
 
