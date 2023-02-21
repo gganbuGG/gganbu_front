@@ -190,7 +190,7 @@ const Champion1 = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost1-color);
+  border: 3px solid var(--cost0-color);
   border-radius: 10px;
 `;
 
@@ -199,7 +199,7 @@ const Champion2 = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost2-color);
+  border: 3px solid var(--cost1-color);
   border-radius: 10px;
 `;
 
@@ -208,7 +208,7 @@ const Champion3 = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost3-color);
+  border: 3px solid var(--cost2-color);
   border-radius: 10px;
 `;
 
@@ -226,6 +226,6 @@ const Champion5 = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost5-color);
+  border: 3px solid var(--cost6-color);
   border-radius: 10px;
 `;

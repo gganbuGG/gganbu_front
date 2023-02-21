@@ -59,6 +59,13 @@ export default function Card() {
                         </Tiers> */}
                         <div>
                           <div>{ChampionImg(match.name)}</div>
+                          {/* <div>
+                            <Champions
+                              bdcolor="var(--cost2-color)"
+                              src={match.smallimg}
+                              alt="smallimg"
+                            />
+                          </div> */}
                         </div>
                         <div>{match.name}</div>
                       </ChampionName>
@@ -84,13 +91,13 @@ export default function Card() {
                       <ChampionItem>
                         {Object.keys(match.items).map((e, i) => (
                           <div>
-                            <p className="text-xl">{i + 1}순위</p>
+                            {/* <p className="text-xl">{i + 1}순위</p> */}
                             <img
-                              className="mr-5 h-20 w-20"
+                              className="mr-5 h-20 w-20 rounded-3xl bg-red-100"
                               src={Object.values(match.items)[i]}
                               alt="items"
                             />
-                            <span className="flex justify-start text-xs">
+                            <span className="flex justify-start pt-5 text-xs">
                               {Object.keys(match.items)[i].slice(0, 8)}
                             </span>
                           </div>

@@ -76,6 +76,7 @@ const AvgPlace = () => {
                               {/* 코어 챔피언 손봐야함 */}
                               <BoxChampionImg>
                                 <Champions
+                                  // bdcolor={green}
                                   src={match.units[i].img}
                                   alt="Unit"
                                 />
@@ -423,7 +424,7 @@ const Champions = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost1-color);
+  border: 3px solid ${(props) => props.bdcolor};
   border-radius: 10px;
 `;
 
