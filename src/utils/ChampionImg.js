@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { getChampion } from "../api/API_Profile";
 import Alistar from "../images/Champions/Alistar.jpg";
 import Annie from "../images/Champions/Annie.jpg";
 import Aphelios from "../images/Champions/Aphelios.jpg";
@@ -60,6 +63,17 @@ import Zed from "../images/Champions/Zed.jpg";
 import Zoe from "../images/Champions/Zoe.jpg";
 
 export default function ChampionImg(event) {
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const result = await getChampion();
+        setInfo(result);
+      } catch (e) {
+        console.error(e.message);
+      }
+    })();
+  }, []);
   switch (event) {
     case "알리스타":
       return <Champion3 src={Alistar} alt="Alistar" />;

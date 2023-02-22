@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { getDeckAvgplace } from "../../api/API_Profile";
 // import Core from "../../Components/Core/Core";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
+import ChampionBorderColor from "../../utils/ChampionBorderColor";
 
 const AvgPlace = () => {
   const [info, setInfo] = useState([]);
@@ -16,6 +17,7 @@ const AvgPlace = () => {
       }
     })();
   }, []);
+
   return (
     <body>
       <h2 className="mb-10 text-6xl text-white">평균 등수</h2>
@@ -65,7 +67,9 @@ const AvgPlace = () => {
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
                                 <Champions
-                                  // bdcolor={green}
+                                  bdcolor={ChampionBorderColor(
+                                    match.units[i].cost
+                                  )}
                                   src={match.units[i].img}
                                   alt="Unit"
                                 />
