@@ -64,7 +64,24 @@ const AvgPlace = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
-                            {/* <Core /> */}
+                            {match.core.map((event, j) => (
+                              <>
+                                {match.core[j].name === match.units[i].name ? (
+                                  <>
+                                    <>
+                                      <Core />
+                                    </>
+                                    <CoreItems>
+                                      {event.items.map((item) => (
+                                        <CoreItem src={item.img} />
+                                      ))}
+                                    </CoreItems>
+                                  </>
+                                ) : (
+                                  ""
+                                )}
+                              </>
+                            ))}
 
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
@@ -396,13 +413,25 @@ const BoxChampionBody2 = styled.div`
 
 const BoxChampionMain = styled.div`
   position: relative;
-  display: inline-flex;
+  display: inline-block;
   flex-direction: column;
   padding-top: 9px;
   &:hover ${ChampionName} {
     opacity: 1;
     visibility: visible;
   }
+`;
+
+const CoreItems = styled.div`
+  position: absolute;
+  margin-top: 50px;
+  display: inline-flex;
+`;
+
+const CoreItem = styled.img`
+  width: 15px;
+  height: 15px;
+  flex-direction: row;
 `;
 
 const BoxChampionImgAndItems = styled.div`

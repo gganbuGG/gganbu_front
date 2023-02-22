@@ -47,7 +47,7 @@ const Profile = () => {
                     {Object.values(productList).map((e) => (
                       <div>
                         <img
-                          className="mt-5 mb-3 h-24 w-24 rounded-full"
+                          className="mt-5 mb-3 h-24 w-24 shrink-0 rounded-full"
                           src={e.profile_img}
                           alt="profile_img"
                         />

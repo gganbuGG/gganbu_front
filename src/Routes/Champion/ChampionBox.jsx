@@ -172,6 +172,8 @@ const TierRates = styled.div`
   display: flex;
   position: relative;
   padding-top: 15px;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const TierRate = styled.div``;
@@ -198,7 +200,6 @@ const ChampionItems = styled.div`
   align-items: center;
   flex-wrap: wrap;
   flex-shrink: 0;
-  gap: 2px;
   margin: 15px 0px;
 `;
 
