@@ -28,13 +28,7 @@ const WinRate = () => {
                 <BoxHeaderText>
                   {/* 덱 이름 */}
                   <p class="font-bold leading-none text-white">
-                    <span>
-                      {match.traits[0].name} {match.core[0].name}
-                    </span>
-                    {/* {match.core.map((e, i) => (
-                          <span>{match.core[i]}</span>
-                        ))} */}
-                    덱
+                    <span>{match.name}</span>덱
                   </p>
                   {/* 덱 이름 */}
                 </BoxHeaderText>
@@ -43,7 +37,9 @@ const WinRate = () => {
                     {/* 시너지 */}
                     {match.traits.map((e, i) => (
                       <SynergyMain>
-                        <Synergy src={match.traits[i].img} alt="traits" />
+                        <Tile bgimg={match.traits[i].bgimg} alt="bg-traits">
+                          <Synergy src={match.traits[i].img} alt="traits" />
+                        </Tile>
                         <SynergyName>
                           {match.traits[i].name}({match.traits[i].count})
                         </SynergyName>
@@ -257,6 +253,13 @@ const SynergyMain = styled.div`
     opacity: 1;
     visibility: visible;
   }
+`;
+
+const Tile = styled.div`
+  background: url(${(props) => props.bgimg}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
 `;
 
 const Synergy = styled.img`

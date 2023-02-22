@@ -48,15 +48,6 @@ export default function Card() {
                       </ChampionRanking>
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
-                        {/* 추후 추가할지 말지 논의 */}
-                        {/* <Tiers>
-                          <Tier>
-                            {ChampionStatsTierStar(
-                              Object.keys(match.tier),
-                              match.rarity
-                            )}
-                          </Tier>
-                        </Tiers> */}
                         <div>
                           <div>{ChampionImg(match.name)}</div>
                           {/* <div>

@@ -28,13 +28,7 @@ const AvgPlace = () => {
                 <BoxHeaderText>
                   {/* 덱 이름 */}
                   <p class="font-bold leading-none text-white">
-                    <span>
-                      {match.traits[0].name} {match.core[0].name}
-                    </span>
-                    {/* {match.core.map((e, i) => (
-                          <span>{match.core[i]}</span>
-                        ))} */}
-                    덱
+                    <span>{match.name}</span>덱
                   </p>
                   {/* 덱 이름 */}
                 </BoxHeaderText>
@@ -43,7 +37,10 @@ const AvgPlace = () => {
                     {/* 시너지 */}
                     {match.traits.map((e, i) => (
                       <SynergyMain>
-                        <Synergy src={match.traits[i].img} alt="traits" />
+                        <Tile bgimg={match.traits[i].bgimg} alt="bg-traits">
+                          <Synergy src={match.traits[i].img} alt="traits" />
+                        </Tile>
+
                         <SynergyName>
                           {match.traits[i].name}({match.traits[i].count})
                         </SynergyName>
@@ -65,15 +62,7 @@ const AvgPlace = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
-                            {/* {match.units[i].name === match.core[i].name ? (
-                              <Core />
-                            ) : (
-                              ""
-                            )} */}
                             <BoxChampionImgAndItems>
-                              {/* 코어 챔피언 손봐야함 */}
-
-                              {/* 코어 챔피언 손봐야함 */}
                               <BoxChampionImg>
                                 <Champions
                                   // bdcolor={green}
@@ -261,10 +250,17 @@ const SynergyMain = styled.div`
   }
 `;
 
+const Tile = styled.div`
+  background: url(${(props) => props.bgimg}) center/cover no-repeat;
+  width: 26px;
+  height: 26px;
+  position: relative;
+`;
+
 const Synergy = styled.img`
   position: relative;
-  /* top: 18%; */
-  /* left: 18%; */
+  top: 13%;
+  left: 13%;
   height: 20px;
   width: 20px;
   object-fit: cover;
