@@ -48,7 +48,7 @@ export default function Card() {
                       </ChampionRanking>
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
-                        <div>
+                        <ChampionImgs>
                           <div>{ChampionImg(match.name)}</div>
                           {/* <div>
                             <Champions
@@ -57,7 +57,7 @@ export default function Card() {
                               alt="smallimg"
                             />
                           </div> */}
-                        </div>
+                        </ChampionImgs>
                         <div>{match.name}</div>
                       </ChampionName>
                       {/* 3번 별 rate */}
@@ -81,21 +81,20 @@ export default function Card() {
                         </TierRate>
                       </TierRates>
                       {/*4번 grid  아이템 사진*/}
-                      <ChampionItem>
+                      <ChampionItems>
                         {Object.keys(match.items).map((e, i) => (
-                          <div>
+                          <ChampionItem>
                             {/* <p className="text-xl">{i + 1}순위</p> */}
-                            <img
-                              className="mr-5 h-20 w-20 rounded-3xl bg-red-100"
+                            <ChampionItemImg
                               src={Object.values(match.items)[i]}
                               alt="items"
                             />
                             <span className="flex justify-start pt-5 text-xs">
                               {Object.keys(match.items)[i].slice(0, 8)}
                             </span>
-                          </div>
+                          </ChampionItem>
                         ))}
-                      </ChampionItem>
+                      </ChampionItems>
 
                       {/*  */}
                     </ChampionMain>
@@ -147,6 +146,8 @@ const ChampionName = styled.div`
   margin: 15px 0px;
 `;
 
+const ChampionImgs = styled.div``;
+
 const TierRates = styled.div`
   display: flex;
   position: relative;
@@ -170,7 +171,7 @@ const Star = styled.div`
 
 const StarSpan = styled.span``;
 
-const ChampionItem = styled.div`
+const ChampionItems = styled.div`
   position: relative;
   display: inline-flex;
   justify-content: flex-start;
@@ -179,6 +180,16 @@ const ChampionItem = styled.div`
   flex-shrink: 0;
   gap: 2px;
   margin: 15px 0px;
+`;
+
+const ChampionItem = styled.div``;
+
+const ChampionItemImg = styled.img`
+  background-color: rgb(254, 226, 226);
+  margin-right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
 `;
 
 const DeckName = styled.div`
