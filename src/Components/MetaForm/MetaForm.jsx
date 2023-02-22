@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
+import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
 import ModalMetaForm from "../Modal/ModalMeta";
 
 const MetaForm = () => {
@@ -71,7 +72,13 @@ const MetaForm = () => {
                             {/* 코어 챔피언 손봐야함 */}
                             <BoxChampionImg>
                               {/* {ChampionImg(match.units[i])} */}
-                              <Champions src={match.units[i].img} alt="Unit" />
+                              <Champions
+                                bdcolor={ChampionBorderColor(
+                                  match.units[i].cost
+                                )}
+                                src={match.units[i].img}
+                                alt="Unit"
+                              />
                             </BoxChampionImg>
                           </BoxChampionImgAndItems>
                           <ChampionName>{match.units[i].name}</ChampionName>
@@ -315,37 +322,9 @@ const Champions = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost1-color);
+  border: 3px solid ${(props) => props.bdcolor};
   border-radius: 10px;
 `;
-// const BoxChampionImgDetail = styled.div`
-//   position: relative;
-//   display: inline-flex;
-//   height: 45px;
-//   width: 45px;
-//   overflow: hidden;
-//   border-radius: 8px;
-//   border-width: 2px;
-//   border-color: ${(props) => props.bdColor};
-// `;
-
-// const BoxChampionCoreItems = styled.div`
-//   position: absolute;
-//   display: inline-flex;
-//   width: 100%;
-//   align-items: center;
-//   justify-content: center;
-//   padding-top: 50px;
-// `;
-
-// const BoxChampionCoreItem = styled.div`
-//   position: relative;
-
-//   height: 15px;
-//   width: 15px;
-//   overflow: hidden;
-// `;
-
 const MetaDeckExplain = styled.div`
   display: flex;
   align-items: center;

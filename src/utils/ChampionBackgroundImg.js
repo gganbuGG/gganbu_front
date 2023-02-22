@@ -193,7 +193,6 @@ const Background = styled.img`
   background-size: cover;
   width: 100%;
   height: 100%;
-  /* flex-direction: column; */
   background-position: center;
   background-repeat: no-repeat;
   overflow: visible;

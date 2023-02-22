@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import { getChampion } from "../../api/API_Profile";
-import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
-import ChampionImg from "../../utils/ChampionImg";
+import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
 import ChampionStatsTierStar from "../../utils/Star";
 
 export default function Card() {
@@ -35,7 +34,7 @@ export default function Card() {
               })
               .map((match, i) => (
                 <ChampionGroup>
-                  {ChampionBackgroundImg(match.name)}
+                  <Background src={match.bgimg} alt="bgImg" />
 
                   <ChapionGroupContents>
                     {/*  */}
@@ -49,14 +48,13 @@ export default function Card() {
                       {/*  2번 grid  챔피언 이름& 챔피언 사진*/}
                       <ChampionName>
                         <ChampionImgs>
-                          <div>{ChampionImg(match.name)}</div>
-                          {/* <div>
+                          <div>
                             <Champions
-                              bdcolor="var(--cost2-color)"
+                              bdcolor={ChampionBorderColor(match.rarity)}
                               src={match.smallimg}
                               alt="smallimg"
                             />
-                          </div> */}
+                          </div>
                         </ChampionImgs>
                         <div>{match.name}</div>
                       </ChampionName>
@@ -123,6 +121,19 @@ const ChampionGroup = styled.div`
   border-color: rgb(61, 60, 60);
 `;
 
+const Background = styled.img`
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  top: 0%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: visible;
+`;
+
 const ChapionGroupContents = styled.div``;
 
 const ChampionMain = styled.div`
@@ -147,6 +158,15 @@ const ChampionName = styled.div`
 `;
 
 const ChampionImgs = styled.div``;
+
+const Champions = styled.img`
+  position: relative;
+  margin-right: 15px;
+  height: 65px;
+  width: 65px;
+  border: 3px solid ${(props) => props.bdcolor};
+  border-radius: 10px;
+`;
 
 const TierRates = styled.div`
   display: flex;

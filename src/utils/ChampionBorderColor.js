@@ -1,27 +1,27 @@
 export function ChampionBorderColor(event) {
   if (event === 1) {
-    return "gray";
+    return "var(--cost0-color)";
   } else if (event === 2) {
-    return "green";
+    return "var(--cost1-color)";
   } else if (event === 3) {
-    return "blue";
+    return "var(--cost2-color)";
   } else if (event === 4) {
-    return "purple";
+    return "var(--cost4-color)";
   } else {
-    return "gold";
+    return "var(--cost6-color)";
   }
 }
 
 export function ProfileChampionBorderColor(event) {
   if (event === 0) {
-    return "gray";
+    return "var(--cost0-color)";
   } else if (event === 1) {
-    return "green";
+    return "var(--cost1-color)";
   } else if (event === 2) {
-    return "blue";
+    return "var(--cost2-color)";
   } else if (event === 4) {
-    return "purple";
+    return "var(--cost4-color)";
   } else {
-    return "gold";
+    return "var(--cost6-color)";
   }
 }

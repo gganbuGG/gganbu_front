@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckAvgplace } from "../../api/API_Profile";
+import Core from "../../Components/Core/Core";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
 
@@ -63,6 +64,8 @@ const AvgPlace = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
+                            {/* <Core /> */}
+
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
                                 <Champions
