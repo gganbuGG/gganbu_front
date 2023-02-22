@@ -61,23 +61,25 @@ export default function Card() {
                         <div>{match.name}</div>
                       </ChampionName>
                       {/* 3번 별 rate */}
-                      <div className="relative flex">
-                        <div>
+                      <TierRates>
+                        <TierRate>
                           {Object.keys(match.tier).map((e, i) => (
-                            <div>
-                              <div className=" flex flex-row justify-between">
-                                <div className="mr-10 flex ">
+                            <StarsMain>
+                              <Stars>
+                                <Star>
                                   {ChampionStatsTierStar(
                                     parseInt(Object.keys(match.tier)[i]),
                                     match.rarity
                                   )}
-                                </div>
-                                <span>{Object.values(match.tier)[i]}</span>
-                              </div>
-                            </div>
+                                </Star>
+                                <StarSpan>
+                                  {Object.values(match.tier)[i]}
+                                </StarSpan>
+                              </Stars>
+                            </StarsMain>
                           ))}
-                        </div>
-                      </div>
+                        </TierRate>
+                      </TierRates>
                       {/*4번 grid  아이템 사진*/}
                       <ChampionItem>
                         {Object.keys(match.items).map((e, i) => (
@@ -145,6 +147,29 @@ const ChampionName = styled.div`
   margin: 15px 0px;
 `;
 
+const TierRates = styled.div`
+  display: flex;
+  position: relative;
+  padding-top: 15px;
+`;
+
+const TierRate = styled.div``;
+
+const StarsMain = styled.div``;
+
+const Stars = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const Star = styled.div`
+  display: flex;
+  margin-right: 40px;
+`;
+
+const StarSpan = styled.span``;
+
 const ChampionItem = styled.div`
   position: relative;
   display: inline-flex;
@@ -155,22 +180,6 @@ const ChampionItem = styled.div`
   gap: 2px;
   margin: 15px 0px;
 `;
-
-// const Tiers = styled.div`
-//   position: absolute;
-//   margin-bottom: 90px;
-//   display: flex;
-//   align-items: center;
-// `;
-
-// const Tier = styled.div`
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 16px;
-//   text-align: center;
-//   font-weight: bold;
-// `;
 
 const DeckName = styled.div`
   font-size: 18px;
