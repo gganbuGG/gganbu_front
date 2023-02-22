@@ -5,6 +5,7 @@ import { USERINFO_BASE_URL } from "../../api/API_User";
 import SynergyImg from "../../utils/SynergyImg";
 import ChampionStatsTierStar from "../../utils/Star";
 import 블랙타일 from "../../images/Synergy/Tile/black.svg";
+import { ProfileChampionBorderColor } from "../../utils/ChampionBorderColor";
 
 const ProfileDetail = () => {
   const [productList, setProductList] = useState({});
@@ -102,8 +103,12 @@ const ProfileDetail = () => {
                             )}
                           </div>
                           <BoxChampionImg>
-                            {/* {ChampionImg(match.Units[i].Champion)} */}
-                            <ChampionImgs src={match.Units[i].champion_image} />
+                            <ChampionImgs
+                              bdcolor={ProfileChampionBorderColor(
+                                match.Units[i].rarity
+                              )}
+                              src={match.Units[i].champion_image}
+                            />
                           </BoxChampionImg>
                         </BoxChampionImgAndItems>
                         <ChampionName>{match.Units[i].Champion}</ChampionName>
@@ -307,7 +312,7 @@ const ChampionImgs = styled.img`
   margin-right: 15px;
   height: 65px;
   width: 65px;
-  border: 3px solid var(--cost1-color);
+  border: 3px solid ${(props) => props.bdcolor};
   border-radius: 10px;
 `;
 
