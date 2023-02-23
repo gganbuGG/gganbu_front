@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckWindefenceRate } from "../../api/API_Profile";
+import Core from "../../Components/Core/Core";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
 
@@ -61,6 +62,24 @@ const WindefenceRate = () => {
 
                         {match.units.map((e, i) => (
                           <BoxChampionMain>
+                            {match.core.map((event, j) => (
+                              <>
+                                {match.core[j].name === match.units[i].name ? (
+                                  <>
+                                    <>
+                                      <Core />
+                                    </>
+                                    <CoreItems>
+                                      {event.items.map((item) => (
+                                        <CoreItem src={item.img} />
+                                      ))}
+                                    </CoreItems>
+                                  </>
+                                ) : (
+                                  ""
+                                )}
+                              </>
+                            ))}
                             <BoxChampionImgAndItems>
                               <BoxChampionImg>
                                 <Champions
@@ -397,6 +416,18 @@ const BoxChampionMain = styled.div`
     opacity: 1;
     visibility: visible;
   }
+`;
+
+const CoreItems = styled.div`
+  position: absolute;
+  margin-top: 50px;
+  display: inline-flex;
+`;
+
+const CoreItem = styled.img`
+  width: 15px;
+  height: 15px;
+  flex-direction: row;
 `;
 
 const BoxChampionImgAndItems = styled.div`
