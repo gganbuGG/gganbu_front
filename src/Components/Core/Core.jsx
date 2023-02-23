@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-function Core() {
+function Core(top) {
   return (
-    <Wrapper>
+    <Wrapper top={0}>
       <CoreHeader>
         <CoreSpan>CORE</CoreSpan>
       </CoreHeader>
@@ -12,7 +12,7 @@ function Core() {
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 0px;
+  top: ${(props) => props.top}px;
   left: 50%;
   z-index: 20;
   display: flex;

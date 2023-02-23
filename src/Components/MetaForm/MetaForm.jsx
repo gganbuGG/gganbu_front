@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
 import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
 import ModalMetaForm from "../Modal/ModalMeta";
+// import Core from "../Core/Core";
 
-const MetaForm = () => {
+const MetaForm = ({ top }) => {
   const navigate = useNavigate();
   const [info, setInfo] = useState([]);
   const navigateDeck = () => {
@@ -24,7 +25,7 @@ const MetaForm = () => {
   return (
     <div class="container">
       <Wrapper>
-        <Version>V13.1c(시즌8) 추천 메타</Version>
+        <Version>V13.4c(시즌8) 추천 메타</Version>
         {info["data"] &&
           info["data"].slice(0, 5).map((match) => (
             <MetaGroup>
@@ -66,12 +67,26 @@ const MetaForm = () => {
                     <MetaDeckChampions>
                       {match.units.map((e, i) => (
                         <BoxChampionMain>
+                          {match.core.map((event, j) => (
+                            <>
+                              {match.core[j].name === match.units[i].name ? (
+                                <>
+                                  {/* <>
+                                    <StyleCore top={-10} />
+                                  </> */}
+                                  <CoreItems>
+                                    {event.items.map((item) => (
+                                      <CoreItem src={item.img} />
+                                    ))}
+                                  </CoreItems>
+                                </>
+                              ) : (
+                                ""
+                              )}
+                            </>
+                          ))}
                           <BoxChampionImgAndItems>
-                            {/* 코어 챔피언 손봐야함 */}
-
-                            {/* 코어 챔피언 손봐야함 */}
                             <BoxChampionImg>
-                              {/* {ChampionImg(match.units[i])} */}
                               <Champions
                                 bdcolor={ChampionBorderColor(
                                   match.units[i].cost
@@ -84,47 +99,6 @@ const MetaForm = () => {
                           <ChampionName>{match.units[i].name}</ChampionName>
                         </BoxChampionMain>
                       ))}
-                      {/* 아이템 가지고 있는 챔피언 예시 */}
-                      {/* <BoxChampionMain>
-                        <BoxChampionImgAndItems>
-                          <BoxChampionImg>
-                            <BoxChampionImgDetail bdColor="var(--cost4-color)">
-                              <img
-                                src={Samira}
-                                class="h-full w-full object-cover object-center"
-                                alt=""
-                              />
-                            </BoxChampionImgDetail>
-                          </BoxChampionImg>
-                        </BoxChampionImgAndItems>
-                        <BoxChampionCoreItems>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/LastWhisper_1642015257.png"
-                              width="3"
-                              height="3"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/GiantSlayer_1670462997-giant_slayer.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                          <BoxChampionCoreItem>
-                            <img
-                              src="//cdn.lolchess.gg/upload/images/items/InfinityEdge_ljmJbkViyMGC8IKr50os4jC8Ccl1ro2JbqXuvHqT.png"
-                              width="12"
-                              height="12"
-                              alt=""
-                            />
-                          </BoxChampionCoreItem>
-                        </BoxChampionCoreItems>
-                      </BoxChampionMain> */}
-                      {/* 아이템 가지고 있는 챔피언 예시 */}
                     </MetaDeckChampions>
                     {/* 챔피언 */}
 
@@ -299,6 +273,19 @@ const BoxChampionMain = styled.div`
     opacity: 1;
     visibility: visible;
   }
+`;
+
+const CoreItems = styled.div`
+  position: absolute;
+  margin-top: 40px;
+  z-index: 10;
+  display: inline-flex;
+`;
+
+const CoreItem = styled.img`
+  width: 15px;
+  height: 15px;
+  flex-direction: row;
 `;
 
 const BoxChampionImgAndItems = styled.div`
