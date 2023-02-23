@@ -5,6 +5,7 @@ import { USER_BASE_URL } from "../../api/API_User";
 import styled from "styled-components";
 import ProfileDetail from "./ProfileDetail";
 import HeaderSrc from "../../images/deck_main.jpg";
+import UpdateButton from "../../Components/Button/UpdateButton";
 
 const Profile = () => {
   const [productList, setProductList] = useState({});
@@ -57,7 +58,7 @@ const Profile = () => {
                     ))}
                   </ProfileHeaderTitle>
                 </ProfileHeaderText>
-                <Button>Update</Button>
+                <UpdateButton />
               </ProfileHeader>
 
               <ProfileDetail />
@@ -103,13 +104,13 @@ const ProfileHeaderTitle = styled.div`
   color: var(--main-bg-color);
 `;
 
-const Button = styled.button`
-  margin-bottom: 5px;
-  border-radius: 100px;
-  width: 100px;
-  height: 50px;
-  border: 1px solid black;
-  background-color: white;
-`;
+// const Button = styled.button`
+//   margin-bottom: 5px;
+//   border-radius: 100px;
+//   width: 100px;
+//   height: 50px;
+//   border: 1px solid black;
+//   background-color: white;
+// `;
 
 export default Profile;

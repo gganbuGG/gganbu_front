@@ -45,10 +45,13 @@ const ProfileDetail = () => {
                   {/* 2. 아이콘 이미지 */}
                   <Icons>
                     <img
-                      className="h-24 w-24 rounded-full border-2 border-slate-400"
+                      className="h-24 w-24 rounded-3xl border-2 border-slate-400"
                       src={match.Pet_Img}
                       alt="Pet_Img"
                     />
+                    <span className="absolute z-10 ml-20 mt-20 flex h-8 w-8 items-center justify-center rounded-full border-2 border-black text-2xl font-bold">
+                      {match.Game_level}
+                    </span>
                   </Icons>
                   {/* 아이콘 이미지 */}
 
@@ -69,9 +72,8 @@ const ProfileDetail = () => {
                   </Traits>
                   {/* 시너지 */}
                   {/* 4. 증강체 */}
-
                   <BoxAugmentsBody>
-                    {Object.keys(match.Augments).map((e, i) => (
+                    {Object.keys(match.Augments).map((augment, i) => (
                       <AugmentsBody>
                         <BoxSiderAugmentsBodyImg>
                           <DarkTile>
@@ -88,30 +90,24 @@ const ProfileDetail = () => {
                       </AugmentsBody>
                     ))}
                   </BoxAugmentsBody>
-
                   {/* 증강체 */}
 
                   {/*5. 챔피언 */}
                   <div className="py-9">
-                    {match.Units.map((e, i) => (
+                    {match.Units.map((unit, i) => (
                       <BoxChampionMain>
                         <BoxChampionImgAndItems>
                           <div className="relative inline-flex text-xs">
-                            {ChampionStatsTierStar(
-                              match.Units[i].tier,
-                              match.Units[i].rarity
-                            )}
+                            {ChampionStatsTierStar(unit.tier, unit.rarity)}
                           </div>
                           <BoxChampionImg>
                             <ChampionImgs
-                              bdcolor={ProfileChampionBorderColor(
-                                match.Units[i].rarity
-                              )}
-                              src={match.Units[i].champion_image}
+                              bdcolor={ProfileChampionBorderColor(unit.rarity)}
+                              src={unit.champion_image}
                             />
                           </BoxChampionImg>
                         </BoxChampionImgAndItems>
-                        <ChampionName>{match.Units[i].Champion}</ChampionName>
+                        <ChampionName>{unit.Champion}</ChampionName>
                       </BoxChampionMain>
                     ))}
                   </div>
@@ -120,10 +116,10 @@ const ProfileDetail = () => {
                   {/* 6. 같이 플레이한인원 */}
                   <Participants>
                     <Participant>
-                      {match.Participant.map((e, i) => (
+                      {match.Participant.map((participant, i) => (
                         <span>
-                          <Link to={`/profile?q=${match.Participant[i]}`}>
-                            {match.Participant[i]}
+                          <Link to={`/profile?q=${participant}`}>
+                            {participant}
                           </Link>
                         </span>
                       ))}
@@ -322,7 +318,12 @@ const BoxAugmentsBody = styled.div`
   flex-direction: column;
   margin-top: 2px;
   gap: 1px;
-  /* justify-content: flex-start; */
+  align-items: center;
+  justify-content: center;
+  &:hover ${AugmentsName} {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 const AugmentsBody = styled.div`
@@ -336,8 +337,6 @@ const AugmentsBody = styled.div`
 `;
 
 const BoxSiderAugmentsBodyImg = styled.div`
-  /* display: inline-flex; */
-
   position: relative;
   width: 35px;
   height: 35px;
@@ -354,7 +353,9 @@ const DarkTile = styled.div`
 `;
 
 const Participants = styled.div`
-  margin-top: 10px;
+  display: flex;
+  margin-top: 8px;
+  padding-top: 5px;
   text-align: center;
   align-items: center;
   justify-content: center;
