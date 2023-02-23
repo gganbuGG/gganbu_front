@@ -72,9 +72,9 @@ const Profile = () => {
 
 const Wrapper = styled.div`
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 2rem;
-  /* height: 200vh; */
+  max-height: 200vh;
 `;
 
 const ProfileHeader = styled.div`

@@ -26,7 +26,7 @@ const ProfileDetail = () => {
   }, [query]);
 
   return (
-    <div>
+    <Wrapper>
       {productList.length > 0 &&
         productList.slice(0, 10).map((match, i) => (
           <Main>
@@ -77,16 +77,15 @@ const ProfileDetail = () => {
                       <AugmentsBody>
                         <BoxSiderAugmentsBodyImg>
                           <DarkTile>
-                            <img
-                              className="flex h-8 w-8 items-center justify-center rounded-3xl"
+                            <AugmentsImg
                               src={Object.values(match.Augments)[i]}
                               alt="Augments None"
                             />
                           </DarkTile>
+                          <AugmentsName>
+                            {Object.keys(match.Augments)[i]}
+                          </AugmentsName>
                         </BoxSiderAugmentsBodyImg>
-                        <AugmentsName>
-                          {Object.keys(match.Augments)[i]}
-                        </AugmentsName>
                       </AugmentsBody>
                     ))}
                   </BoxAugmentsBody>
@@ -131,41 +130,18 @@ const ProfileDetail = () => {
             </MainContent>
           </Main>
         ))}
-    </div>
+    </Wrapper>
   );
 };
 
-const AugmentsName = styled.span`
-  position: absolute;
-  background-color: #000;
-  width: 130px;
-  color: #fff;
-  top: -30px;
-  text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-radius: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: 0.5s;
-  visibility: hidden;
-  &::after {
-    content: "";
-    position: absolute;
-    background-color: #000;
-    width: 5px;
-    height: 5px;
-    transform: rotate(45deg) translateX(-50%);
-    bottom: -5px;
-    left: 50%;
-  }
+const Wrapper = styled.div`
+  margin-bottom: 250px;
 `;
 
 const Main = styled.div`
   display: flex;
   align-items: center;
-  min-height: 100px;
+  /* min-height: 100px; */
   border-width: 2px;
   border-color: lightgray;
   margin-bottom: 10px;
@@ -320,9 +296,33 @@ const BoxAugmentsBody = styled.div`
   gap: 1px;
   align-items: center;
   justify-content: center;
-  &:hover ${AugmentsName} {
-    opacity: 1;
-    visibility: visible;
+`;
+
+const AugmentsName = styled.span`
+  position: absolute;
+  background-color: #000;
+  width: 100px;
+  color: #fff;
+  font-size: 12px;
+  top: -15px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 5px;
+    height: 5px;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
   }
 `;
 
@@ -330,6 +330,7 @@ const AugmentsBody = styled.div`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   &:hover ${AugmentsName} {
     opacity: 1;
     visibility: visible;
@@ -350,6 +351,19 @@ const DarkTile = styled.div`
   width: 35px;
   height: 35px;
   position: relative;
+  &:hover ${AugmentsName} {
+    opacity: 1;
+    visibility: visible;
+  }
+`;
+
+const AugmentsImg = styled.img`
+  display: flex;
+  height: 24px;
+  width: 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
 `;
 
 const Participants = styled.div`
