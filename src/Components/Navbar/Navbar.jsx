@@ -57,7 +57,7 @@ const Navbar = () => {
           <Link to="/">
             <span>GGanbuGG</span>
           </Link>
-          <Link to="/deck">개인 통계</Link>
+          <Link to="/deck">단일 통계</Link>
           <Link to="/champion">챔피언통계</Link>
           <Link to="/leaderboards">순위표</Link>
         </div>

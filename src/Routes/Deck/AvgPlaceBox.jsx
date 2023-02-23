@@ -73,7 +73,9 @@ const AvgPlace = () => {
                                     </>
                                     <CoreItems>
                                       {event.items.map((item) => (
-                                        <CoreItem src={item.img} />
+                                        <div>
+                                          <CoreItem src={item.img} />
+                                        </div>
                                       ))}
                                     </CoreItems>
                                   </>
