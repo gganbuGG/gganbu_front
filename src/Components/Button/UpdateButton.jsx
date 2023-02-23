@@ -9,20 +9,17 @@ function UpdateButton() {
   const handleClick = () => {
     setLoading(true);
 
-    // Extract "q" parameter from current URL
     const searchParams = new URLSearchParams(window.location.search);
     const q = searchParams.get("q");
 
-    // Send POST request to PythonAnywhere with "q" parameter
     axios
       .post(`https://ggback2.pythonanywhere.com/user/info/${q}/`)
       .then((response) => {
-        // Handle response
         console.log(response.data);
         setLoading(false);
+        window.location.reload();
       })
       .catch((error) => {
-        // Handle error
         console.error(error);
         setLoading(false);
       });
