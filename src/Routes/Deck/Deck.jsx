@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getDeckWinRate } from "../../api/API_Profile";
 import Navbar from "../../Components/Navbar/Navbar";
-import AvgPlace from "./AvgPlaceBox";
-import WindefenceRate from "./WindefencerateBox";
-import Winrate from "./WinRateBox";
+import AvgPlace from "../../Components/MetaForm/AvgPlaceBox";
+import WindefenceRate from "../../Components/MetaForm/WindefencerateBox";
+import Winrate from "../../Components/MetaForm/WinRateBox";
 
 const Deck = () => {
   const [isNow, setIsNow] = useState(1);
