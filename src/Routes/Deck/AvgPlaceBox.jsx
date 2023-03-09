@@ -4,6 +4,7 @@ import { getDeckAvgplace } from "../../api/API_Profile";
 import Core from "../../Components/Core/Core";
 import ChampionBackgroundImg from "../../utils/ChampionBackgroundImg";
 import { ChampionBorderColor } from "../../utils/ChampionBorderColor";
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 const AvgPlace = () => {
   const [info, setInfo] = useState([]);
@@ -151,6 +152,11 @@ const AvgPlace = () => {
                         </BoxSiderTopRateTwoIndex>
                       </BoxSiderTopRate>
                     </BoxSider>
+                    <div>
+                      <button>
+                        <FaAngleDoubleDown color="white" size={42} />
+                      </button>
+                    </div>
                   </BoxBodyMain>
                 </BoxBodyImage>
               </BoxBody>
