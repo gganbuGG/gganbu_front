@@ -6,8 +6,10 @@ import HeaderSrc from "../../images/header.jpg";
 const Header = () => {
   return (
     <Wrapper>
-      <HeaderContent>
-        <HeaderTitle>GGanBu.GG</HeaderTitle>
+      <HeaderContent className="sm:min-h-screen md:h-60">
+        <HeaderTitle className="text-7xl sm:text-4xl md:text-5xl lg:text-7xl xxl:text-8xl">
+          GGanBu.GG
+        </HeaderTitle>
         <Br />
         <SearchForm />
       </HeaderContent>
@@ -31,7 +33,7 @@ const HeaderContent = styled.div`
 
 const HeaderTitle = styled.div`
   text-transform: capitalize;
-  font-size: 80px;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;

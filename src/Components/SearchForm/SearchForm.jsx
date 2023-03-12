@@ -34,18 +34,20 @@ const SearchForm = () => {
   return (
     <SearchMain>
       <div className="container">
-        <SearchFormContent>
-          <SearchForms>
-            <SearchElem>
+        <SearchFormContent className="sm:px-10 sm:py-2">
+          <SearchForms className="sm:px-10 sm:py-2">
+            <SearchElem className="sm:px-10 sm:py-2">
               <Input
                 type="text"
                 placeholder="소환사 검색"
                 onChange={handleNameChange}
                 onKeyPress={(event) => searchEnter(event)}
                 minLength="2"
+                className="sm:w-2 sm:py-2"
+                autoFocus
               />
               <Button type="submit" minLength="2" onClick={handleClick}>
-                <FaSearch className="text-purple" size={32} />
+                <FaSearch className="text-purple sm:w-8" size={32} />
               </Button>
             </SearchElem>
           </SearchForms>
